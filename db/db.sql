@@ -21,12 +21,12 @@ create table services(
 
 -- Table structure for table `experts`
 create table experts(
-
     expert_id int primary key auto_increment,
     nom varchar(50) not null,
     prenom varchar(50) not null,
     email varchar(50) not null,
     password_ varchar(15) not null,
+    photo varchar(70),
     metier varchar(100) not null,
     ville varchar(100) not null
 );
