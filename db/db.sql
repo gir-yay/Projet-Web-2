@@ -68,7 +68,7 @@ create table commentaires_sur_clients(
 
 create table commentaires_sur_experts(
     commentaire_id int primary key auto_increment,
-    note float not null,
+    note int not null,
     client_id int not null,
     expert_id int not null,
     service_id int not null,
