@@ -58,7 +58,7 @@ create table admins(
 -- Table structure for table `commentaires_sur_clients`
 create table commentaires_sur_clients(
     commentaire_id int primary key auto_increment,
-    note float not null,
+    note int not null,
     client_id int not null,
     expert_id int not null,
     commentaire varchar(255) not null,
