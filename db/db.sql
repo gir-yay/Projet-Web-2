@@ -69,7 +69,6 @@ create table demandes_clients(
     service_id int not null,
     date_demande date not null,
     date_debut date not null,
-    date_fin date not null,
     duree varchar(100) not null,
     etat varchar(50) not null,
     foreign key (client_id) references clients(client_id),
