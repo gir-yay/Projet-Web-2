@@ -12,14 +12,14 @@ create table clients(
     password_ varchar(255) not null,
     adresse varchar(255) not null,
     phone varchar(15) not null,
-    compte_status boolean default 1
+    compte_status varchar(30) not null
 );
 
 -- table structure for table `services`
 create table services(
     service_id int primary key auto_increment,
     nom varchar(255) unique not null,
-    service_status boolean default 1
+    service_status varchar(30) not null
 );
 
 -- Table structure for table `experts`
@@ -31,7 +31,7 @@ create table experts(
     password_ varchar(255) not null,
     photo varchar(70),
     metier varchar(100) not null,
-    compte_status boolean default 1
+    compte_status varchar(30) not null
 );
 
 -- Table structure for table `service_expert` (many to many relationship)
@@ -44,7 +44,7 @@ create table service_expert(
     duree varchar(100),
     prix_par_duree float,
     ville varchar(100) not null,
-    status_ boolean default 1,
+    status_ varchar(30) not null,
     foreign key (expert_id) references experts(expert_id),
     foreign key (service_id) references services(service_id),
     primary key (expert_id, service_id)
@@ -69,7 +69,7 @@ create table demandes_clients(
     date_demande date not null,
     date_debut date not null,
     duree varchar(100) not null,
-    etat boolean default 0,
+    etat varchar(30) not null,
     foreign key (client_id) references clients(client_id),
     foreign key (expert_id) references experts(expert_id),
     foreign key (service_id) references services(service_id)
