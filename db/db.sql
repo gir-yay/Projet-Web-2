@@ -29,6 +29,7 @@ create table experts(
     prenom varchar(50) not null,
     email varchar(50) unique not null,
     password_ varchar(255) not null,
+    bio varchar(255),
     photo varchar(70),
     metier varchar(100) not null,
     compte_status varchar(30) not null
