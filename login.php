@@ -90,7 +90,7 @@
                 </div>
 
                 <button class="submit">Login</button>
-                <span>or <a href="">Create account</a> </span>
+                <span>or <a href="signup.php">Create account</a> </span>
             </form>
         </div>
     </section>
