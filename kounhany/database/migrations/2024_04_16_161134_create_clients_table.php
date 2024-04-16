@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email', 50)->unique();
             $table->string('password_', 255);
             $table->string('adresse', 255);
-            $table->string('phone', 15);
+            $table->string('phone', 25);
             $table->string('compte_status', 30);
             $table->timestamps();
         });
