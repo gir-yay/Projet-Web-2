@@ -1,6 +1,7 @@
 -- projet web 2024
--- db name : prjw
-use prjw;
+-- db name : kounHany
+create database if not exists kounHany;
+use kounHany;
 
 -- Table structure for table `clients`
 
