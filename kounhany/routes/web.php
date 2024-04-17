@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\auth\HomeController;
 use App\Http\Controllers\auth\LoginAdminController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\LogoutController;
@@ -20,10 +21,12 @@ use Illuminate\Support\Facades\Route;
 
 
 ///*****   Guest Routes  ********////
+/*
 Route::get('/', function () {
     return "Home Page";
 });
-
+*/
+Route::get('/',[HomeController::class, "index"]);
 
 // connecter un client ou un expert
 Route::get('/login', [LoginController::class, "index"]);

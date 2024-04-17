@@ -427,3 +427,8 @@ span a{
         display: none;
     }
 }
+.error{
+  font-size: 15px;
+  color: #dc3545;
+  padding-top: 4px;
+}
