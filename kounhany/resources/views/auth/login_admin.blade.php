@@ -52,7 +52,7 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href=" {{ asset('css/adminlogin.css') }}" />
+    <link rel="stylesheet" href=" {{ asset('css/admin/adminlogin.css') }}" />
     <title>Espace Admin</title>
   </head>
   <body>

@@ -27,9 +27,9 @@
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="{{ asset('css/admin/dashadmin.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/admin/ourclient.css') }}">
 
-	<title>Admin KounHany</title>
+	<title>Les Prtenaires de KounHany</title>
 </head>
 <body>
 
@@ -37,12 +37,11 @@
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand">
-			
-			<i class="bx ri-open-arm-fill "></i>
-			<span class="text">KounHany</span>
+		<i class="bx ri-open-arm-fill "></i>
+			<span class="text">KounHany !</span>
 		</a>
 		<ul class="side-menu top">
-			<li class="active">
+			<li >
 				<a href="{{ route('admin.dashboard') }}">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
@@ -54,7 +53,7 @@
 					<span class="text">Clients</span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="{{ route('admin.ourexperts') }}">
 					<i class='bx bxs-doughnut-chart' ></i>
 					<span class="text">Partenaires</span>
@@ -64,13 +63,14 @@
 			
 		</ul>
 		<ul class="side-menu">
+			
 			<li>
 				<a href="#" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<form action="{{route("admin.logout")}}" method="Post">
                       @csrf
                      <button class="logout-btn">Logout</button>
-                    </form>
+                     </form>
 				</a>
 			</li>
 		</ul>
@@ -113,101 +113,67 @@
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="#">Our Partenaires</a>
 						</li>
 					</ul>
 				</div>
 			</div>
-			@php
-    $totalClients = \App\Models\Client::count();
-    $totalExperts = \App\Models\Expert::count();
-	$totalService = \App\Models\Service::count();
-@endphp
-
-			<ul class="box-info">
-				<li>
-					<i class='bx bxs-group' ></i>
-					<span class="text">
-						<h3>{{ $totalClients}}</h3>
-						<p>Clients</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-group' ></i>
-					<span class="text">
-						<h3>{{ $totalExperts }}</h3>
-						<p>Partenaires</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-calendar-check' ></i>
-					<span class="text">
-						<h3>{{$totalService}}</h3>
-						<p>Services</p>
-					</span>
-				</li>
-			</ul>
-
 
 			<div class="table-data">
-				<div class="order">
-					<div class="head">
-						<h3>Recent Orders</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>User</th>
-								<th>Date Order</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status process">Process</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+            <main class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Customer's Orders</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <i class='bx bx-search' ></i>
+            </div>
+            
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Nom <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Prenom <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> email <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Biography <span class="icon-arrow">&UpArrow;</span></th>
+						<th> Photo <span class="icon-arrow">&UpArrow;</span></th>
+						<th> Metier <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> statut <span class="icon-arrow">&UpArrow;</span></th>
+						<th> Action <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+				@foreach($experts as $expert)
+        <tr>
+            <td>{{ $expert->id }}</td>
+            <td>{{ $expert->nom }}</td>
+            <td>{{ $expert->prenom }}</td>
+            <td>{{ $expert->email }}</td>
+            <td>{{ $expert->bio }}</td>
+            <td>{{ $expert->photo }}</td>
+            <td>{{ $expert->metier }}</td>
+            <td>{{ $expert->compte_status }}</td>
+			<td>
+    @if ($expert->compte_status === 'active')
+        <form action="{{ route('toggleExpertStatus', $expert->id) }}" method="POST">
+            @csrf
+            <button type="submit" class ="cancelled">Désactiver</button>
+        </form>
+    @else
+        <form action="{{ route('toggleExpertStatus', $expert->id) }}" method="POST">
+            @csrf
+            <button type="submit" class="delivered">Activer</button>
+        </form>
+    @endif
+</td>
+        </tr>
+        @endforeach
+                </tbody>
+            </table>
+        </section>
+    </main>
 				
 			</div>
 		</main>
@@ -215,9 +181,7 @@
 	</section>
 	<!-- CONTENT -->
 	
-
-	<script src="{{ asset('js/adminJS/script.js') }}"></script>
-  
+    <script src="{{ asset('js/adminJS/script.js') }}"></script>
 	<script src="{{ asset('js/adminJS/table.js') }}"></script>
 </body>
 </html>

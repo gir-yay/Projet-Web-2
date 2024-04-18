@@ -5,6 +5,10 @@ use App\Http\Controllers\auth\LoginAdminController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\admin\ShowOurclient;
+use App\Http\Controllers\admin\ShowOurexpert;
+use App\Http\Controllers\admin\ClientController;
+use App\Http\Controllers\admin\ExpertController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
@@ -37,8 +41,24 @@ Route::get('/login_admin', [LoginAdminController::class, "index"]);
 Route::post('/login_admin', [LoginAdminController::class, "login"])->name("login_admin");
 
 
-
 Route::get('/inscrire', [RegisterController::class, "index"])->name("inscription");
+
+//=================================================================================================
+
+/********* Admin Route *********** */
+
+// route de admin ====> Show Our clients
+Route::get('/admin/ourclients', [ShowOurclient::class, 'index'])->name('admin.ourclients');
+
+// route de admin ====> Show Our experts
+Route::get('/admin/experts', [ShowOurexpert::class, 'index'])->name('admin.ourexperts');
+
+/****** Activer et desactiver le compte de client  */
+Route::post('/client/{id}/toggle-status', [ClientController::class, 'toggleStatus'])->name('toggleStatus');
+
+/****** Activer et desactiver le compte de expert */
+Route::post('/expert/{id}/toggle-status', [ExpertController::class, 'toggleStatus'])->name('toggleExpertStatus');
+//=================================================================================================
 
 /***  Auth Routes  ********///
 Route::prefix("client")->name("client.")->middleware("auth:web")->group(function () {
