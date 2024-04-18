@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\ShowOurclient;
 use App\Http\Controllers\admin\ShowOurexpert;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\ExpertController;
+use App\Http\Controllers\admin\StatistiqueController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
@@ -58,6 +59,9 @@ Route::post('/client/{id}/toggle-status', [ClientController::class, 'toggleStatu
 
 /****** Activer et desactiver le compte de expert */
 Route::post('/expert/{id}/toggle-status', [ExpertController::class, 'toggleStatus'])->name('toggleExpertStatus');
+
+/* statistique */
+Route::get('/admin/dashboard', [StatistiqueController::class, 'index'])->name('admin.dashboard');
 //=================================================================================================
 
 /***  Auth Routes  ********///

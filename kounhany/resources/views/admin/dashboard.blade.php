@@ -118,11 +118,7 @@
 					</ul>
 				</div>
 			</div>
-			@php
-    $totalClients = \App\Models\Client::count();
-    $totalExperts = \App\Models\Expert::count();
-	$totalService = \App\Models\Service::count();
-@endphp
+			
 
 			<ul class="box-info">
 				<li>
