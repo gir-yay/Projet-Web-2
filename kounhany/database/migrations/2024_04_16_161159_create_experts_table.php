@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('bio', 255)->nullable();
             $table->string('photo', 70)->nullable();
             $table->string('metier', 100);
-            $table->string('compte_status', 30);
+            $table->string('compte_status', 30)->default("active");
             $table->timestamps();
         });
     }
