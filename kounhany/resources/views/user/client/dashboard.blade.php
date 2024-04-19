@@ -8,6 +8,8 @@
 </head>
 <body>
   <h1>Dashboard Client</h1>
+    <a href="{{route('user.client.profile')}}">profile</a>
+
   <form action="{{route("client.logout")}}" method="Post">
     @csrf
     <button>Logout</button>

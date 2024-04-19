@@ -12,6 +12,8 @@ use App\Http\Controllers\admin\ExpertController;
 use App\Http\Controllers\admin\StatistiqueController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExpertProfileController;
+use App\Http\Controllers\ClientProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +77,7 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
 
 
 });
+/************Expert Profile***********/
+Route::get('/expert/profile', [ExpertProfileController::class, 'show'])->name('expert.profile');
+/***************Client Profile****************/
+Route::get('/user/client/profile', [ClientProfileController::class, 'show'])->name('user.client.profile');

@@ -8,7 +8,9 @@
 </head>
 <body>
   <h1>Dashboard Expert</h1>
-  <form action="{{route("expert.logout")}}" method="Post">
+  <a href="{{route('expert.profile')}}">profile</a>
+  <br>
+  <form action="{{route('expert.logout')}}" method="Post">
     @csrf
     <button>Logout</button>
   </form>
