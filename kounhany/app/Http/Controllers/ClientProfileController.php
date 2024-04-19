@@ -7,6 +7,7 @@ class ClientProfileController extends Controller
 {
     public function show()
     {   
+        //get the current authenticated client's data
         $user = auth()->user();
        // return view('expert.profile');
         

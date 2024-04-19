@@ -77,6 +77,8 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
 
 
 });
+
+
 /************Expert Profile***********/
 Route::get('/expert/profile', [ExpertProfileController::class, 'show'])->name('expert.profile');
 /***************Client Profile****************/

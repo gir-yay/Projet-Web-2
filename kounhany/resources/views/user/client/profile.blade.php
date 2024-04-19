@@ -21,22 +21,22 @@
 <div class="col-md-6">
 <div class="media">
 <label>Nom</label>
-<p></p>
+<p>{{ $user->nom }}</p>
 </div>
 <div class="media">
 <label>Prenom</label>
-<p></p>
+<p>{{ $user->prenom }}</p>
 </div>
 
 </div>
 <div class="col-md-6">
 <div class="media">
 <label>E-mail</label>
-<p></p>
+<p>{{ $user->email }}</p>
 </div>
 <div class="media">
 <label>Phone</label>
-<p></p>
+<p>{{ $user->phone }}</p>
 </div>
 </div>
 </div>
