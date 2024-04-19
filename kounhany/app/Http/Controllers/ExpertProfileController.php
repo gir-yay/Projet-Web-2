@@ -7,7 +7,7 @@ class ExpertProfileController extends Controller
 {
     public function show()
     {   
-        $user = auth()->user();
+        $user = auth('expert')->user();
        // return view('expert.profile');
         
         //$user = Auth::user();

@@ -33,11 +33,11 @@
 <div class="col-md-6">
 <div class="media">
 <label>E-mail</label>
-<p></p>
+<p>{{ $user->email }}</p>
 </div>
 <div class="media">
 <label>Phone</label>
-<p></p>
+<p>{{ $user->phone }}</p>
 </div>
 </div>
 </div>
