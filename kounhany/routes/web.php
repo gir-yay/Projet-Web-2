@@ -44,7 +44,6 @@ Route::get('/login_admin', [LoginAdminController::class, "index"]);
 Route::post('/login_admin', [LoginAdminController::class, "login"])->name("login_admin");
 
 
-Route::get('/inscrire', [RegisterController::class, "index"])->name("inscription");
 //routes pour les formulaires d'inscription :
 Route::get('/insclient', [RegisterController::class, "sdk_client"])->name("sdk_client");
 Route::get('/insexpert', [RegisterController::class, "sdk_expert"])->name("sdk_expert");
