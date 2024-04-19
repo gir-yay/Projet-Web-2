@@ -13,12 +13,12 @@
 <body>
 <section class="section about-section gray-bg" id="about">
 <div class="container">
-<div class="row align-items-center flex-row-reverse">
+<div class="row align-items-center flex-row-reverse ">
 <div class="col-lg-6">
 <div class="about-text go-to">
 <h3 class="dark-color">Profile</h3>
 <h6 class="theme-color lead">Bio</h6>
-<p></p>
+<p>{{ $user->bio }}</p>
 <div class="row about-list">
 <div class="col-md-6">
 <div class="media">
@@ -36,8 +36,8 @@
 <p>{{ $user->email }}</p>
 </div>
 <div class="media">
-<label>Phone</label>
-<p>{{ $user->phone }}</p>
+<label>Métier</label>
+<p>{{ $user->metier }}</p>
 </div>
 </div>
 </div>
@@ -45,7 +45,7 @@
 </div>
 <div class="col-lg-6">
 <div class="about-avatar">
-<img src="https://bootdey.com/img/Content/avatar/avatar7.png" title alt>
+<img src="{{ asset($user->photo) }}" title alt width="50%" >
 </div>
 </div>
 </div>
