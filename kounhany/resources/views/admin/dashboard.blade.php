@@ -39,7 +39,7 @@
 		<a href="#" class="brand">
 			
 			<i class="bx ri-open-arm-fill "></i>
-			<span class="text">KounHany</span>
+			<span class="text">KounHany !</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
@@ -50,13 +50,14 @@
 			</li>
 			<li >
 				<a href="{{ route('admin.ourclients') }}">
-					<i class='bx bxs-shopping-bag-alt' ></i>
+				
+					<i class='bx bxs-group' ></i>
 					<span class="text">Clients</span>
 				</a>
 			</li>
 			<li>
 				<a href="{{ route('admin.ourexperts') }}">
-					<i class='bx bxs-doughnut-chart' ></i>
+				<i class='bx bxs-group' ></i>
 					<span class="text">Partenaires</span>
 				</a>
 			</li>
@@ -69,7 +70,7 @@
 					<i class='bx bxs-log-out-circle' ></i>
 					<form action="{{route("admin.logout")}}" method="Post">
                       @csrf
-                     <button class="logout-btn">Logout</button>
+                     <button class="logout-btn">se déconnecter</button>
                     </form>
 				</a>
 			</li>
@@ -97,7 +98,7 @@
 				
 			</a>
 			<a href="#" class="profile">
-				<img src="img/people.png">
+				<img src="../images/iconadmin.png">
 			</a>
 		</nav>
 		<!-- NAVBAR -->

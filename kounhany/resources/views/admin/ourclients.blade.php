@@ -38,7 +38,7 @@
 	<section id="sidebar">
 		<a href="#" class="brand">
 		<i class="bx ri-open-arm-fill "></i>
-			<span class="text">KounHany</span>
+			<span class="text">KounHany !</span>
 		</a>
 		<ul class="side-menu top">
 			<li >
@@ -49,13 +49,13 @@
 			</li>
 			<li class="active">
 				<a href="{{ route('admin.ourclients') }}">
-					<i class='bx bxs-shopping-bag-alt' ></i>
+				<i class='bx bxs-group' ></i>
 					<span class="text">Clients</span>
 				</a>
 			</li>
 			<li>
 				<a href="{{ route('admin.ourexperts') }}">
-					<i class='bx bxs-doughnut-chart' ></i>
+				<i class='bx bxs-group' ></i>
 					<span class="text">Partenaires</span>
 				</a>
 			</li>
@@ -68,7 +68,7 @@
 					<i class='bx bxs-log-out-circle' ></i>
 					<form action="{{route("admin.logout")}}" method="Post">
                       @csrf
-                     <button class="logout-btn">Logout</button>
+                     <button class="logout-btn">se déconnecter</button>
                     </form>
 				</a>
 			</li>
@@ -96,7 +96,7 @@
 				
 			</a>
 			<a href="#" class="profile">
-				<img src="img/people.png">
+			<img src="../images/iconadmin.png">
 			</a>
 		</nav>
 		<!-- NAVBAR -->
@@ -112,7 +112,7 @@
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Our Client</a>
+							<a class="active" href="#">Clients</a>
 						</li>
 					</ul>
 				</div>
@@ -121,7 +121,7 @@
 			<div class="table-data">
             <main class="table" id="customers_table">
         <section class="table__header">
-            <h1>Customer's Orders</h1>
+            <h1></h1>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
                 <i class='bx bx-search' ></i>
@@ -132,7 +132,6 @@
             <table>
                 <thead>
                     <tr>
-                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Nom <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Prenom <span class="icon-arrow">&UpArrow;</span></th>
                         <th> email <span class="icon-arrow">&UpArrow;</span></th>
@@ -144,7 +143,6 @@
                 <tbody>
                 @foreach($clients as $client)
         <tr>
-            <td>{{ $client->id }}</td>
             <td>{{ $client->nom }}</td>
             <td>{{ $client->prenom }}</td>
             <td>{{ $client->email }}</td>

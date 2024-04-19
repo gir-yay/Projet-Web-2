@@ -391,7 +391,7 @@ body {
 }
 #content main .box-info li:nth-child(1) .bx {
 	background: var(--light-blue);
-	color: var(--blue);
+	color: #3C91E6;
 }
 #content main .box-info li:nth-child(2) .bx {
 	background: var(--light-yellow);
