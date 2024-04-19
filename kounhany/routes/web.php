@@ -45,6 +45,13 @@ Route::post('/login_admin', [LoginAdminController::class, "login"])->name("login
 
 
 Route::get('/inscrire', [RegisterController::class, "index"])->name("inscription");
+//routes pour les formulaires d'inscription :
+Route::get('/insclient', [RegisterController::class, "sdk_client"])->name("sdk_client");
+Route::get('/insexpert', [RegisterController::class, "sdk_expert"])->name("sdk_expert");
+Route::get('/ins', [RegisterController::class, "sdk_signup"])->name("sdk_signup");
+//routes pour stockage a partir des formulaires :
+Route::post('/stockclient', [RegisterController::class, "sdk_stock_client"])->name("sdk_stock_client");
+Route::post('/stockexpert', [RegisterController::class, "sdk_stock_expert"])->name("sdk_stock_expert");
 
 //=================================================================================================
 
