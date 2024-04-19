@@ -33,7 +33,7 @@ Route::get('/', function () {
     return "Home Page";
 });
 */
-Route::get('/',[HomeController::class, "index"]);
+Route::get('/',[HomeController::class, "index"])->name("home");
 
 // connecter un client ou un expert
 Route::get('/login', [LoginController::class, "index"]);

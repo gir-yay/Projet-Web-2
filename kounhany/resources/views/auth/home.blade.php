@@ -7,7 +7,7 @@
      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
      <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>Document</title>
+    <title>KounHany</title>
 </head>
 <body>
     <!-- header start -->
@@ -40,19 +40,19 @@
 
                      <ul class="dropdown__menu">
                         <li>
-                           <a href="#" class="dropdown__link">
-                           <i class="ri-home-3-line"></i> Menage
+                           <a href="#service" class="dropdown__link">
+                           <i class="ri-home-3-line"></i> Ménage
                            </a>                          
                         </li>
 
                         <li>
-                           <a href="#" class="dropdown__link">
-                           <i class="ri-parent-line"></i> BabySiter
+                           <a href="#service" class="dropdown__link">
+                           <i class="ri-parent-line"></i> BabySitter
                            </a>
                         </li>
 
                         <li>
-                           <a href="#" class="dropdown__link">
+                           <a href="##service" class="dropdown__link">
                            <i class="ri-restaurant-line"></i> Cuisine
                            </a>
                         </li>
@@ -76,28 +76,28 @@
 
 
        <!-- services start -->
-       <section class="services" id="services">
+       <section class="services" id="service">
        <div class="services">
        <div class="card__container">
             <article class="card__article">
-               <h1>Cuisine</h1>
+               <h1>Ménage</h1>
                <img src="images/babysitter.png" alt="image" class="card__img">
 
                <div class="card__data">
-                  <span class="card__description">Vancouver Mountains, Canada</span>
-                  <h2 class="card__title">The Great Path</h2>
-                  <a href="#" class="card__button">Reserve</a>
+                  <span class="card__description"> </span>
+                  <h2 class="card__title">Garde d'enfants experte et rassurante</h2>
+                  <a href="{{ route('login') }}" class="card__button">Demander</a>
                </div>
             </article>
 
             <article class="card__article">
-            <h1>Cuisine</h1>
+            <h1>BabySitter</h1>
               <img src="images/menage.png" alt="image" class="card__img">
 
-               <div class="card__data">
-                  <span class="card__description">Poon Hill, Nepal</span>
-                  <h2 class="card__title">Starry Night</h2>
-                  <a href="#" class="card__button">Reserve</a>
+               <div class="card__data" id="babysitter">
+                  <span class="card__description"></span>
+                  <h2 class="card__title">Profitez d'un intérieur étincelant sans effort</h2>
+                  <a href="{{ route('login') }}" class="card__button">Demander</a>
                </div>
             </article>
 
@@ -106,9 +106,9 @@
               <img src="images/cuisine.png" alt="image" class="card__img">
 
                <div class="card__data">
-                  <span class="card__description">Bojcin Forest, Serbia</span>
-                  <h2 class="card__title">Path Of Peace</h2>
-                  <a href="#" class="card__button">Reserve</a>
+                  <span class="card__description"></span>
+                  <h2 class="card__title">Repas faits maison selon vos goûts</h2>
+                  <a href="{{ route('login') }}" class="card__button">Demander</a>
                </div>
             </article>
          </div>
@@ -122,7 +122,11 @@
                <img src="images/aboutbg.png" class="section-bg" alt="">
                <div class="section-info">
                <h1 class="title"> Kon <span>Hany</span> !</h1>
-               <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolorum unde dolores, odit voluptate suscipit quaerat magnam incidunt odio quo? Vero explicabo veniam sapiente accusantium incidunt ducimus exercitationem, autem optio!</p>
+               <p class="info">
+               Notre application vise à simplifier votre vie en vous proposant des services domestiques personnalisés.
+                Que ce soit pour le ménage, la cuisine ou la garde d'enfants,
+                KounHany nous sommes là pour répondre à vos besoins. Avec notre réseau de professionnels qualifiés, vous pouvez compter sur nous pour vous offrir un service fiable et pratique, directement chez vous
+               </p>
             </div>
             </div>
        </section>
@@ -152,7 +156,9 @@
         <div class="left box">
           <h2>About us</h2>
           <div class="content">
-            <p>chi paragraphe sghira 3la l application</p>
+            <p>Chez KounHany nous rendons les tâches domestiques  <br>faciles. <br> <br>
+                Notre application met en relation les clients  <br> <br>
+                avec des experts en ménage, cuisine et garde d'enfants.</p>
             <div class="social">
               <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
               <a href="#"><span class="fab fa-twitter"></span></a>
@@ -191,7 +197,7 @@
                 <textarea rows="2" cols="25" required></textarea>
               </div>
               <div class="btn">
-                <button type="submit">Send</button>
+                <button type="submit">envoyer</button>
               </div>
             </form>
           </div>
@@ -200,7 +206,7 @@
       <div class="bottom">
         <center>
           <span class="credit">Koun <a href="#">Hany!</a> | </span>
-          <span class="far fa-copyright"></span><span> 2024 All rights reserved.</span>
+          <span class="far fa-copyright"></span><span> 2024 Tous droits réservés.</span>
         </center>
       </div>
     </footer>
