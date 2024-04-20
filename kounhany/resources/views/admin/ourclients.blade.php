@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,8 +59,8 @@
 					<span class="text">Partenaires</span>
 				</a>
 			</li>
-			
-			
+
+
 		</ul>
 		<ul class="side-menu">
 			<li>
@@ -86,14 +86,14 @@
 			<a href="#" class="nav-link"></a>
 			<form action="#">
 				<div class="form-input">
-					
-					
+
+
 				</div>
 			</form>
-			
+
 			<a href="#" class="notification">
 				<i></i>
-				
+
 			</a>
 			<a href="#" class="profile">
 			<img src="../images/iconadmin.png">
@@ -126,7 +126,7 @@
                 <input type="search" placeholder="Search Data...">
                 <i class='bx bx-search' ></i>
             </div>
-            
+
         </section>
         <section class="table__body">
             <table>
@@ -150,12 +150,12 @@
             <td>{{ $client->compte_status }}</td>
 			<td>
     @if ($client->compte_status === 'active')
-        <form action="{{ route('toggleStatus', $client->id) }}" method="POST">
+        <form action="{{ route('admin.toggleStatus', $client->id) }}" method="POST">
             @csrf
             <button type="submit" class ="cancelled">Désactiver</button>
         </form>
     @else
-        <form action="{{ route('toggleStatus', $client->id) }}" method="POST">
+        <form action="{{ route('admin.toggleStatus', $client->id) }}" method="POST">
             @csrf
             <button type="submit" class="delivered">Activer</button>
         </form>
@@ -163,18 +163,18 @@
 </td>
         </tr>
         @endforeach
-          
+
                 </tbody>
             </table>
         </section>
     </main>
-				
+
 			</div>
 		</main>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-	
+
     <script src="{{ asset('js/adminJS/script.js') }}"></script>
 	<script src="{{ asset('js/adminJS/table.js') }}"></script>
 </body>

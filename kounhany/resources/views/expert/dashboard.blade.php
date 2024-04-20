@@ -8,10 +8,10 @@
 </head>
 <body>
   <h1>Dashboard Expert</h1>
-  <a href="{{route('expert.profile')}}">profile</a>
+  <a href="{{--route('expert.profile')--}}">profile</a>
   <br>
-  <form action="{{route('expert.logout')}}" method="Post">
-    @csrf
+  <form action="{{--route('expert.logout')--}}" method="Post">
+    {{--@csrf--}}
     <button>Logout</button>
   </form>
 </body>
@@ -27,10 +27,10 @@
 </head>
 <body>
   <h1>Dashboard Client</h1>
-    <a href="{{route('user.client.profile')}}">profile</a>
+    <a href="{{--route('client.profile')--}}">profile</a>
 
-  <form action="{{route("client.logout")}}" method="Post">
-    @csrf
+  <form action="{{--route("client.logout")--}}" method="Post">
+    {{--@csrf--}}
     <button>Logout</button>
   </form>
 </body>
@@ -46,7 +46,7 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
   <link rel="stylesheet" href="{{ asset('css/admin/dashadmin.css') }}">
-	<title>Dashboard client</title>
+	<title>Dashboard Expert</title>
 </head>
 <body>
 
@@ -59,7 +59,7 @@
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="{{ route('client.dashboard') }}">
+				<a href="{{ route('expert.dashboard') }}">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
 				</a>
@@ -88,13 +88,13 @@
 					<span class="text">Mes domaines</span>
 				</a>
 			</li>
-			
+
 		</ul>
 		<ul class="side-menu">
 			<li>
 				<a href="#" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
-					<form action="{{route("client.logout")}}" method="Post">
+					<form action="{{route("expert.logout")}}" method="Post">
                       @csrf
                      <button class="logout-btn">Deconnexion</button>
                     </form>
@@ -119,9 +119,9 @@
 			</form>
 			<input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
-			
+
 			<a href="#" class="profile">
-				<img src="img/people.png">
+				<img src="{{asset(auth('expert')->user()->photo)}}">
 			</a>
 		</nav>
 		<!-- NAVBAR -->
@@ -142,7 +142,7 @@
 					</ul>
 				</div>
 			</div>
-			
+
 
 			<ul class="box-info">
 				<li>
@@ -170,7 +170,7 @@
 
 			<ul class="box-info">
 				<li>
-					
+
 				</li>
 				<li>
 					<img  >
@@ -186,13 +186,13 @@
 		</main>
 		<!-- MAIN -->
 	</section>
-				
+
 			</div>
 		</main>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-	
+
 
   <script src="{{ asset('js/expertJS/script.js') }}"></script></body>
 </html>

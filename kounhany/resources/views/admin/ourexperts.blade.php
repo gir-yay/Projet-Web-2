@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,11 +59,11 @@
 					<span class="text">Partenaires</span>
 				</a>
 			</li>
-			
-			
+
+
 		</ul>
 		<ul class="side-menu">
-			
+
 			<li>
 				<a href="#" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
@@ -87,14 +87,14 @@
 			<a href="#" class="nav-link"></a>
 			<form action="#">
 				<div class="form-input">
-					
-					
+
+
 				</div>
 			</form>
-			
+
 			<a href="#" class="notification">
 				<i></i>
-				
+
 			</a>
 			<a href="#" class="profile">
 			<img src="../images/iconadmin.png">
@@ -127,7 +127,7 @@
                 <input type="search" placeholder="Search Data...">
                 <i class='bx bx-search' ></i>
             </div>
-            
+
         </section>
         <section class="table__body">
             <table>
@@ -153,12 +153,12 @@
             <td>{{ $expert->compte_status }}</td>
 			<td>
     @if ($expert->compte_status === 'active')
-        <form action="{{ route('toggleExpertStatus', $expert->id) }}" method="POST">
+        <form action="{{ route('admin.toggleExpertStatus', $expert->id) }}" method="POST">
             @csrf
             <button type="submit" class ="cancelled">Désactiver</button>
         </form>
     @else
-        <form action="{{ route('toggleExpertStatus', $expert->id) }}" method="POST">
+        <form action="{{ route('admin.toggleExpertStatus', $expert->id) }}" method="POST">
             @csrf
             <button type="submit" class="delivered">Activer</button>
         </form>
@@ -170,13 +170,13 @@
             </table>
         </section>
     </main>
-				
+
 			</div>
 		</main>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-	
+
     <script src="{{ asset('js/adminJS/script.js') }}"></script>
 	<script src="{{ asset('js/adminJS/table.js') }}"></script>
 </body>

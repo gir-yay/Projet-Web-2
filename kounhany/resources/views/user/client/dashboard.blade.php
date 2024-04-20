@@ -8,10 +8,10 @@
 </head>
 <body>
   <h1>Dashboard Client</h1>
-    <a href="{{route('user.client.profile')}}">profile</a>
+    <a href="{{--route('client.profile')--}}">profile</a>
 
-  <form action="{{route("client.logout")}}" method="Post">
-    @csrf
+  <form action="{{--route("client.logout")--}}" method="Post">
+    {{--@csrf--}}
     <button>Logout</button>
   </form>
 </body>
@@ -46,7 +46,7 @@
 				</a>
 			</li>
 			<li>
-			<a href="{{ route('user.client.profile') }}">
+			<a href="{{ route('client.profile') }}">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Mon Profile</span>
 				</a>
@@ -63,7 +63,7 @@
 					<span class="text">Mes commentaires</span>
 				</a>
 			</li>
-			
+
 		</ul>
 		<ul class="side-menu">
 			<li>
@@ -94,9 +94,10 @@
 			</form>
 			<input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
-			
+
 			<a href="#" class="profile">
-				<img src="img/people.png">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+				<!--img src="img/people.png"-->
 			</a>
 		</nav>
 		<!-- NAVBAR -->
@@ -120,7 +121,7 @@
 
 			<ul class="box-info">
 				<li>
-					
+
 				</li>
 				<li>
 					<img  >
@@ -138,7 +139,7 @@
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-	
+
 
 	<script src="{{ asset('js/clientJS/script.js') }}"></script>
 </body>
