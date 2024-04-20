@@ -25,3 +25,4 @@ Route::get('/dashboard', [StatistiqueController::class, 'index'])->name('dashboa
 //=================================================================================================
 Route::post("/logout", [LogoutController::class, "logout"])->name("logout");
 
+

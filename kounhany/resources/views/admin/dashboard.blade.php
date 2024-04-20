@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +9,8 @@
 </head>
 <body>
   <h1>Dashboard Admin</h1>
-  <form action="{{route("admin.logout")}}" method="Post">
-    @csrf
+  <form action="{{--route("admin.logout")--}}" method="Post">
+    {{--@csrf--}}
     <button>Logout</button>
   </form>
 </body>
@@ -37,7 +37,7 @@
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand">
-			
+
 			<i class="bx ri-open-arm-fill "></i>
 			<span class="text">KounHany !</span>
 		</a>
@@ -50,7 +50,7 @@
 			</li>
 			<li >
 				<a href="{{ route('admin.ourclients') }}">
-				
+
 					<i class='bx bxs-group' ></i>
 					<span class="text">Clients</span>
 				</a>
@@ -61,8 +61,8 @@
 					<span class="text">Partenaires</span>
 				</a>
 			</li>
-			
-			
+
+
 		</ul>
 		<ul class="side-menu">
 			<li>
@@ -88,14 +88,14 @@
 			<a href="#" class="nav-link"></a>
 			<form action="#">
 				<div class="form-input">
-					
-					
+
+
 				</div>
 			</form>
-			
+
 			<a href="#" class="notification">
 				<i></i>
-				
+
 			</a>
 			<a href="#" class="profile">
 				<img src="../images/iconadmin.png">
@@ -119,7 +119,7 @@
 					</ul>
 				</div>
 			</div>
-			
+
 
 			<ul class="box-info">
 				<li>
@@ -151,16 +151,16 @@
 					<table>
 					</table>
 				</div>
-				
+
 			</div>
 		</main>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-	
+
 
 	<script src="{{ asset('js/adminJS/script.js') }}"></script>
-  
+
 	<script src="{{ asset('js/adminJS/table.js') }}"></script>
 </body>
 </html>

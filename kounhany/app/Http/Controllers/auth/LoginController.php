@@ -37,6 +37,9 @@ class LoginController extends Controller
                     'password_' => 'Mot de passe incorrect',
                 ]);
             }
+            if($client->compte_status == "non active"){
+                return redirect()->back()->with('error', "Votre compte est desactivé.");
+            }
             Auth::guard('web')->login($client);
             return redirect()->route('client.dashboard');
         }
@@ -47,6 +50,9 @@ class LoginController extends Controller
                 throw ValidationException::withMessages([
                     'password_' => 'Mot de passe incorrect',
                 ]);
+            }
+            if($expert->compte_status == "non active"){
+                return redirect()->back()->with('error', "Votre compte est  desactivé.");
             }
             Auth::guard('expert')->login($expert);
             return redirect()->route('expert.dashboard');
