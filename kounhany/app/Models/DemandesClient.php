@@ -14,6 +14,7 @@ class DemandesClient extends Model
         'service_id',
         'date_debut',
         'duree',
+        'total',
         'etat'
     ];
 

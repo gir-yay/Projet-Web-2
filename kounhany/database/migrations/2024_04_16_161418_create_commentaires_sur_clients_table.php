@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('note');
             $table->foreignId('demande_id')->constrained('demandes_clients');
+            $table->foreignId('client_id')->constrained('clients');
+            $table->foreignId('expert_id')->constrained('experts');
             $table->string('commentaire', 255);
             $table->timestamps();
         });

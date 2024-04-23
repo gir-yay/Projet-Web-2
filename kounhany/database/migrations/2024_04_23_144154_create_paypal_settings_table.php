@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('paypal_settings', function (Blueprint $table) {
             $table->id();
-            $table->string('nom', 50);
-            $table->string('prenom', 50);
-            $table->string('email')->unique();
-            $table->string('password_');
+            $table->string('client_id');
+            $table->string('client_secret');
+            $table->string('mode');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('paypal_settings');
     }
 };

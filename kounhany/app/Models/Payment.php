@@ -5,20 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CommentairesSurExpert extends Model
+class Payment extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'note',
-        'demande_id',
-        'commentaire',
-        'client_id',
         'expert_id',
+        'montant',
+        'methode',
+        'transaction_id',
     ];
 
-    public function demande()
+    public function expert()
     {
-        return $this->belongsTo(DemandesClient::class);
+        return $this->belongsTo(Expert::class);
     }
-
 }

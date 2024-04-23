@@ -11,7 +11,9 @@ class CommentairesSurClient extends Model
     protected $fillable = [
         'note',
         'demande_id',
-        'commentaire'
+        'commentaire',
+        'client_id',
+        'expert_id',
     ];
 
     public function demande()
@@ -19,6 +21,6 @@ class CommentairesSurClient extends Model
         return $this->belongsTo(DemandesClient::class);
     }
 
-    
+
 
 }
