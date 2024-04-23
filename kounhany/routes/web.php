@@ -22,7 +22,7 @@ use App\Http\Controllers\ClientProfileController;
 
 ///*****   Guest Routes  ********////
 
-Route::get('/',[HomeController::class, "index"])->name("home");
+Route::get('/', [HomeController::class, "index"])->name("home");
 
 // connecter un client ou un expert
 Route::get('/login', [LoginController::class, "index"]);
@@ -41,22 +41,24 @@ Route::get('/ins', [RegisterController::class, "sdk_signup"])->name("sdk_signup"
 Route::post('/stockclient', [RegisterController::class, "sdk_stock_client"])->name("sdk_stock_client");
 Route::post('/stockexpert', [RegisterController::class, "sdk_stock_expert"])->name("sdk_stock_expert");
 
+
+// contact
+Route::post('/contact', [HomeController::class, "contact"])->name("contact");
+
 //=================================================================================================
 
 
 
 
 
-/***  Auth Routes  ********///
+/***  Auth Routes  ********/ //
 Route::prefix("client")->name("client.")->middleware("auth:web")->group(function () {
     // url: http://localhost:8080/client/dashboard
-    Route::get("/dashboard", function(){
+    Route::get("/dashboard", function () {
         return view("user.client.dashboard");
     })->name("dashboard");
     Route::get('/profile', [ClientProfileController::class, 'show'])->name('profile');
     Route::post("/logout", [LogoutController::class, "logout"])->name("logout");
-
-
 });
 
 

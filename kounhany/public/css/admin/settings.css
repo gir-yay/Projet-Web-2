@@ -13,6 +13,10 @@ li {
     list-style: none;
 }
 
+body {
+    background: #EEEEEE !important
+}
+
 :root {
     --poppins: 'Poppins', sans-serif;
     --lato: 'Lato', sans-serif;
@@ -634,4 +638,12 @@ body {
     #content main .table-data .todo .todo-list {
         min-width: 420px;
     }
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    padding-left: 0 !important;
 }

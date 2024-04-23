@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\ShowOurclient;
 use App\Http\Controllers\admin\ShowOurexpert;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\ExpertController;
+use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\admin\StatistiqueController;
 
 // route de admin ====> Show Our clients
@@ -22,6 +23,12 @@ Route::post('/expert/{id}/toggle-status', [ExpertController::class, 'toggleStatu
 
 /* statistique */
 Route::get('/dashboard', [StatistiqueController::class, 'index'])->name('dashboard');
+/* settings */
+Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
+Route::put('/settings/email', [SettingsController::class, 'update_email_settings'])->name('email_settings.update');
+Route::put('/settings/paypal', [SettingsController::class, 'update_paypal_settings'])->name('paypal_settings.update');
+Route::put('/settings/general', [SettingsController::class, 'update_general_settings'])->name('general_settings.update');
+
 //=================================================================================================
 Route::post("/logout", [LogoutController::class, "logout"])->name("logout");
 
