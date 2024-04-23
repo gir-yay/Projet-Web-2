@@ -18,6 +18,7 @@ showMenu('nav-toggle', 'nav-menu')
 var contactForm = document.querySelector(".contact-form");
 var btnContact = document.querySelector(".btn-contact");
 contactForm.addEventListener("submit", function(e) {
-    btnContact.innerHTML = "Sending...";
+    btnContact.innerHTML = "Envoi en cours...";
+
     btnContact.type = "button";
 })

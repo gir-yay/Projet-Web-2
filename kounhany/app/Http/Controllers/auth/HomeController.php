@@ -41,7 +41,7 @@ class HomeController extends Controller
         ]);
 
         Mail::to("salmanbenomar988@gmail.com")->send(new ContactMail($request->email, $request->message));
-        return back()->with('success', 'Message sent successfully');
+        return back()->with('success', 'Message envoyé avec succès');
 
     }
 
