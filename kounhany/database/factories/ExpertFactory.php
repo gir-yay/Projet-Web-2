@@ -22,7 +22,7 @@ class ExpertFactory extends Factory
             'email' => fake()->unique()->safeEmail,
             'password_' => '$2y$10$vBhHw1FWhsd5LGk8.zEz1usPjzh3PB9.3SggjQvlZ6Pgs.tQ.ANKK',
             'bio'=>fake()->sentence,
-            'photo'=>"admin_photo.png",
+            'photo'=>"images/admin_photo.png",
             'metier'=>fake()->sentence,
             'compte_status' => 'active',
         ];

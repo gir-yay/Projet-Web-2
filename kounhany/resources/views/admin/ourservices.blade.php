@@ -9,11 +9,10 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- My CSS -->
-    <link rel="stylesheet" href="{{ asset('css/admin/dashadmin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/ourclient.css') }}">
 
-    <title>Admin KounHany</title>
+    <title>Les Services de KounHany</title>
 </head>
 
 <body>
@@ -22,20 +21,18 @@
     <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="#" class="brand">
-
             <i class="bx ri-open-arm-fill "></i>
             <span class="text">KounHany !</span>
         </a>
         <ul class="side-menu top">
-            <li class="active">
+            <li>
                 <a href="{{ route('admin.dashboard') }}">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="{{ route('admin.ourclients') }}">
-
                     <i class='bx bxs-group'></i>
                     <span class="text">Clients</span>
                 </a>
@@ -46,13 +43,13 @@
                     <span class="text">Partenaires</span>
                 </a>
             </li>
-            <li>
+             <li class="active">
                 <a href="{{ route('admin.ourservices') }}">
                     <i class='bx bxs-group'></i>
                     <span class="text">Services</span>
                 </a>
             </li>
-            <li>
+            <li  class="">
                 <a href="{{ route('admin.settings.index') }}">
                     <i class='bx bxs-cog'></i>
                     <span class="text">Paramètres</span>
@@ -109,43 +106,66 @@
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
                         <li>
-                            <a class="active" href="#">Home</a>
+                            <a class="active" href="#">Services</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-
-            <ul class="box-info">
-                <li>
-                    <i class='bx bxs-group'></i>
-                    <span class="text">
-                        <h3>{{ $totalClients }}</h3>
-                        <p>Clients</p>
-                    </span>
-                </li>
-                <li>
-                    <i class='bx bxs-group'></i>
-                    <span class="text">
-                        <h3>{{ $totalExperts }}</h3>
-                        <p>Partenaires</p>
-                    </span>
-                </li>
-                <li>
-                    <i class='bx bxs-calendar-check'></i>
-                    <span class="text">
-                        <h3>{{ $totalServices }}</h3>
-                        <p>Services</p>
-                    </span>
-                </li>
-            </ul>
-
-
             <div class="table-data">
-                <div class="order">
-                    <table>
-                    </table>
-                </div>
+                <main class="table" id="customers_table">
+                    <section class="table__header">
+                        <h1></h1>
+                        <div class="input-group">
+                            <input type="search" placeholder="Search Data...">
+                            <i class='bx bx-search'></i>
+                        </div>
+
+                    </section>
+                    <section class="table__body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                                    <th> nom <span class="icon-arrow">&UpArrow;</span></th>
+                                    <th> Date de creation <span class="icon-arrow">&UpArrow;</span></th>
+                                    <th> Date de modification <span class="icon-arrow">&UpArrow;</span></th>
+                                    <th> status <span class="icon-arrow">&UpArrow;</span></th>
+                                    <th> Action <span class="icon-arrow">&UpArrow;</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($services as $service)
+                                    <tr>
+                                        <td>{{ $service->id }}</td>
+                                        <td>{{ $service->nom }}</td>
+                                        <td>{{ $service->created_at }}</td>
+                                        <td>{{ $service->updated_at }}</td>
+                                        <td><span
+                                                class="{{ $service->service_status == 'active' ? 'active' : 'non-active' }} status-compte">{{ $service->service_status }}</span>
+                                        </td>
+                                        <td>
+                                            @if ($service->service_status === 'active')
+                                                <form action="{{ route('admin.toggleStatus', $service->id) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    <button type="submit" class ="cancelled">Désactiver</button>
+                                                </form>
+                                            @else
+                                                <form action="{{ route('admin.toggleStatus', $service->id) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="delivered">Activer</button>
+                                                </form>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+                            </tbody>
+                        </table>
+                    </section>
+                </main>
 
             </div>
         </main>
@@ -153,9 +173,7 @@
     </section>
     <!-- CONTENT -->
 
-
     <script src="{{ asset('js/adminJS/script.js') }}"></script>
-
     <script src="{{ asset('js/adminJS/table.js') }}"></script>
 </body>
 

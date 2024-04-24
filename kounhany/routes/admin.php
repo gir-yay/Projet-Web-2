@@ -8,6 +8,8 @@ use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\ExpertController;
 use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\admin\StatistiqueController;
+use App\Http\Controllers\admin\ShowOurservice;
+use App\Http\Controllers\admin\ServiceController;
 
 // route de admin ====> Show Our clients
 Route::get('/ourclients', [ShowOurclient::class, 'index'])->name('ourclients');
@@ -15,11 +17,16 @@ Route::get('/ourclients', [ShowOurclient::class, 'index'])->name('ourclients');
 // route de admin ====> Show Our experts
 Route::get('/experts', [ShowOurexpert::class, 'index'])->name('ourexperts');
 
+Route::get('/ourservices', [ShowOurservice::class, 'index'])->name('ourservices');
+
 /****** Activer et desactiver le compte de client  */
 Route::post('/client/{id}/toggle-status', [ClientController::class, 'toggleStatus'])->name('toggleStatus');
 
 /****** Activer et desactiver le compte de expert */
 Route::post('/expert/{id}/toggle-status', [ExpertController::class, 'toggleStatus'])->name('toggleExpertStatus');
+
+Route::post('/service/{id}/toggle-status', [ServiceController::class, 'toggleStatus'])->name('toggleStatus');
+
 
 /* statistique */
 Route::get('/dashboard', [StatistiqueController::class, 'index'])->name('dashboard');

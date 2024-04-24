@@ -59,6 +59,12 @@
 					<span class="text">Partenaires</span>
 				</a>
 			</li>
+			<li>
+                <a href="{{ route('admin.ourservices') }}">
+                    <i class='bx bxs-group'></i>
+                    <span class="text">Services</span>
+                </a>
+            </li>
             <li  class="">
                 <a href="{{ route('admin.settings.index') }}">
                     <i class='bx bxs-cog'></i>
