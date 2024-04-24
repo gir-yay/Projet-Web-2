@@ -16,4 +16,5 @@ class ShowOurservice extends Controller
        // Passer les clients à la vue
        return view('admin.ourservices', compact('services'));
     }
+
 }

@@ -116,6 +116,18 @@
                 <main class="table" id="customers_table">
                     <section class="table__header">
                         <h1></h1>
+                        @if ($errors->any())
+                            <ul>
+                         @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                         @endforeach
+                         </ul>
+                            @endif
+                        <form method="post" action="{{route('admin.ourservices.store')}}">
+                        @csrf
+                        <input type="text" name="nom" placeholder="nom du service">
+                        <button type="submit">Ajouter un service</button>
+                        </form>
                         <div class="input-group">
                             <input type="search" placeholder="Search Data...">
                             <i class='bx bx-search'></i>

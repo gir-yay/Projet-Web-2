@@ -18,6 +18,8 @@ Route::get('/ourclients', [ShowOurclient::class, 'index'])->name('ourclients');
 Route::get('/experts', [ShowOurexpert::class, 'index'])->name('ourexperts');
 
 Route::get('/ourservices', [ShowOurservice::class, 'index'])->name('ourservices');
+Route::post('/ourservices' , [ServiceController::class, 'store'])->name('ourservices.store');
+
 
 /****** Activer et desactiver le compte de client  */
 Route::post('/client/{id}/toggle-status', [ClientController::class, 'toggleStatus'])->name('toggleStatus');
@@ -25,7 +27,10 @@ Route::post('/client/{id}/toggle-status', [ClientController::class, 'toggleStatu
 /****** Activer et desactiver le compte de expert */
 Route::post('/expert/{id}/toggle-status', [ExpertController::class, 'toggleStatus'])->name('toggleExpertStatus');
 
+
+/****** Activer et desactiver le service */
 Route::post('/service/{id}/toggle-status', [ServiceController::class, 'toggleStatus'])->name('toggleStatus');
+//admin add service
 
 
 /* statistique */
