@@ -98,7 +98,7 @@
 
                 <div class="col-sm-4 col-md-7 col-lg-8">
                     <div class="">
-                        <a href="#">
+                        <a href="{{ route('expert-detail', ['expertId' => $serviceExpert->expert->id, 'serviceId' => $serviceExpert->service_id]) }}">
                             <img src="{{asset( $serviceExpert->expert->photo )}}" alt="">
                             <h6 class="mt-2">{{ $serviceExpert->expert->nom }} {{ $serviceExpert->expert->prenom }}</h6>
                             <h6>{{ $serviceExpert->prix_par_duree }}</h6>
