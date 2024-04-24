@@ -102,8 +102,8 @@
                         <a href="#">
                             <img src="{{asset( $serviceExpert->expert->photo )}}" alt="">
                             <h6 class="mt-2">{{ $serviceExpert->expert->nom }} {{ $serviceExpert->expert->prenom }}</h6>
-                            <h6>{{ $serviceExpert->expert->prix_par_duree }}</h6>
-                            <h7>{{ $serviceExpert->expert->ville }}</h7>
+                            <h6>{{ $serviceExpert->prix_par_duree }}</h6>
+                            <h7>{{ $serviceExpert->ville }}</h7>
                         </a>
                     </div>
                 </div>
