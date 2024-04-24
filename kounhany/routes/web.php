@@ -8,6 +8,8 @@ use App\Http\Controllers\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientProfileController;
 use App\Http\Controllers\OurServicesController;
+use App\Http\Controllers\ExperdetailtController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,6 +68,7 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
 
 });
 
+/*************** plus d info sur un expert ..  ****************/
+Route::get('/expert-detail/{expertId}/{serviceId}', [ExperdetailtController::class, 'showExpertDetails'])->name('expert-detail');
 
-/***************Client Profile****************/
-
+/** route pour envoi d email ( quand le client clique demander ) */
