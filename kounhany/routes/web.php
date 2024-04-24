@@ -10,6 +10,7 @@ use App\Http\Controllers\ClientProfileController;
 use App\Http\Controllers\OurServicesController;
 use App\Http\Controllers\ExperdetailtController;
 
+use App\Http\Controllers\ClientDemandeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,6 +61,8 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
         return view("user.client.dashboard");
     })->name("dashboard");
     Route::get('/profile', [ClientProfileController::class, 'show'])->name('profile');
+    Route::get('/demande', [ClientDemandeController::class, 'show'])->name('demande_client');
+
     Route::post("/logout", [LogoutController::class, "logout"])->name("logout");
 
 

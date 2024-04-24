@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nos services </title>
-    <link rel="icon" href="https://img.icons8.com/ios-filled/100/000000/nike.png" type="image/png">
     <link rel="stylesheet" href="{{ asset('css/services/product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/services/stellarnav.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -57,7 +56,7 @@
                   <div class="panel">
                     <button class="accordion font-weight-bold mb-3">CATAGORIES</button>
                     <div class="panel">
-                      <p><<a href="#">Babysitting</a></p>
+                      <p><a href="#">Babysitting</a></p>
                       <p><a href="#">Cuisine</a></p>
                       <p><a href="#">Menage</a></p>
                     </div>
@@ -102,8 +101,8 @@
                         <a href="{{ route('expert-detail', ['expertId' => $serviceExpert->expert->id, 'serviceId' => $serviceExpert->service_id]) }}">
                             <img src="{{asset( $serviceExpert->expert->photo )}}" alt="">
                             <h6 class="mt-2">{{ $serviceExpert->expert->nom }} {{ $serviceExpert->expert->prenom }}</h6>
-                            <h6>{{ $serviceExpert->expert->prix_par_duree }}</h6>
-                            <h7>{{ $serviceExpert->expert->ville }}</h7>
+                            <h6>{{ $serviceExpert->prix_par_duree }}</h6>
+                            <h7>{{ $serviceExpert->ville }}</h7>
                         </a>
                     </div>
                 </div>
