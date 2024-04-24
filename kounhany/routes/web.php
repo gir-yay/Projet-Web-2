@@ -8,6 +8,8 @@ use App\Http\Controllers\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientProfileController;
 use App\Http\Controllers\ourServicesController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,5 +70,4 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
 
 
 /***************Client Profile****************/
-
 
