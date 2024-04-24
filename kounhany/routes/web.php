@@ -7,7 +7,7 @@ use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientProfileController;
-
+use App\Http\Controllers\ourServicesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +59,11 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
     })->name("dashboard");
     Route::get('/profile', [ClientProfileController::class, 'show'])->name('profile');
     Route::post("/logout", [LogoutController::class, "logout"])->name("logout");
+
+
+    Route::get('/services', function () {return view('user.client.services');})->name('services');
+    Route::get('/services', [ourServicesController::class, 'showServices'])->name('services');
+
 });
 
 
