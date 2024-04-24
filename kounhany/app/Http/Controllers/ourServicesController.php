@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\CommentairesSurExpert;
 use App\Models\Expert;
 use App\Models\ServiceExpert;
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class OurServicesController extends Controller{
     
         return view('user/client/services', compact('serviceExpert'));
     }
-    
+
     public function searchByCity(Request $request){
         
         $ville = $request->input('ville');
@@ -44,6 +45,16 @@ class OurServicesController extends Controller{
     
         return view('user/client/services', compact('serviceExpert'));
     }
+
+    public function searchByRating(Request $request)
+{
+    $note = $request->input('note');
+
+    // Implémentez la logique pour récupérer les services avec la note sélectionnée
+    $serviceExpert = CommentairesSurExpert::where('note', $note)->paginate(20);
+
+    return view('user/client/services', compact('serviceExpert'));
+}
 
     public function filtreParCat($cat){
         $serviceExpert = ServiceExpert::whereHas('expert', function ($query) {

@@ -65,6 +65,7 @@
 
                     
                     <button class="accordion font-weight-bold mb-3">Prix</button>
+                    <div class="panel">
                     <form action="{{ route('searchByPrice') }}" method="GET">
                         <div class="form-group">
                                       <label for="prix">Prix:</label>
@@ -72,8 +73,10 @@
                         </div>
                                     <button type="submit" class="btn btn-primary">Rechercher</button>
                   </form>
+                    </div>
 
                   <button class="accordion font-weight-bold mb-3">Ville</button>
+                  <div class="panel">
                     <form action="{{ route('searchByCity') }}" method="GET">
                         <div class="form-group">
                                       <label for="ville">Ville:</label>
@@ -81,22 +84,26 @@
                         </div>
                                     <button type="submit" class="btn btn-primary">Rechercher</button>
                   </form>
+                  </div>
 
 
                     
 
-                    <button class="accordion font-weight-bold mb-3">Note </button>
-                    <div class="panel">
-                      <p><a href="#">1</a></p>
-                      <p><a href="#">2</a></p>
-                      <p><a href="#">3</a></p>
-                      <p><a href="#">4</a></p>
-                      <p><a href="#">5</a></p>
+                  <button class="accordion font-weight-bold mb-3">Note </button>
+                     <div class="panel">
+                <form action="{{ route('searchByRating') }}" method="GET">
+                         <select name="note">
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="3">3</option>
+                         <option value="4">4</option>
+                         <option value="5">5</option>
+                         </select>
+                      <button type="submit" class="btn btn-primary">Rechercher</button>
+                 </form>
                     </div>
 
-                    <button class="accordion font-weight-bold mb-3"></button>
-                    <div class="panel">
-                    </div>
+                    
 
                     <div class="panel size"></div>
                 </div>
