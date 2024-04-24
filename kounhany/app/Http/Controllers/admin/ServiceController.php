@@ -36,7 +36,7 @@ public function store(Request $request)
     
         $service->save();
 
-        return redirect()->back()->with('success', 'Comment stored successfully!');
+        return redirect()->back()->with('success', ' service ajouté!');
     }
 
 }
