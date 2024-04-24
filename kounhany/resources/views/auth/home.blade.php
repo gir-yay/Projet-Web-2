@@ -33,24 +33,7 @@
 
                     <li><a href="#about" class="nav__link">About Us</a></li>
 
-                    <!--=============== DROPDOWN 1 ===============-->
-
-                    <li class="dropdown__item">
-                        <div class="nav__link">
-                            Servicess <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-
-                     <ul class="dropdown__menu">
-                        <li>
-                        <a href="{{ route('client.services') }}" class="dropdown__link">
-                            <i class="ri-home-3-line"></i> Ménage
-                        </a>                        
-                        </li>
-
-                       
-                     </ul>
-                  </li>
-
+                    <li><a href="{{ route('client.services') }}" class="nav__link">Services</a></li>
                     <li><a href="#contact" class="nav__link">Contact Us</a></li>
                     <li><a href="{{ route('login') }}" class="nav__link">Login</a></li>
                 </ul>
