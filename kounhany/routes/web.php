@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\auth\HomeController;
 use App\Http\Controllers\auth\LoginAdminController;
 use App\Http\Controllers\auth\LoginController;
@@ -9,7 +8,7 @@ use App\Http\Controllers\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientProfileController;
 use App\Http\Controllers\ourServicesController;
-use App\Models\Service;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -71,5 +70,4 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
 
 
 /***************Client Profile****************/
-
 
