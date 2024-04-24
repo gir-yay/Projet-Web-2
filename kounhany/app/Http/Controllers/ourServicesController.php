@@ -19,6 +19,15 @@ class OurServicesController extends Controller{
 
     }
 
+    public function filtreParCat($cat){
+        $serviceExpert = ServiceExpert::whereHas('expert', function ($query) {
+            $query->where('compte_status', 'active')
+                ->where('status_abonnement', 1);
+        })->where('service_id', $cat)->paginate(6);
+
+        return view('user/client/services',compact('serviceExpert'));
+    }
+
 
 
 

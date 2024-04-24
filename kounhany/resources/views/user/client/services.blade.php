@@ -56,9 +56,9 @@
                   <div class="panel">
                     <button class="accordion font-weight-bold mb-3">CATAGORIES</button>
                     <div class="panel">
-                      <p><a href="#">Babysitting</a></p>
-                      <p><a href="#">Cuisine</a></p>
-                      <p><a href="#">Menage</a></p>
+                      <p><a href="{{route('client.catFiltre' , '3')}}">Babysitting</a></p>
+                      <p><a href="{{route('client.catFiltre' , '6')}}">Cuisine</a></p>
+                      <p><a href="{{route('client.catFiltre' , '5')}}">Menage</a></p>
                     </div>
                     
 

@@ -66,6 +66,8 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
 
     Route::get('/services', function () {return view('user.client.services');})->name('services');
     Route::get('/services', [OurServicesController::class, 'showServices'])->name('services');
+    Route::get('/services/categorie/{cat}/filtre', [OurServicesController::class, 'filtreParCat'])->name('catFiltre');
+
 
 });
 
