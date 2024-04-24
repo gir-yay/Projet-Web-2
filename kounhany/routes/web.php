@@ -7,9 +7,7 @@ use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientProfileController;
-use App\Http\Controllers\ourServicesController;
-
-
+use App\Http\Controllers\OurServicesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

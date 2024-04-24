@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Expert;
 
-class ourServicesController extends Controller{
+class OurServicesController extends Controller{
 public function showServices()
 {
     $experts = Expert::all(); 
     
 
-    return view('user/client/services', ['experts' => $experts]);
+    return view('user.client.services', ['experts' => $experts]);
 }
 }
