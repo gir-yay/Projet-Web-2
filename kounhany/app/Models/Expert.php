@@ -25,7 +25,9 @@ class Expert extends Authenticatable
         'bio',
         'photo',
         'metier',
-        'compte_status'
+        'compte_status',
+        'status_abonnement',
+        'status_payment',
     ];
 
     public function demandes()
@@ -33,15 +35,25 @@ class Expert extends Authenticatable
         return $this->hasMany(DemandesClient::class);
     }
 
+    public function commentaires_sur_expert()
+    {
+        return $this->hasMany(CommentairesSurExpert::class);
+    }
+    public function commentaires_sur_client()
+    {
+        return $this->hasMany(CommentairesSurClient::class);
+    }
+
     public function serviceExpert()
     {
         return $this->hasMany(ServiceExpert::class);
     }
 
-    public function services()
+    public function paiements()
     {
-        return $this->hasMany(ServiceExpert::class);
+        return $this->hasMany(Payment::class);
     }
+
 
 
 

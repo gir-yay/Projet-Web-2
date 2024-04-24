@@ -11,12 +11,23 @@ class CommentairesSurExpert extends Model
     protected $fillable = [
         'note',
         'demande_id',
-        'commentaire'
+        'commentaire',
+        'client_id',
+        'expert_id',
     ];
 
     public function demande()
     {
         return $this->belongsTo(DemandesClient::class);
+    }
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id');
+    }
+
+    public function expert()
+    {
+        return $this->belongsTo(Expert::class, 'expert_id');
     }
 
 }

@@ -15,12 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('nom', 50);
             $table->string('prenom', 50);
-            $table->string('email', 50)->unique();
-            $table->string('password_', 255);
+            $table->string('email')->unique();
+            $table->string('password_');
             $table->string('bio', 255)->nullable();
             $table->string('photo', 70)->nullable();
             $table->string('metier', 100);
             $table->string('compte_status', 30);
+            $table->boolean('status_abonnement')->default(true);
+            $table->boolean('status_payment')->default(true);
             $table->timestamps();
         });
     }

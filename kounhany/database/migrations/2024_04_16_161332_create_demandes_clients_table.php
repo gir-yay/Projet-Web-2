@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('date_debut');
             $table->string('duree', 100);
             $table->string('etat', 30);
+            $table->double('total');
             $table->timestamps();
         });
     }

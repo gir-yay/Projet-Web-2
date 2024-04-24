@@ -32,7 +32,15 @@ class Client extends Authenticatable
         return $this->hasMany(DemandesClient::class);
     }
 
-    
+    public function commentaires_sur_expert()
+    {
+        return $this->hasMany(CommentairesSurExpert::class);
+    }
+    public function commentaires_sur_client()
+    {
+        return $this->hasMany(CommentairesSurClient::class);
+    }
+
 
 
 

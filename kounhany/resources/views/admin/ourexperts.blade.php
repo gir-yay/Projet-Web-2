@@ -59,21 +59,32 @@
 					<span class="text">Partenaires</span>
 				</a>
 			</li>
-
-
-		</ul>
-		<ul class="side-menu">
-
 			<li>
+                <a href="{{ route('admin.ourservices') }}">
+                    <i class='bx bxs-group'></i>
+                    <span class="text">Services</span>
+                </a>
+            </li>
+            <li  class="">
+                <a href="{{ route('admin.settings.index') }}">
+                    <i class='bx bxs-cog'></i>
+                    <span class="text">Paramètres</span>
+                </a>
+            </li>
+            <li>
 				<a href="#" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<form action="{{route("admin.logout")}}" method="Post">
                       @csrf
-                     <button class="logout-btn">se déconnecter</button>
+                     <button class="logout-btn">Se Déconnecter</button>
                      </form>
 				</a>
 			</li>
+
+
 		</ul>
+
+
 	</section>
 	<!-- SIDEBAR -->
 
@@ -136,7 +147,6 @@
                         <th> Nom <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Prenom <span class="icon-arrow">&UpArrow;</span></th>
                         <th> email <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Biography <span class="icon-arrow">&UpArrow;</span></th>
 						<th> Metier <span class="icon-arrow">&UpArrow;</span></th>
                         <th> statut <span class="icon-arrow">&UpArrow;</span></th>
 						<th> Action <span class="icon-arrow">&UpArrow;</span></th>
@@ -148,9 +158,8 @@
             <td>{{ $expert->nom }}</td>
             <td>{{ $expert->prenom }}</td>
             <td>{{ $expert->email }}</td>
-            <td>{{ $expert->bio }}</td>
             <td>{{ $expert->metier }}</td>
-            <td>{{ $expert->compte_status }}</td>
+            <td><span  class="{{$expert->compte_status == "active" ? "active" : "non-active"}} status-compte">{{ $expert->compte_status }}</span></td>
 			<td>
     @if ($expert->compte_status === 'active')
         <form action="{{ route('admin.toggleExpertStatus', $expert->id) }}" method="POST">
