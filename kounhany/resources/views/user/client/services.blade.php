@@ -87,26 +87,32 @@
                     <div class="panel">
                     </div>
 
-                    <div class="panel size"></div></div>
-                </div>
-
-                <div class="product-view">
-    @foreach($experts as $expert)
-        @if(isset($expert->expert) && $expert->expert !== null)
-            <div class="">
-                <img src="{{ $expert->expert->photo }}" alt="Expert Photo">
-                <div class="card-body">
-                    <h6 class="mt-2">{{ $expert->expert->nom }} {{ $expert->expert->prenom }}</h6>
-                    <small>{{ $expert->prix_par_duree }}</small>
-                    <h6>{{ $expert->ville }}</h6>
+                    <div class="panel size"></div>
                 </div>
             </div>
-        @endif
-    @endforeach
-</div>
            
-                 
-        </section>
+
+            
+            <div class="product-view">
+        
+            @foreach ($serviceExpert as $serviceExpert)
+
+                <div class="col-sm-4 col-md-7 col-lg-8">
+                    <div class="">
+                        <a href="#">
+                            <img src="{{asset( $serviceExpert->expert->photo )}}" alt="">
+                            <h6 class="mt-2">{{ $serviceExpert->expert->nom }} {{ $serviceExpert->expert->prenom }}</h6>
+                            <h6>{{ $serviceExpert->expert->prix_par_duree }}</h6>
+                            <h7>{{ $serviceExpert->expert->ville }}</h7>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        
+    </div>
+    </div>
+    
+</section>
 
         <footer class="page-footer font-small indigo mt-5">
 
