@@ -7,6 +7,8 @@ use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientProfileController;
+use App\Http\Controllers\ExpertProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,9 +57,12 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
     })->name("dashboard");
     Route::get('/profile', [ClientProfileController::class, 'show'])->name('profile');
     Route::post("/logout", [LogoutController::class, "logout"])->name("logout");
+    Route::get('/profile/{client}/edit', [ClientProfileController::class, "sdk_edit_client"])->name("sdk_edit_client");
+    Route::put('/profile/{client}', [ClientProfileController::class, "sdk_update_client"])->name("sdk_stockupdatec");
 
 
 });
 
 
 /***************Client Profile****************/
+

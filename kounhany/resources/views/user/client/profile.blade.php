@@ -9,11 +9,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+    <style>
+    button {
+    padding: 8px 16px;
+    background-color: darkblue;
+    color: white;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 14px;
+    
+    }
+
+    button:hover {
+    background-color: blue;
+    color: white;
+    }
+    
+
+    </style>
 
 </head>
 
 <body>
     <section class="section about-section gray-bg" id="about">
+        @if (session('success'))
+                <div class="alert alert-success text-center"
+                    style=" border-color: #c3e6cb; color: #155724;text-align:center;margin-bottom:5px">
+                    {{ session('success') }}
+                </div>
+            @elseif(session('error'))
+                <div class="alert alert-danger text-center"
+                    style=" border-color: #f5c6cb; color: #721c24;text-align:center; margin-bottom:5px">
+                    {{ session('error') }}
+                </div>
+            @endif
         <div class="container">
             <div class="row align-items-center flex-row-reverse">
                 <div class="col-lg-6">
@@ -40,9 +71,17 @@
                                     <label>Phone</label>
                                     <p>{{ $user->phone }}</p>
                                 </div>
+                                
                             </div>
                         </div>
+                        
                     </div>
+                    <form action="">
+                        @csrf
+                        <div class="button-container">
+                        <button><a  style="color: aliceblue;" href="{{route("client.sdk_edit_client",$user)}}">Modifier</a></button>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-avatar">

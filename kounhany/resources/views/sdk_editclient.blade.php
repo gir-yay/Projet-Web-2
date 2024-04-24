@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title> as client</title>
+<style>
+
+body {
+background-color: white;
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+}
+
+form {
+background-color: white;
+width: 400px;
+margin: 20px auto;
+padding: 40px;
+padding-top: 5px;
+border-radius: 10px;
+box-shadow: 0px 0px 5px 0px darkblue;
+}
+
+h2 {
+text-align: center;
+margin-bottom: 30px;
+position: relative;
+}
+
+h2::after {
+content: ""; 
+display: block;
+width: 200px;
+height: 3px; 
+background-color: darkblue; 
+position: absolute; 
+bottom: -10px; 
+left: 50%; 
+transform: translateX(-50%); 
+}
+
+label {
+display: block;
+margin-bottom: 10px; 
+font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+width: calc(100% - 20px); 
+padding: 10px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+input[type="submit"] {
+width: calc(100% - 20px); 
+padding: 10px;
+background-color: darkblue; 
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+font-weight: 500;
+
+}
+
+input[type="submit"]:hover {
+background-color: beige; 
+color: black
+}
+</style>
+</head>
+<body>
+    <form action="{{ route('client.sdk_stockupdatec',$client) }}" method="POST">
+        @method('PUT')
+        @csrf
+        <h2>Modifier votre profile</h2>
+        <label for="Nom">Nom</label>
+        @error('nom')
+        <span class="error-message" style="color: red; font-weight: bold; font-style: italic;">{{ $message }} </span>
+        @enderror
+        <input type="text" name="nom" value="{{old("nom",$client->nom)}}">
+        <label for="prenom">Prenom</label>
+        @error('prenom')
+        <span class="error-message" style="color: red; font-weight: bold;font-style: italic; ">{{ $message }} </span>
+        @enderror
+        <input type="text" name="prenom" value="{{old("prenom",$client->prenom)}}">
+        <label for="email">Email</label>
+        @error('email')
+        <span class="error-message" style="color: red; font-weight: bold;font-style: italic; ">{{ $message }} </span>
+        @enderror
+        <input type="email" name="email" value="{{old("email",$client->email)}}">
+        <label for="tel">Téléphone</label>
+        @error('tel')
+        <span class="error-message" style="color: red; font-weight: bold;font-style: italic; ">{{ $message }} </span>
+        @enderror
+        <input type="number" name="tel" value="{{old("tel",$client->phone)}}">
+        <label for="adresse">Adresse</label>
+        @error('adresse')
+        <span class="error-message" style="color: red; font-weight: bold; font-style: italic;">{{ $message }} </span>
+        @enderror
+        <input type="text" name="adresse" value="{{old("adresse",$client->adresse)}}">
+        <label for="mdp">Mot de passe</label>
+        @error('password')
+        <span class="error-message" style="color: red; font-weight: bold;font-style: italic; ">{{ $message }} </span>
+        @enderror
+        <input type="password" name="password">
+        <input type="submit" value="Modifier">
+        
+    </form>
+</body>
+</html>
+
