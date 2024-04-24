@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nos services </title>
-    <link rel="icon" href="https://img.icons8.com/ios-filled/100/000000/nike.png" type="image/png">
     <link rel="stylesheet" href="{{ asset('css/services/product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/services/stellarnav.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -57,7 +56,7 @@
                   <div class="panel">
                     <button class="accordion font-weight-bold mb-3">CATAGORIES</button>
                     <div class="panel">
-                      <p><<a href="#">Babysitting</a></p>
+                      <p><a href="#">Babysitting</a></p>
                       <p><a href="#">Cuisine</a></p>
                       <p><a href="#">Menage</a></p>
                     </div>
