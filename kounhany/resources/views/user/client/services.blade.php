@@ -38,7 +38,7 @@
 
         <section class="offers">
             <div class="container">
-                <h4>OFFICIAL NIKE STORE</h4>
+                <h4>Nos services </h4>
             </div>
         </section>
 
@@ -57,7 +57,7 @@
                   <div class="panel">
                     <button class="accordion font-weight-bold mb-3">CATAGORIES</button>
                     <div class="panel">
-                      <p><<a href="#"> Babysitting</a></p>
+                      <p><<a href="#">Babysitting</a></p>
                       <p><a href="#">Cuisine</a></p>
                       <p><a href="#">Menage</a></p>
                     </div>
@@ -78,7 +78,6 @@
                     <div class="panel">
                       <p><a href="#">1</a></p>
                       <p><a href="#">2</a></p>
-                      <p><a href="#"></a>2</a></p>
                       <p><a href="#">3</a></p>
                       <p><a href="#">4</a></p>
                       <p><a href="#">5</a></p>
@@ -88,35 +87,29 @@
                     <div class="panel">
                     </div>
 
-                    <div class="panel size">
-                      
-                    </div>
-
-                </div>
+                    <div class="panel size"></div></div>
                 </div>
 
                 <div class="product-view">
-
-                @foreach($experts as $expert)
-    @if(isset($expert->expert) && $expert->expert !== null)
-        <div class="">
-            <img src="{{ $expert->expert->photo }}" alt="...">
-            <div class="card-body">
-                <h6 class="mt-2">{{ $expert->expert->nom }} {{ $expert->expert->prenom }}</h6>
-                <small>{{ $expert->prix_par_duree }}</small>
-                <h6>{{ $expert->ville }}</h6>
+    @foreach($experts as $expert)
+        @if(isset($expert->expert) && $expert->expert !== null)
+            <div class="">
+                <img src="{{ $expert->expert->photo }}" alt="Expert Photo">
+                <div class="card-body">
+                    <h6 class="mt-2">{{ $expert->expert->nom }} {{ $expert->expert->prenom }}</h6>
+                    <small>{{ $expert->prix_par_duree }}</small>
+                    <h6>{{ $expert->ville }}</h6>
+                </div>
             </div>
-        </div>
-    @endif
-@endforeach       
+        @endif
+    @endforeach
+</div>
+           
                  
         </section>
 
         <footer class="page-footer font-small indigo mt-5">
 
-
-      
-            
             <div class="footer-copyright text-center py-3">© KOUN HANY Copyright:
              
             </div>
