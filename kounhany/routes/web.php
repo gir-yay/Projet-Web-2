@@ -48,6 +48,8 @@ Route::post('/stockexpert', [RegisterController::class, "sdk_stock_expert"])->na
 // contact
 Route::post('/contact', [HomeController::class, "contact"])->name("contact");
 
+Route::get('/services/searchByPrice', [OurServicesController::class, 'searchByPrice'])->name('searchByPrice');
+Route::get('/services/searchByCity', [OurServicesController::class, 'searchByCity'])->name('searchByCity');
 //=================================================================================================
 
 

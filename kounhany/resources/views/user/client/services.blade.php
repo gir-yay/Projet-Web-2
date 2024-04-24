@@ -65,13 +65,25 @@
 
                     
                     <button class="accordion font-weight-bold mb-3">Prix</button>
-                    <input type="range" class="custom-range p-4" id="customRange" name="points1">
+                    <form action="{{ route('searchByPrice') }}" method="GET">
+                        <div class="form-group">
+                                      <label for="prix">Prix:</label>
+                         <input type="number" class="form-control" id="prix" name="prix" placeholder="Entrez le prix">
+                        </div>
+                                    <button type="submit" class="btn btn-primary">Rechercher</button>
+                  </form>
+
+                  <button class="accordion font-weight-bold mb-3">Ville</button>
+                    <form action="{{ route('searchByCity') }}" method="GET">
+                        <div class="form-group">
+                                      <label for="ville">Ville:</label>
+                         <input type="text" class="form-control" id="ville" name="ville" placeholder="Entrez la ville..">
+                        </div>
+                                    <button type="submit" class="btn btn-primary">Rechercher</button>
+                  </form>
 
 
-                    <button class="accordion font-weight-bold mb-3">Ville</button>
-                    <div class="panel">
-                      <input type="text" name="ville" id="ville">
-                    </div>
+                    
 
                     <button class="accordion font-weight-bold mb-3">Note </button>
                     <div class="panel">
