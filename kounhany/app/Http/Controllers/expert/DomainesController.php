@@ -59,7 +59,7 @@ class DomainesController extends Controller
             'expert_id' => auth()->user()->id,
             'service_id' => $request->service_id,
             'nbr_annee_d_exp' => $request->nbr_annee_d_exp,
-            'description' => $request->description,
+            'disponibilite' => $request->description,
             'duree' => 'jour',
             'prix_par_duree' => $request->prix_par_duree,
             'ville' => $request->ville,
@@ -108,7 +108,7 @@ class DomainesController extends Controller
         $serviceExpert->update([
             'expert_id' => auth()->user()->id,
             'nbr_annee_d_exp' => $request->nbr_annee_d_exp,
-            'description' => $request->description,
+            'disponibilite' => $request->description,
             'duree' => 'jour',
             'prix_par_duree' => $request->prix_par_duree,
             'ville' => $request->ville,

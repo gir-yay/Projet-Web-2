@@ -144,7 +144,7 @@
                                     </div>
                                     <div>
                                         <span>Description:</span>
-                                        <p class="description">{{ $domaine->description }}</p>
+                                        <p class="description">{{ $domaine->disponibilite }}</p>
                                         </p>
                                     </div>
                                     <div class="d-flex justify-content-end gap-3 mt-3">

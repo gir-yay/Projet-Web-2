@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('expert_id')->constrained('experts');
             $table->foreignId('service_id')->constrained('services');
             $table->integer('nbr_annee_d_exp')->nullable();
-            $table->string('disponibilite', 255)->nullable();
+            $table->text('disponibilite')->nullable();
             $table->string('duree', 100)->nullable();
             $table->float('prix_par_duree')->nullable();
             $table->string('ville', 100);
