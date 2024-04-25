@@ -8,7 +8,7 @@
     <title>Nos services </title>
     <link rel="stylesheet" href="{{ asset('css/services/product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/services/stellarnav.css') }}">
-
+     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>

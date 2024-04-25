@@ -71,6 +71,7 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
     Route::get('/profile/{client}/edit', [ClientProfileController::class, "sdk_edit_client"])->name("sdk_edit_client");
     Route::put('/profile/{client}', [ClientProfileController::class, "sdk_update_client"])->name("sdk_stockupdatec");
 
+    Route::post('/demandes-client', [DemandesClientController::class, 'store'])->name('demandes-client.store');
 
 
 
@@ -81,4 +82,3 @@ Route::get('/expert-detail/{expertId}/{serviceId}', [ExperdetailtController::cla
 /*************** plus d info sur un expert ..  ****************/
 /** route pour envoi d email ( quand le client clique demander ) */
 
-Route::post('/demandes-client', [DemandesClientController::class, 'store'])->name('demandes-client.store');
