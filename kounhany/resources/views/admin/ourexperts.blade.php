@@ -59,7 +59,7 @@
 					<span class="text">Partenaires</span>
 				</a>
 			</li>
-			<li>
+            <li>
                 <a href="{{ route('admin.ourservices') }}">
                     <i class='bx bxs-group'></i>
                     <span class="text">Services</span>

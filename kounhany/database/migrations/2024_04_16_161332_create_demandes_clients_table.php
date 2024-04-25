@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('service_id')->constrained('services');
             $table->date('date_debut');
             $table->string('duree', 100);
+            $table->text('description');
             $table->string('etat', 30);
             $table->double('total');
             $table->timestamps();

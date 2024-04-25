@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('service_experts', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('expert_id')->constrained('experts');
             $table->foreignId('service_id')->constrained('services');
             $table->integer('nbr_annee_d_exp')->nullable();
@@ -20,7 +21,6 @@ return new class extends Migration
             $table->float('prix_par_duree')->nullable();
             $table->string('ville', 100);
             $table->string('status_', 30);
-            $table->primary(['expert_id', 'service_id']);
             $table->timestamps();
         });
     }

@@ -22,7 +22,7 @@ Route::post('/ourservices' , [ServiceController::class, 'store'])->name('ourserv
 
 
 /****** Activer et desactiver le compte de client  */
-Route::post('/client/{id}/toggle-status', [ClientController::class, 'toggleStatus'])->name('toggleStatus');
+Route::post('/client/{id}/toggle-status', [ClientController::class, 'toggleStatus'])->name('toggleClientStatus');
 
 /****** Activer et desactiver le compte de expert */
 Route::post('/expert/{id}/toggle-status', [ExpertController::class, 'toggleStatus'])->name('toggleExpertStatus');

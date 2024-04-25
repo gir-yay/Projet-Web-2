@@ -31,7 +31,7 @@
                     <span class="text">Dashboard</span>
                 </a>
             </li>
-            <li >
+            <li>
                 <a href="{{ route('admin.ourclients') }}">
                     <i class='bx bxs-group'></i>
                     <span class="text">Clients</span>
@@ -43,13 +43,13 @@
                     <span class="text">Partenaires</span>
                 </a>
             </li>
-             <li class="active">
+            <li class="active">
                 <a href="{{ route('admin.ourservices') }}">
                     <i class='bx bxs-group'></i>
                     <span class="text">Services</span>
                 </a>
             </li>
-            <li  class="">
+            <li class="">
                 <a href="{{ route('admin.settings.index') }}">
                     <i class='bx bxs-cog'></i>
                     <span class="text">Paramètres</span>
@@ -118,16 +118,20 @@
                         <h1></h1>
                         @if ($errors->any())
                             <ul>
-                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                         @endforeach
-                         </ul>
-                            @endif
-                        <form method="post" action="{{route('admin.ourservices.store')}}">
-                        @csrf
-                        <input type="text" name="nom" placeholder="nom du service">
-                        <button type="submit">Ajouter un service</button>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+                        <form method="post" action="{{ route('admin.ourservices.store') }}" style="margin-top: 20px;">
+                            @csrf
+                            <input type="text" name="nom" placeholder="Nom du service"
+                                style="padding: 7px; margin-right: 10px;">
+                            <button type="submit"
+                                style="padding: 7px 10px; background-color: #007bff; color: #fff; border: none; cursor: pointer;">Ajouter
+                                un service</button>
                         </form>
+
                         <div class="input-group">
                             <input type="search" placeholder="Search Data...">
                             <i class='bx bx-search'></i>

@@ -144,13 +144,13 @@
                                         </td>
                                         <td>
                                             @if ($client->compte_status === 'active')
-                                                <form action="{{ route('admin.toggleStatus', $client->id) }}"
+                                                <form action="{{ route('admin.toggleClientStatus', $client->id) }}"
                                                     method="POST">
                                                     @csrf
                                                     <button type="submit" class ="cancelled">Désactiver</button>
                                                 </form>
                                             @else
-                                                <form action="{{ route('admin.toggleStatus', $client->id) }}"
+                                                <form action="{{ route('admin.toggleClientStatus', $client->id) }}"
                                                     method="POST">
                                                     @csrf
                                                     <button type="submit" class="delivered">Activer</button>
