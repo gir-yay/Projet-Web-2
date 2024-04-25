@@ -126,38 +126,38 @@
 
 
 
-                <!-- Slider main container -->
-                <div class="swiper">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                        @foreach ($comments as $comment)
-                             <div class="swiper-slide">
-                                <div class="box-area">
-                                    <div class="img-area">
-                                        <img src="{{ asset('images/user.png') }}" alt="">
-                                    </div>
-                                    <h5>{{$comment->client->nom . " " . $comment->client->orenom}}</h5>
-                                    <p class="content">
-                                        {{ $comment->commentaire }}
-                                    </p>
-                                    <div class="rating">
-                                        @for ($i = 1; $i <= 5; $i++)
-                                            @if ($i <= $comment->note)
-                                                <i class="fa fa-star"></i> <!--  les étoiles remplies -->
-                                            @else
-                                                <i class="fa fa-star"></i> <!-- Étoile vide -->
-                                            @endif
-                                        @endfor
-                                    </div>
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    @foreach ($comments as $comment)
+                        <div class="swiper-slide">
+                            <div class="box-area">
+                                <div class="img-area">
+                                    <img src="{{ asset('images/user.png') }}" alt="">
+                                </div>
+                                <h5>{{ $comment->client->nom . ' ' . $comment->client->orenom }}</h5>
+                                <p class="content">
+                                    {{ $comment->commentaire }}
+                                </p>
+                                <div class="rating">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        @if ($i <= $comment->note)
+                                            <i class="fa fa-star"></i> <!--  les étoiles remplies -->
+                                        @else
+                                            <i class="fa-regular fa-star"></i>
+                                        @endif
+                                    @endfor
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-
-
+                        </div>
+                    @endforeach
                 </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+
+            </div>
 
 
 
