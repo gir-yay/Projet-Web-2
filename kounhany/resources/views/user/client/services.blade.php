@@ -21,19 +21,14 @@
                     <li><img src="" alt=""></li>
                 </ul>
                 <ul class="account">
-                    <li>Home</li>
+                    <li><a href="{{route('home')}}" style="color:white">Home</a></li>
                     <li>
-				<a href="#" class="logout">
-					<form action="{{route("client.logout")}}" method="Post">
-                      @csrf
-                     <button class="logout-btn">Se déconnecter</button>
-                    </form>
-				</a>
+
 			</li>
                 </ul>
             </div>
         </header>
-       
+
 
         <section class="offers">
             <div class="container">
@@ -56,14 +51,14 @@
                   <div class="panel">
                     <button class="accordion font-weight-bold mb-3">CATAGORIES</button>
                     <div class="panel">
-                      <p><a href="{{route('client.catFiltre' , '3')}}">Babysitting</a></p>
-                      <p><a href="{{route('client.catFiltre' , '6')}}">Cuisine</a></p>
-                      <p><a href="{{route('client.catFiltre' , '5')}}">Menage</a></p>
+                      <p><a href="{{route('catFiltre' , '2')}}">Babysitting</a></p>
+                      <p><a href="{{route('catFiltre' , '3')}}">Cuisine</a></p>
+                      <p><a href="{{route('catFiltre' , '1')}}">Menage</a></p>
                     </div>
-                    
 
 
-                    
+
+
                     <button class="accordion font-weight-bold mb-3">Prix</button>
                     <div class="panel">
                     <form action="{{ route('searchByPrice') }}" method="GET">
@@ -87,7 +82,7 @@
                   </div>
 
 
-                    
+
 
                   <button class="accordion font-weight-bold mb-3">Note </button>
                      <div class="panel">
@@ -103,16 +98,16 @@
                  </form>
                     </div>
 
-                    
+
 
                     <div class="panel size"></div>
                 </div>
             </div>
-           
 
-            
+
+
             <div class="product-view">
-        
+
             @foreach ($serviceExpert as $serviceExpert)
 
                 <div class="col-sm-4 col-md-7 col-lg-8">
@@ -126,22 +121,22 @@
                     </div>
                 </div>
             @endforeach
-        
+
     </div>
     </div>
-    
+
 </section>
 
         <footer class="page-footer font-small indigo mt-5">
 
             <div class="footer-copyright text-center py-3">© KOUN HANY Copyright:
-             
+
             </div>
-        
-          
+
+
         </footer>
-    
-    
+
+
 
 
 
@@ -150,7 +145,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script  src="{{ asset('js/servicesJS/stellarnav.js') }}"> </script>
     <script src="{{ asset('js/servicesJS/product.js') }}"></script>
-    
+
 </body>
 </html>
 

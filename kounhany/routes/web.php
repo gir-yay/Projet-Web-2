@@ -51,10 +51,11 @@ Route::get('/services/searchByRating', [OurServicesController::class, 'searchByR
 Route::get('/services/searchByPrice', [OurServicesController::class, 'searchByPrice'])->name('searchByPrice');
 Route::get('/services/searchByCity', [OurServicesController::class, 'searchByCity'])->name('searchByCity');
 //=================================================================================================
+// services
 
-
-
-
+//Route::get('/services', function () {return view('user.client.services');})->name('services');
+Route::get('/services', [OurServicesController::class, 'showServices'])->name('services');
+Route::get('/services/categorie/{cat}/filtre', [OurServicesController::class, 'filtreParCat'])->name('catFiltre');
 
 /***  Auth Routes  ********/ //
 Route::prefix("client")->name("client.")->middleware("auth:web")->group(function () {
@@ -70,13 +71,11 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
     Route::put('/profile/{client}', [ClientProfileController::class, "sdk_update_client"])->name("sdk_stockupdatec");
 
 
-    Route::get('/services', function () {return view('user.client.services');})->name('services');
-    Route::get('/services', [OurServicesController::class, 'showServices'])->name('services');
-    Route::get('/services/categorie/{cat}/filtre', [OurServicesController::class, 'filtreParCat'])->name('catFiltre');
 
 
 });
+Route::get('/expert-detail/{expertId}/{serviceId}', [ExperdetailtController::class, 'showExpertDetails'])->name('expert-detail');
+
 
 /*************** plus d info sur un expert ..  ****************/
-Route::get('/expert-detail/{expertId}/{serviceId}', [ExperdetailtController::class, 'showExpertDetails'])->name('expert-detail');
 /** route pour envoi d email ( quand le client clique demander ) */

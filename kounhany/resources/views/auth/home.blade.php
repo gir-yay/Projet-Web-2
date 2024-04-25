@@ -33,9 +33,21 @@
 
                     <li><a href="#about" class="nav__link">About Us</a></li>
 
-                    <li><a href="{{ route('client.services') }}" class="nav__link">Services</a></li>
+                    <li><a href="#service" class="nav__link">Services</a></li>
                     <li><a href="#contact" class="nav__link">Contact Us</a></li>
-                    <li><a href="{{ route('login') }}" class="nav__link">Login</a></li>
+                    @if (auth()->check())
+                        <li>
+                            <a href="{{ route('client.logout') }}" class="nav__link">
+                                <form action="{{ route('client.logout') }}" method="POST">
+                                    @csrf
+                                    <button class="nav__link" style="border:none; background:none; font-size:16px; font-weight600">Se
+                                        Déconnecter</button>
+                                </form>
+                            </a>
+                        </li>
+                    @else
+                        <li><a href="{{ route('login') }}" class="nav__link">Login</a></li>
+                    @endif
                 </ul>
             </div>
         </nav>
@@ -56,23 +68,23 @@
             <div class="card__container">
                 <article class="card__article">
                     <h1>Ménage</h1>
-                    <img src="images/babysitter.png" alt="image" class="card__img">
+                    <img src="images/menage.png" alt="image" class="card__img">
 
                     <div class="card__data">
                         <span class="card__description"> </span>
                         <h2 class="card__title">Garde d'enfants experte et rassurante</h2>
-                        <a href="{{ route('login') }}" class="card__button">Demander</a>
+                        <a href="{{ route('catFiltre', ['cat' => 1]) }}" class="card__button">Demander</a>
                     </div>
                 </article>
 
                 <article class="card__article">
                     <h1>BabySitter</h1>
-                    <img src="images/menage.png" alt="image" class="card__img">
+                    <img src="images/babysitter.png" alt="image" class="card__img">
 
                     <div class="card__data" id="babysitter">
                         <span class="card__description"></span>
                         <h2 class="card__title">Profitez d'un intérieur étincelant sans effort</h2>
-                        <a href="{{ route('login') }}" class="card__button">Demander</a>
+                        <a href="{{ route('catFiltre', ['cat' => 2]) }}" class="card__button">Demander</a>
                     </div>
                 </article>
 
@@ -83,7 +95,7 @@
                     <div class="card__data">
                         <span class="card__description"></span>
                         <h2 class="card__title">Repas faits maison selon vos goûts</h2>
-                        <a href="{{ route('login') }}" class="card__button">Demander</a>
+                        <a href="{{ route('catFiltre', ['cat' => 3]) }}" class="card__button">Demander</a>
                     </div>
                 </article>
             </div>
