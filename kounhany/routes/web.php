@@ -79,5 +79,4 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
 
 /*************** plus d info sur un expert ..  ****************/
 Route::get('/expert-detail/{expertId}/{serviceId}', [ExperdetailtController::class, 'showExpertDetails'])->name('expert-detail');
-
 /** route pour envoi d email ( quand le client clique demander ) */

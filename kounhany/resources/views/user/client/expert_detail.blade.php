@@ -27,7 +27,7 @@
                 <div class="price"><i class="fas fa-dollar-sign"></i>{{ $serviceExpert->prix_par_duree }} / jour</div>
                 <div class="price ville" style="font-size=200;"> <i class="fa fa-map-marker-alt"></i> {{ $serviceExpert->ville }}</div>
                 <div class="price ville"><i class="fa-solid fa-calendar-days"></i> {{ $serviceExpert->disponibilite}}</div>
-                
+
                 <div class="description">{{ $expert->bio }}
                 </div>
                 <br>
@@ -52,10 +52,10 @@
                 <div class="col-md-12">
                     <div class="testmonial_slider_area text-center owl-carousel">
                     @foreach($comments as $comment)
-<div class="box-area">	
+<div class="box-area">
     <div class="img-area">
         <img src="{{ asset('images/user.png') }}" alt="">
-    </div>	
+    </div>
     <h5>{{$comment->client->prenom . " " . $comment->client->nom}}</h5>
     <p class="content">
         {{ $comment->commentaire }}
@@ -69,7 +69,7 @@
         @endif
     @endfor
 </div>
-</div> 
+</div>
 @endforeach
                     </div>
                 </div>
@@ -84,18 +84,18 @@
 <div class="modall-containerr show" id="modall-containerr">
         <div class="modall">
              <span id="close">X</span>
-             <div class="modall-inner">       
+             <div class="modall-inner">
                <div class = "card-containe">
                  <div class = "card-img"> <!-- image here --></div>
                 <div class ="card-content">
                     <h3>Reservation</h3>
                     <form>
                         <div class = "form-row">
-                            <input type = "date" name="date_de_debut">
+                            <input type = "date" name="date_debut">
                             <input type = "text" name="description" placeholder="Description de demande">
                         </div>
                         <div class = "form-row">
-                            <input type = "number" name="jour" placeholder="Combien de jour?" min = "1">
+                            <input type = "number" name="duree" placeholder="Combien de jour?" min = "1">
                             <input type = "submit" value = "Demander">
                         </div>
                     </form>
@@ -126,8 +126,8 @@ closeModal.addEventListener('click', () => {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 <script>
-   
-// 
+
+//
 $(".testmonial_slider_area").owlCarousel({
         autoplay: true,
         slideSpeed:1000,
@@ -151,7 +151,7 @@ $(".testmonial_slider_area").owlCarousel({
                 items:3
             }
         }
-        
+
     });
 
 </script>
@@ -217,6 +217,6 @@ window.onload = function () {
 // coding with nick
 
 </script>
-    
+
 </body>
 </html>
