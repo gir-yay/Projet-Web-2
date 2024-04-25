@@ -258,3 +258,144 @@ a{
 .rating .fa-star {
     font-size: 20px; /* Taille des étoiles */
 }
+
+
+/******* forum ***/
+
+
+
+/*
+<div class = "card-container">
+                 <div class = "card-img"> <!-- image here --></div>
+                <div class ="card-content">
+                    <h3>Reservation</h3>
+                    <form>
+                        <div class = "form-row">
+                            <input type = "date" name="date de dbut">
+                            <input type = "text" placeholder="Description de demande">
+                        </div>
+                        <div class = "form-row">
+                            <input type = "number" placeholder="Combien de jour?" min = "1">
+                            <input type = "submit" value = "BOOK TABLE">
+                        </div>
+                    </form>
+                </div>
+*/
+
+
+.modall-containerr {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+    z-index: 1000;
+    opacity: 0; /* start with 0 opacity to make it invisible */
+    /* smooth transition for opacity changes */
+}
+
+.modall-containerr.show {
+    display: block; /* make the modal visible when the show class is added */
+    opacity: 1; /* fully visible */
+}
+.modall {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff; /* white background for the modal */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+.card-containe{
+    display: grid;
+    grid-template-columns: 420px 420px;
+}
+.card-img{
+    background: url("../../images/reservation.png") center/cover no-repeat;
+}
+
+.card-content{
+    background: #fff;
+    height: 330px;
+}
+.card-content h3{
+    text-align: center;
+    color: #000;
+    padding: 25px 0 10px 0;
+    font-size: 26px;
+    font-weight: 500;
+}
+.form-row{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+form select, form input{
+    display: block;
+    width: 100%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+}
+form input[type = text], form input[type = number],form input[type = date], form input::placeholder, select{
+    color: #9a9a9a;
+}
+form input[type = submit]{
+    color: #fff;
+    background: #86654B;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+form input[type = submit]:hover{
+    opacity: 0.9;
+}
+@media(max-width: 992px){
+    .card-containe{
+        grid-template-columns: 100%;
+        width: 100vw;
+    }
+    .card-img{
+        height: 330px;
+    }
+}
+.modall span{
+
+	float: right;
+    font-size: 18px;
+    font-weight: 600;
+	line-height: 1;
+	margin:2px 15px 0;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: none;
+    opacity: .5;
+	cursor: pointer;
+	height: 10px;
+}
+
+.modall-inner h1 {
+	margin: 0;
+}
+
+.modall-inner p {
+	font-size: 14px;
+	opacity: 0.7;
+}
+
+
+
+
+
+
+
+

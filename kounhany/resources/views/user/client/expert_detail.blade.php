@@ -32,16 +32,20 @@
                 </div>
                 <br>
                 <div class="buttons">
-                   <form action="" method="POST">
-                      @csrf
-                    <button type="submit">Demander</button>
+                   <form >
+                    <button type="submit" id="open">Demander</button>
                     </form>
                 </div>
             </div>
         </div>
+
+
+
         <div class="title">Commentaires</div>
         <div class="listProduct"></div>
     </div>
+
+
     <section id="testimonial_area" class="section_padding">
         <div class="container">
             <div class="row">
@@ -72,6 +76,51 @@
             </div>
         </div>
     </section>
+
+
+<!-- forum -->
+
+
+<div class="modall-containerr show" id="modall-containerr">
+        <div class="modall">
+             <span id="close">X</span>
+             <div class="modall-inner">       
+               <div class = "card-containe">
+                 <div class = "card-img"> <!-- image here --></div>
+                <div class ="card-content">
+                    <h3>Reservation</h3>
+                    <form>
+                        <div class = "form-row">
+                            <input type = "date" name="date_de_debut">
+                            <input type = "text" name="description" placeholder="Description de demande">
+                        </div>
+                        <div class = "form-row">
+                            <input type = "number" name="jour" placeholder="Combien de jour?" min = "1">
+                            <input type = "submit" value = "Demander">
+                        </div>
+                    </form>
+                </div>
+          </div>
+        </div>
+    </div>
+
+
+
+    <script>const openModal = document.getElementById('open');
+const closeModal = document.getElementById('close');
+const modal = document.getElementById('modall-containerr');
+
+openModal.addEventListener('click', () => {
+    modal.classList.add('show');
+});
+
+closeModal.addEventListener('click', () => {
+    modal.classList.remove('show');
+});
+
+
+    </script>
+
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
