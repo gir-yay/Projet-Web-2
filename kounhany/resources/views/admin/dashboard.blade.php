@@ -138,6 +138,48 @@
                         <p>Services</p>
                     </span>
                 </li>
+                <li>
+                    <i class='bx bxs-calendar-check'></i>
+                    <span class="text">
+                        <h3>{{ $totalDemandesT }}</h3>
+                        <p>Demandes non traitées</p>
+                    </span>
+                </li>
+                <li>
+                    <i class='bx bxs-calendar-check'></i>
+                    <span class="text">
+                        <h3>{{ $totalDemandesNT }}</h3>
+                        <p>Demandes Traitées</p>
+                    </span>
+                </li>
+                <li>
+                    <i class='bx bxs-calendar-check'></i>
+                    <span class="text">
+                        <h3>{{ $totalDemandes }}</h3>
+                        <p>Demandes </p>
+                    </span>
+                </li>
+                <li>
+                <i class='bx bxs-chat'></i>
+                    <span class="text">
+                        <h3>{{ $totalCommentairesC }}</h3>
+                        <p>Commentaires sur clients </p>
+                    </span>
+                </li>
+                <li>
+                <i class='bx bxs-chat'></i>
+                    <span class="text">
+                        <h3>{{ $totalCommentairesE }}</h3>
+                        <p>Commentaires sur Experts </p>
+                    </span>
+                </li>
+                <li>
+                <i class='bx bxs-dollar-circle'></i>
+                    <span class="text">
+                        <h3>{{ $totalRevenus }}</h3>
+                        <p>Total des revenus générés </p>
+                    </span>
+                </li>
             </ul>
 
 
