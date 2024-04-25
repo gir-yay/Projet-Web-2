@@ -12,7 +12,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- My CSS -->
     <link rel="stylesheet" href="{{ asset('css/expert/dashexpert.css') }}">
-    <title>Dashboard Expert</title>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <title>Avis</title>
 </head>
 
 <body>
@@ -25,7 +31,7 @@
             <span class="text">Koun Hany</span>
         </a>
         <ul class="side-menu top">
-            <li class="active">
+            <li>
                 <a href="{{ route('expert.dashboard') }}">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
@@ -38,25 +44,25 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('expert.demandes.index')}}">
+                <a href="{{ route('expert.demandes.index') }}">
                     <i class='bx bxs-group'></i>
                     <span class="text">Mes demandes</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('expert.domaines.index')}}" class="domaines">
+                <a href="{{ route('expert.domaines.index') }}" class="domaines">
                     <i class="fa-brands fa-servicestack"></i>
                     <span class="text">Mes domaines</span>
                 </a>
             </li>
-            <li>
-                <a href="{{route('expert.avis.index')}}">
+            <li class="active">
+                <a href="{{ route('expert.avis.index') }}">
                     <i class='bx bxs-message-dots'></i>
                     <span class="text">Avis</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('expert.payment.index')}}">
+                <a href="{{ route('expert.payment.index') }}">
                     <i class='bx bxs-wallet'></i>
                     <span class="text">Paiement</span>
                 </a>
@@ -111,74 +117,94 @@
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
                         <li>
-                            <a class="active" href="#">Home</a>
+                            <a class="active" href="#">Avis</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
 
-            <ul class="box-info">
-                <li>
-                    <i class='bx bxs-group'></i>
-                    <span class="text">
-                        <h4>Total Demandes</h4>
-                        <p>{{ $demandes }}</p>
-                    </span>
-                </li>
-                <li>
-                    <i class='bx bxs-dollar-circle'></i>
-                    <span class="text">
-                        <h4>Total Gains</h4>
-                        <p>${{ $earnings }}</p>
-                    </span>
-                </li>
-                <li class="review">
-                    <i class='bx bxs-calendar-check'></i>
-                    <span class="text">
-                        <h4>Evaluation</h4>
-                        <p>
-                            @for ($i = 0; $i < 5; $i++)
-                                @if ($i < $ratings)
-                                    <i class="fa-solid fa-star"></i>
-                                @else
-                                    <i class="fa-regular fa-star"></i>
-                                @endif
-                            @endfor
-                        </p>
-                    </span>
-                </li>
-                <li class="comment">
-                    <i class='bx bxs-chat'></i>
-                    <span class="text">
-                        <h4>Commentaires</h4>
-                        <p>{{ $comments }}</p>
-                    </span>
-                </li>
-                <li class="avis">
-                    <i class="fa-solid fa-comment"></i>
-                    <span class="text">
-                        <h4>Avis</h4>
-                        <p>{{ $comments }}</p>
-                    </span>
-                </li>
-                <li class="services">
-                    <i class="fa-brands fa-servicestack"></i>
-                    <span class="text">
-                        <h4>Services</h4>
-                        <p>{{ $services }}</p>
-                    </span>
-                </li>
-            </ul>
+
+
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        @foreach ($comments as $comment)
+                             <div class="swiper-slide">
+                                <div class="box-area">
+                                    <div class="img-area">
+                                        <img src="{{ asset('images/user.png') }}" alt="">
+                                    </div>
+                                    <h5>{{$comment->client->nom . " " . $comment->client->orenom}}</h5>
+                                    <p class="content">
+                                        {{ $comment->commentaire }}
+                                    </p>
+                                    <div class="rating">
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            @if ($i <= $comment->note)
+                                                <i class="fa fa-star"></i> <!--  les étoiles remplies -->
+                                            @else
+                                                <i class="fa fa-star"></i> <!-- Étoile vide -->
+                                            @endif
+                                        @endfor
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+
+                </div>
 
 
 
         </main>
         <!-- MAIN -->
     </section>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
 
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            }
+        });
+    </script>
 
     <script src="{{ asset('js/expertJS/script.js') }}"></script>
+
+
 </body>
+
+
+
 
 </html>
