@@ -48,7 +48,7 @@
             </li>
             <li>
                 <a href="{{ route('admin.ourservices') }}">
-                    <i class='bx bxs-group'></i>
+                    <i class='bx bxs-home'></i>
                     <span class="text">Services</span>
                 </a>
             </li>
