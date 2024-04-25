@@ -56,35 +56,54 @@
                   <div class="panel">
                     <button class="accordion font-weight-bold mb-3">CATAGORIES</button>
                     <div class="panel">
-                      <p><a href="#">Babysitting</a></p>
-                      <p><a href="#">Cuisine</a></p>
-                      <p><a href="#">Menage</a></p>
+                      <p><a href="{{route('client.catFiltre' , '3')}}">Babysitting</a></p>
+                      <p><a href="{{route('client.catFiltre' , '6')}}">Cuisine</a></p>
+                      <p><a href="{{route('client.catFiltre' , '5')}}">Menage</a></p>
                     </div>
                     
 
 
                     
                     <button class="accordion font-weight-bold mb-3">Prix</button>
-                    <input type="range" class="custom-range p-4" id="customRange" name="points1">
-
-
-                    <button class="accordion font-weight-bold mb-3">Ville</button>
                     <div class="panel">
-                      <input type="text" name="ville" id="ville">
+                    <form action="{{ route('searchByPrice') }}" method="GET">
+                        <div class="form-group">
+                                      <label for="prix">Prix:</label>
+                         <input type="number" class="form-control" id="prix" name="prix" placeholder="Entrez le prix">
+                        </div>
+                                    <button type="submit" class="btn btn-primary">Rechercher</button>
+                  </form>
                     </div>
 
-                    <button class="accordion font-weight-bold mb-3">Note </button>
-                    <div class="panel">
-                      <p><a href="#">1</a></p>
-                      <p><a href="#">2</a></p>
-                      <p><a href="#">3</a></p>
-                      <p><a href="#">4</a></p>
-                      <p><a href="#">5</a></p>
+                  <button class="accordion font-weight-bold mb-3">Ville</button>
+                  <div class="panel">
+                    <form action="{{ route('searchByCity') }}" method="GET">
+                        <div class="form-group">
+                                      <label for="ville">Ville:</label>
+                         <input type="text" class="form-control" id="ville" name="ville" placeholder="Entrez la ville..">
+                        </div>
+                                    <button type="submit" class="btn btn-primary">Rechercher</button>
+                  </form>
+                  </div>
+
+
+                    
+
+                  <button class="accordion font-weight-bold mb-3">Note </button>
+                     <div class="panel">
+                <form action="{{ route('searchByRating') }}" method="GET">
+                         <select name="note">
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="3">3</option>
+                         <option value="4">4</option>
+                         <option value="5">5</option>
+                         </select>
+                      <button type="submit" class="btn btn-primary">Rechercher</button>
+                 </form>
                     </div>
 
-                    <button class="accordion font-weight-bold mb-3"></button>
-                    <div class="panel">
-                    </div>
+                    
 
                     <div class="panel size"></div>
                 </div>

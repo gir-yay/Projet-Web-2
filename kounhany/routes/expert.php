@@ -12,4 +12,6 @@ Route::get("/dashboard", function(){
 Route::get('/profile', [ExpertProfileController::class, 'show'])->name('profile');
 
 Route::post("/logout", [LogoutController::class, "logout"])->name("logout");
+Route::get('/profile/{expert}/edit', [ExpertProfileController::class, "sdk_edit_expert"])->name("sdk_edit_expert");
+Route::put('/profile/{expert}', [ExpertProfileController::class, "sdk_update_expert"])->name("sdk_stockupdatex");
 
