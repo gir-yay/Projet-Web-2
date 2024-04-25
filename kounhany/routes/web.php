@@ -11,6 +11,7 @@ use App\Http\Controllers\OurServicesController;
 use App\Http\Controllers\ExperdetailtController;
 
 use App\Http\Controllers\ClientDemandeController;
+use App\Http\Controllers\DemandesClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,3 +81,5 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
 /*************** plus d info sur un expert ..  ****************/
 Route::get('/expert-detail/{expertId}/{serviceId}', [ExperdetailtController::class, 'showExpertDetails'])->name('expert-detail');
 /** route pour envoi d email ( quand le client clique demander ) */
+
+Route::post('/demandes-client', [DemandesClientController::class, 'store'])->name('demandes-client.store');

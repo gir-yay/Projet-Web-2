@@ -13,23 +13,22 @@
 </head>
 <body>
   <!-- Affichage des détails de l'expert -->
-
-
-
 <div class="container">
         <div class="title">EXPERTT DETAIL</div>
+         <!-- Toastr message -->
+    
         <div class="detail">
             <div class="image">
                 <img src="{{ asset($expert->photo) }}">
             </div>
             <div class="content">
                 <h1 class="name"> {{ $expert->nom }}  {{ $expert->prenom }} <div class="price ville">{{ $serviceExpert->nbr_annee_d_exp }} d'expérience</div></h1>
-                <div class="price"><i class="fas fa-dollar-sign"></i>{{ $serviceExpert->prix_par_duree }} / jour</div>
+                <div class="price"><i class="fa-solid fa-sack-dollar"></i>{{ $serviceExpert->prix_par_duree }} MAD / jour</div>
                 <div class="price ville" style="font-size=200;"> <i class="fa fa-map-marker-alt"></i> {{ $serviceExpert->ville }}</div>
-                <div class="price ville"><i class="fa-solid fa-calendar-days"></i> {{ $serviceExpert->disponibilite}}</div>
+                <div class="ville"><i class="fa-solid fa-calendar-days"></i> {{ $serviceExpert->disponibilite}}</div>
+                <br> <br>
 
-                <div class="description">{{ $expert->bio }}
-                </div>
+                <div class="description"><i class="fa-solid fa-address-book"></i> Biographie : {{ $expert->bio }}</div>
                 <br>
                 <div class="buttons">
                    <form >
@@ -38,9 +37,6 @@
                 </div>
             </div>
         </div>
-
-
-
         <div class="title">Commentaires</div>
         <div class="listProduct"></div>
     </div>
@@ -88,15 +84,21 @@
                <div class = "card-containe">
                  <div class = "card-img"> <!-- image here --></div>
                 <div class ="card-content">
-                    <h3>Reservation</h3>
-                    <form>
+                    <h3>Demande de service</h3>
+                    <form  action="{{ route('demandes-client.store')}}" method="POST">
+                    @csrf
                         <div class = "form-row">
-                            <input type = "date" name="date_debut">
-                            <input type = "text" name="description" placeholder="Description de demande">
+                            <input type = "date" id="date_debut" name="date_debut">
+                            <input type = "text" id="description" name="description" placeholder="Description de demande">
                         </div>
                         <div class = "form-row">
                             <input type = "number" name="duree" placeholder="Combien de jour?" min = "1">
                             <input type = "submit" value = "Demander">
+
+
+                            <input type="hidden" name="expert_id" value="{{ $expert->id }}">
+                            <input type="hidden" name="service_id" value="{{ $serviceExpert->service_id }}">
+                            <input type="hidden" name="prix_par_duree" value="{{ $serviceExpert->prix_par_duree }}">
                         </div>
                     </form>
                 </div>
@@ -117,7 +119,6 @@ openModal.addEventListener('click', () => {
 closeModal.addEventListener('click', () => {
     modal.classList.remove('show');
 });
-
 
     </script>
 
