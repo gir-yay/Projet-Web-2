@@ -153,7 +153,7 @@
 
                         <div class="mb-3">
                             <label for="description" class="form-label">Créneaux | Description</label>
-                            <textarea name="description" class="form-control shadow-none" id="description">{{ old('description', isset($domaine) ? $domaine->description : '') }}</textarea>
+                            <textarea name="description" class="form-control shadow-none" id="description">{{ old('description', isset($domaine) ? $domaine->disponibilite : '') }}</textarea>
                         </div>
 
                         <div class="mb-3">
