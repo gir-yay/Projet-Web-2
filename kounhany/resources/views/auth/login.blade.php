@@ -34,37 +34,39 @@
                 <ul class="nav__list">
                     <li><a href="{{ route('home') }}" class="nav__link">Home</a></li>
 
-                    <li><a href="{{ route('home') }}" class="nav__link">About Us</a></li>
+                    <li><a href="{{ route('home') }}/#about" class="nav__link">About Us</a></li>
 
                     <!--=============== DROPDOWN 1 ===============-->
 
                     <li class="dropdown__item">
                         <div class="nav__link">
-                            Servicess <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            <a href="{{ route('services') }}/#service" class="dropdown__link">
+                                Services
+                            </a> <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
 
                         <ul class="dropdown__menu">
                             <li>
-                                <a href="{{ route('home') }}" class="dropdown__link">
+                                <a href="{{ route('catFiltre', ['cat' => 1]) }}" class="dropdown__link">
                                     <i class="ri-home-3-line"></i> Ménage
                                 </a>
                             </li>
 
                             <li>
-                                <a href="{{ route('home') }}" class="dropdown__link">
+                                <a href="{{ route('catFiltre', ['cat' => 2]) }}" class="dropdown__link">
                                     <i class="ri-parent-line"></i> BabySitter
                                 </a>
                             </li>
 
                             <li>
-                                <a href="{{ route('home') }}" class="dropdown__link">
+                                <a href="{{ route('catFiltre', ['cat' => 3]) }}" class="dropdown__link">
                                     <i class="ri-restaurant-line"></i> Cuisine
                                 </a>
                             </li>
                         </ul>
                     </li>
 
-                    <li><a href="{{ route('home') }}" class="nav__link">Contact Us</a></li>
+                    <li><a href="{{ route('home') }}/#contact" class="nav__link">Contact Us</a></li>
                     <li><a href="{{ route('login') }}" class="nav__link">Login</a></li>
                 </ul>
             </div>

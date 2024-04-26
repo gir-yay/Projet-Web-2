@@ -21,7 +21,7 @@ class ClientDemandeController extends Controller
             return [
                 'id' => $demande->client->id,
                 'email' => $demande->expert->email ,
-                'service' => $demande->service->nom, 
+                'service' => $demande->service->nom,
                 'date_debut' => $demande->date_debut,
                 'duree' => $demande->duree,
                 'total' => $demande->total,

@@ -31,7 +31,7 @@ class DemandesController extends Controller
             ]);
 
             Mail::to(auth('expert')->user()->email)->send(new DemandeMail(
-                auth('expert')->user()->name,
+                auth('expert')->user()->prenom . " " . auth('expert')->user()->nom,
                 $demande->client->prenom . " " . $demande->client->nom,
                 $demande->client->phone,
                 $demande->client->adresse

@@ -183,13 +183,7 @@
             </ul>
 
 
-            <div class="table-data">
-                <div class="order">
-                    <table>
-                    </table>
-                </div>
 
-            </div>
         </main>
         <!-- MAIN -->
     </section>
