@@ -1,21 +1,3 @@
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-  <h1>Dashboard Admin</h1>
-  <form action="{{route("admin.logout")}}" method="Post">
-    @csrf
-    <button>Logout</button>
-  </form>
-</body>
-</html>
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +12,36 @@
 	<link rel="stylesheet" href="{{ asset('css/admin/ourclient.css') }}">
 
 	<title>Les Prtenaires de KounHany</title>
+    <style>
+    .comment-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    }
+     
+    .expert-info {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .comment-content {
+        margin-left: 20px;
+    }
+    .comment-card button {
+    background-color: #ff3333; /* Rouge */
+    color: #fff; /* Texte blanc */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    .comment-card button:hover {
+        background-color: #cc0000; /* Rouge plus foncé au survol */
+    }
+    </style>
 </head>
 <body>
 
@@ -129,69 +141,37 @@
 					</ul>
 				</div>
 			</div>
-
-			<div class="table-data">
-            <main class="table" id="customers_table">
-        <section class="table__header">
-            <h1></h1>
-            <div class="input-group">
-                <input type="search" placeholder="Search Data...">
-                <i class='bx bx-search' ></i>
+            <h2>{{$expert->nom}}</h2>
+            <br>
+            @if (session('success'))
+                <div class="alert alert-success text-center"
+                    style=" border-color: #c3e6cb; color: #155724;text-align:center;margin-bottom:5px">
+                    {{ session('success') }}
+                </div>
+            @elseif(session('error'))
+                <div class="alert alert-danger text-center"
+                    style=" border-color: #f5c6cb; color: #721c24;text-align:center; margin-bottom:5px">
+                    {{ session('error') }}
+                </div>
+            @endif
+            <br>
+            @if(count($commentaires) == 0)
+            <p style="text-align: center">Aucun commentaires pour l'instant !</p>
+            @else
+            @foreach ($commentaires as $commentaire)
+            <div class="comment-card">
+                <div class="comment-content">
+                    <p>Commentaire : {{ $commentaire->commentaire }}</p>
+                    <p>Demande : {{ $commentaire->demande->demande_id }}</p>
+                    <form action="{{route('admin.sdk_delete',$commentaire->id)}}"  method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Supprimer</button>
+                    </form>
+                </div>
             </div>
-
-        </section>
-        <section class="table__body">
-            <table>
-                <thead>
-                    <tr>
-                        <th> Nom <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Prenom <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> email <span class="icon-arrow">&UpArrow;</span></th>
-						<th> Metier <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> statut <span class="icon-arrow">&UpArrow;</span></th>
-						<th> Action <span class="icon-arrow">&UpArrow;</span></th>
-						<th> Commentaires <span class="icon-arrow">&UpArrow;</span></th>
-                    </tr>
-                </thead>
-                <tbody>
-				@foreach($experts as $expert)
-        <tr>
-            <td>{{ $expert->nom }}</td>
-            <td>{{ $expert->prenom }}</td>
-            <td>{{ $expert->email }}</td>
-            <td>{{ $expert->metier }}</td>
-            <td><span  class="{{$expert->compte_status == "active" ? "active" : "non-active"}} status-compte">{{ $expert->compte_status }}</span></td>
-			<td>
-    @if ($expert->compte_status === 'active')
-        <form action="{{ route('admin.toggleExpertStatus', $expert->id) }}" method="POST">
-            @csrf
-            <button type="submit" class ="cancelled">Désactiver</button>
-        </form>
-    @else
-        <form action="{{ route('admin.toggleExpertStatus', $expert->id) }}" method="POST">
-            @csrf
-            <button type="submit" class="delivered">Activer</button>
-        </form>
-    @endif
-</td>
-<td style="text-align: center;">
-    <a href="{{route('admin.sdk_show',$expert->id)}}">
-        <i class="fa fa-comment" ></i> <!-- Replace "fa-comment" with the appropriate class for your icon -->
-    </a>
-</td>
-        </tr>
-        @endforeach
-                </tbody>
-            </table>
-        </section>
-    </main>
-
-			</div>
-		</main>
-		<!-- MAIN -->
-	</section>
-	<!-- CONTENT -->
-
+            @endforeach
+            @endif
     <script src="{{ asset('js/adminJS/script.js') }}"></script>
 	<script src="{{ asset('js/adminJS/table.js') }}"></script>
 </body>
