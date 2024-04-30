@@ -29,10 +29,11 @@ class ExpertController extends Controller
     public function sdk_show($id){
         //infos exp
         $expert = Expert::find($id);
-        
-        $commentaires = CommentairesSurClient::with('demande')->where('expert_id', $id)->get();
+        //charger la relation demande et client a la fois
+        $commentaires = CommentairesSurClient::with('demande.client')->where('expert_id', $id)->get();
         return view("sdk_show",compact('expert','commentaires'));
     }
+    
     //supprimer le commentaire
     public function sdk_delete($id)
     {

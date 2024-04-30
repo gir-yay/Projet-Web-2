@@ -161,8 +161,10 @@
             @foreach ($commentaires as $commentaire)
             <div class="comment-card">
                 <div class="comment-content">
-                    <p>Commentaire : {{ $commentaire->commentaire }}</p>
+                    <p>Commentaire  : {{ $commentaire->commentaire }}</p>
                     <p>Demande : {{ $commentaire->demande->demande_id }}</p>
+                    <p>sur le client : {{ $commentaire->demande->client->nom }}</p>
+
                     <form action="{{route('admin.sdk_delete',$commentaire->id)}}"  method="POST">
                         @csrf
                         @method('DELETE')
