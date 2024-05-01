@@ -6,11 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Client;
 use App\Models\CommentairesSurClient;
 use App\Models\CommentairesSurExpert;
-use App\Models\CommentairesSurClient;
-use App\Models\CommentairesSurExpert;
 use App\Models\Expert;
 use App\Models\Service;
-use App\Models\DemandesClient;
 use App\Models\DemandesClient;
 
 use Illuminate\Http\Request;
