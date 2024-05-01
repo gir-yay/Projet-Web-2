@@ -12,6 +12,7 @@ use App\Http\Controllers\ExperdetailtController;
 
 use App\Http\Controllers\ClientDemandeController;
 use App\Http\Controllers\DemandesClientController;
+use App\Http\Controllers\ClientCommentsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,6 +73,9 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
     Route::put('/profile/{client}', [ClientProfileController::class, "sdk_update_client"])->name("sdk_stockupdatec");
 
     Route::post('/demandes-client', [DemandesClientController::class, 'store'])->name('demandes-client.store');
+
+
+    Route::post('commentaires-sur-expert', [ClientCommentsController::class, 'store'])->name('commentaires-sur-expert.store');
 
 
 
