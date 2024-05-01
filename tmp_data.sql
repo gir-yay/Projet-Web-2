@@ -20,11 +20,11 @@ INSERT INTO `service_experts` ( `expert_id`, `service_id`, `nbr_annee_d_exp`, `d
 
 	
 INSERT INTO `demandes_clients` ( `client_id`, `expert_id`, `service_id`, `date_debut`, `duree`, `description`, `etat`, `total`, `created_at`, `updated_at`) VALUES
-	( 3, 2, 1, '2024-05-02', '2 heures', 'Nettoyage complet de la cuisine', 'accepte', 50, NULL, '2024-04-25 02:08:52'),
-	( 5, 2, 2, '2024-05-05', '3 heures', 'Nettoyage approfondi de la salle de bain', 'accepte', 75, NULL, '2024-04-25 02:11:39'),
-	( 1, 2, 1, '2024-05-10', '4 heures', 'Nettoyage général du salon et des chambres', 'en attente', 100, NULL, NULL),
-	( 4, 2, 2, '2024-05-15', '2 heures', 'Nettoyage complet des fenêtres', 'en attente', 50, NULL, NULL),
-	( 2, 2, 1, '2024-05-20', '3 heures', 'Nettoyage des tapis et des moquettes', 'en attente', 75, NULL, NULL);
+	( 3, 2, 1, '2024-05-02', 2, 'Nettoyage complet de la cuisine', 'accepte', 50, NULL, '2024-04-25 02:08:52'),
+	( 5, 2, 2, '2024-05-05', 3, 'Nettoyage approfondi de la salle de bain', 'accepte', 75, NULL, '2024-04-25 02:11:39'),
+	( 1, 2, 1, '2024-05-10', 4, 'Nettoyage général du salon et des chambres', 'en attente', 100, NULL, NULL),
+	( 4, 2, 2, '2024-05-15', 4, 'Nettoyage complet des fenêtres', 'en attente', 50, NULL, NULL),
+	( 2, 2, 1, '2024-05-20', 1, 'Nettoyage des tapis et des moquettes', 'en attente', 75, NULL, NULL);
 
 
 INSERT INTO `commentaires_sur_experts` ( `note`, `demande_id`, `client_id`, `expert_id`, `commentaire`, `created_at`, `updated_at`) VALUES
