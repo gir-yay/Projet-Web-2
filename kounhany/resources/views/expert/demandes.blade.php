@@ -16,8 +16,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- bootstrap for popup-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- My CSS -->
     <link rel="stylesheet" href="{{ asset('css/expert/dashexpert.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/star.css') }}">
+
     <title>Demandes</title>
 </head>
 
@@ -136,12 +142,14 @@
                                 <th>Description</th>
                                 <th>Total</th>
                                 <th>Action</th>
+                                <th>Commentaires</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($demandes as $demande)
                                 <tr>
-                                    <td>{{ $demande->service->nom }}</td>
+                                    <td>{{ optional($demande->service)->nom }}</td>
                                     <td>{{ $demande->date_debut }}</td>
                                     <td>{{ $demande->duree }} jours</td>
                                     <td>{{ $demande->description }}</td>
@@ -154,8 +162,63 @@
                                             <button type="submit" name="action" value="0" class="btn btn-danger"><i class="fa-solid fa-x"></i></button>
                                         </form>
                                     </td>
+                                    <td>
+                                    @php
+                                    $start = \Carbon\Carbon::parse($demande->date_debut);
+                                    $start = $start->copy()->addDays($demande->duree);
+                                    $end = $start->copy()->addDays(7);
+                                    $today = \Carbon\Carbon::today();
+                                    @endphp
+                                    @if($demande->etat == 'accepte')
+                                    @if($today->greaterThanOrEqualTo($start) && $today->lessThan($end)) 
+                                   
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Commenter</button>
+                                     <!-- Modal -->
+                                        <div class="modal fade" id="myModal" role="dialog" >
+   
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="height: 600px; margin-top: 30%">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Ajouter un commentaire</h4>
+        </div>
+        <form action="{{Route('expert.commentaires-sur-client.store')}}" method="POST">
+            @csrf
+        <input type="hidden" name="demande_id" value="{{ $demande->demande_id }}">
+        <input type="hidden" name="expert_id" value="{{ $demande->expert_id }}">
+        <input type="hidden" name="client_id" value="{{ $demande->client_id }}">
+        <div class="modal-body">
+             <span>Notez le service: </span><br>
+          <div class="stars">
+  <input type="radio" id="star1" name="note" value="1" />
+  <input type="radio" id="star2" name="note" value="2" />
+  <input type="radio" id="star3" name="note" value="3" />
+  <input type="radio" id="star4" name="note" value="4" />
+  <input type="radio" id="star5" name="note" value="5" />
+  
+  <label for="star1" aria-label="Banana">1 star</label><label for="star2">2 stars</label><label for="star3">3 stars</label><label for="star4">4 stars</label><label for="star5">5 stars</label>
+</div>
+<br><br>
+          <textarea name="commentaire" id="comment" cols="60" rows="15" placeholder="Ajouter un commentaire"></textarea>
+        </div>
+        <div class="modal-footer">
+            
+          <button type="submit" class="btn btn-danger">Commenter</button>
+          
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+                                    
+  @endif
+  @endif    
 
 
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -45,7 +45,9 @@ class DemandesController extends Controller
 
     public function index_treated()
     {
-        $demandes = DemandesClient::where('etat', '!=', 'en attente')->where('expert_id', auth('expert')->user()->id)->get();
+        $demandes = DemandesClient::with(['client', 'expert', 'service'])->where('etat', '!=', 'en attente')->where('expert_id', auth('expert')->user()->id)->get();
         return view('expert.treated_demandes', compact('demandes'));
+       
+    
     }
 }

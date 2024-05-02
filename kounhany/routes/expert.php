@@ -3,6 +3,7 @@
 use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\expert\AvisController;
 use App\Http\Controllers\expert\DemandesController;
+use App\Http\Controllers\ExpertCommentsController;
 use App\Http\Controllers\expert\DomainesController;
 use App\Http\Controllers\expert\ExpertProfileController;
 use App\Http\Controllers\expert\PaymentController;
@@ -62,3 +63,5 @@ Route::get('paypal/success', [PaymentController::class, 'success_paypal'])->name
 
 Route::post("/logout", [LogoutController::class, "logout"])->name("logout");
 
+//commentaires
+Route::post('commentaires-sur-client', [ExpertCommentsController::class, 'store'])->name('commentaires-sur-client.store');
