@@ -159,7 +159,7 @@
                     <i class="fa-solid fa-comment"></i>
                     <span class="text">
                         <h4>Avis</h4>
-                        <p>{{ $comments }}</p>
+                        <p>{{ $avis }}</p>
                     </span>
                 </li>
                 <li class="services">

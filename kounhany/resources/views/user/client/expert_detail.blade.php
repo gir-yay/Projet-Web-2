@@ -16,7 +16,6 @@
 <div class="container">
         <div class="title">EXPERTT DETAIL</div>
          <!-- Toastr message -->
-    
         <div class="detail">
             <div class="image">
                 <img src="{{ asset($expert->photo) }}">
@@ -85,7 +84,7 @@
                  <div class = "card-img"> <!-- image here --></div>
                 <div class ="card-content">
                     <h3>Demande de service</h3>
-                    <form  action="{{ route('demandes-client.store')}}" method="POST">
+                    <form  action="{{ route('client.demandes-client.store')}}" method="POST">
                     @csrf
                         <div class = "form-row">
                             <input type = "date" id="date_debut" name="date_debut">

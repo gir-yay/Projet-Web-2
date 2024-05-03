@@ -9,7 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+    <!--=============== SWIPER CSS ===============-->
+    <!--<link rel="stylesheet" href="{{ asset('css/client/swiper-bundle.min.css') }}">-->
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ asset('css/admin/ourclient.css') }}">
     <style>
+
+    
     button {
     padding: 8px 16px;
     background-color: darkblue;
@@ -22,9 +32,19 @@
     
     }
 
-    button:hover {
-    background-color: blue;
-    color: white;
+    body {
+       
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f4f4f4;
+    }
+    a {
+        text-decoration: none;
+        
+    }
+    a:hover {
+        text-decoration: none;
     }
     
 
@@ -32,8 +52,94 @@
 
 </head>
 
-<body>
-    <section class="section about-section gray-bg" id="about">
+<body style="background-color:#eee">
+
+ <section id="sidebar">
+        <a href="#" class="brand">
+            <i class="bx ri-open-arm-fill "></i>
+            <span class="text">Koun Hany</span>
+        </a>
+        <ul class="side-menu top">
+            <li>
+                <a href="{{ route('client.dashboard') }}">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="{{ route('client.profile') }}">
+                    <i class='bx bxs-cog'></i>
+                    <span class="text">Mon Profile</span>
+                </a>
+            </li>
+            <li >
+                <a href="{{ route('client.demande_client') }}">
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Mes demandes</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-message-dots'></i>
+                    <span class="text">Mes commentaires</span>
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <form action="{{ route('client.logout') }}" method="Post">
+                        @csrf
+                        <button class="logout-btn">Deconnexion</button>
+                    </form>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- SIDEBAR -->
+
+
+
+    <!-- CONTENT -->
+    <section id="content" >
+        <!-- NAVBAR -->
+        <nav >
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Recherche...">
+                    <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode"></label>
+
+            <a href="#" class="profile">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                <!--img src="img/people.png"-->
+            </a>
+        </nav>
+        <!-- NAVBAR -->
+
+        <!-- MAIN -->
+        <main style="background-color:#eee">
+            <div class="head-title">
+                <div class="left">
+                    <h1>Dashboard</h1>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="#">Dashboard</a>
+                        </li>
+                        <li><i class='bx bx-chevron-right'></i></li>
+                        <li>
+                            <a class="active" href="#">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+    <section class="section about-section" id="about">
         @if (session('success'))
                 <div class="alert alert-success text-center"
                     style=" border-color: #c3e6cb; color: #155724;text-align:center;margin-bottom:5px">
@@ -47,7 +153,7 @@
             @endif
         <div class="container">
             <div class="row align-items-center flex-row-reverse">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <div class="about-text go-to">
                         <h3 class="dark-color">Profile</h3>
                         <div class="row about-list">
@@ -76,6 +182,7 @@
                         </div>
                         
                     </div>
+                    <br><br><br>
                     <form action="">
                         @csrf
                         <div class="button-container">
@@ -83,44 +190,18 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-3">
                     <div class="about-avatar">
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title alt>
                     </div>
                 </div>
             </div>
-            <div class="counter">
-                <div class="row">
-                    <div class="col-6 col-lg-4">
-                        <div class="count-data text-center">
-                            <h6 class="count h2" data-to="500" data-speed="500">4.9</h6>
-                            <p class="m-0px font-w-600">Rank</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-4">
-                        <div class="count-data text-center">
-                            <h6 class="count h2" data-to="150" data-speed="150">5</h6>
-                            <p class="m-0px font-w-600">Resrvation</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-4">
-                        <div class="count-data text-center">
-                            <h6 class="count h2" data-to="850" data-speed="850">10</h6>
-                            <p class="m-0px font-w-600">Commentaires</p>
-                        </div>
-                    </div>
-                    <!--
-<div class="col-6 col-lg-3">
-<div class="count-data text-center">
-<h6 class="count h2" data-to="190" data-speed="190">190</h6>
-<p class="m-0px font-w-600">Telephonic Talk</p>
-</div>
-</div>
--->
-                </div>
-            </div>
+        
         </div>
     </section>
+            </section>
+
+        </main>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>

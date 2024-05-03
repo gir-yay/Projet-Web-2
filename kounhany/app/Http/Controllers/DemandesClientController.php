@@ -11,7 +11,6 @@ class DemandesClientController extends Controller
         // Valider les données soumises si nécessaire
 
         // Récupérer les données du formulaire
-        
         $dateDebut = Carbon::createFromFormat('Y-m-d', $request->input('date_debut'));
         $description = $request->input('description');
         $duree = $request->input('duree');
@@ -25,12 +24,10 @@ class DemandesClientController extends Controller
         // Récupérer l'expert ID et le service ID à partir des champs cachés dans le formulaire
         $expertId = $request->input('expert_id');
         $serviceId = $request->input('service_id');
-        
         $prixParDuree = $request->input('prix_par_duree');
 
 
         // Calculer le total en fonction du nombre de jours et du prix par durée du service
-       
          $total = $duree * $prixParDuree;
 
 
@@ -40,13 +37,11 @@ class DemandesClientController extends Controller
          foreach ($demandesExistantes as $demandeExistante) {
             // Calculer la date de fin de la demande existante
             $dateFinDemandeExistante = Carbon::parse($demandeExistante->date_debut)->addDays($demandeExistante->duree);
-        
             // Vérifier si la date de début de la nouvelle demande est postérieure à la date de fin de la demande existante
             // ou si la date de fin de la nouvelle demande est antérieure à la date de début de la demande existante
             if ($dateDebut >= $dateFinDemandeExistante || Carbon::parse($dateDebut)->addDays($duree) <= Carbon::parse($demandeExistante->date_debut)) {
                 continue; // Pas de chevauchement, passer à la demande suivante
             }
-        
             // Il y a un chevauchement, retourner une erreur
             toastr()->error('L\'expert a déjà des demandes pendant cette période');
             return redirect()->back();
@@ -54,7 +49,7 @@ class DemandesClientController extends Controller
 
         // Créer une nouvelle instance de DemandesClient avec les données récupérées
         $demande = new DemandesClient();
-        $demande->client_id = 1;
+        $demande->client_id = auth()->user()->id;
         $demande->expert_id = $expertId;
         $demande->service_id = $serviceId;
         $demande->date_debut = $dateDebut;

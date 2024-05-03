@@ -18,10 +18,13 @@ use Illuminate\Support\Facades\DB;
 Route::get("/dashboard", function(){
 
     $demandes = DemandesClient::where("expert_id", auth()->user()->id)->count();
+    $totalDemandesT = DemandesClient::where('etat', 'traitee')->count();
+    $totalDemandesNT = DemandesClient::where('etat', 'non_traitee')->count();
     $earnings = DemandesClient::where("expert_id", auth()->user()->id)->sum(DB::raw("total * duree"));
     $ratings = CommentairesSurExpert::where("expert_id", auth()->user()->id)->avg("note") ?? 0;
     $comments = CommentairesSurClient::where("expert_id", auth()->user()->id)->count();
     $avis = CommentairesSurExpert::where("expert_id", auth()->user()->id)->count();
+
     $services = ServiceExpert::where("expert_id", auth()->user()->id)->count();
 
     return view("expert.dashboard", compact("demandes", "earnings", "ratings", "comments", "avis", "services"));

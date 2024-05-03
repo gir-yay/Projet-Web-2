@@ -33,7 +33,36 @@
 
                     <li><a href="#about" class="nav__link">About Us</a></li>
 
-                    <li><a href="#service" class="nav__link">Services</a></li>
+                   
+                        
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                            <a href="{{ route('services') }}/#service" class="dropdown__link">
+                                Services
+                            </a> <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="{{ route('catFiltre', ['cat' => 1]) }}" class="dropdown__link">
+                                    <i class="ri-home-3-line"></i> Ménage
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('catFiltre', ['cat' => 2]) }}" class="dropdown__link">
+                                    <i class="ri-parent-line"></i> BabySitter
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('catFiltre', ['cat' => 3]) }}" class="dropdown__link">
+                                    <i class="ri-restaurant-line"></i> Cuisine
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
                     <li><a href="#contact" class="nav__link">Contact Us</a></li>
                     @if (auth()->check())
                         <li>

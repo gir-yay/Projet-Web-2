@@ -26,5 +26,13 @@ class StatistiqueController extends Controller
         $totalRevenus = DemandesClient::where('etat', 'accepte')->sum('total');
 
         return view('admin.dashboard', compact('totalClients', 'totalExperts','totalServices','totalDemandesT','totalDemandesNT','totalDemandes','totalCommentairesC','totalCommentairesE','totalRevenus'));
+        $totalDemandesT = DemandesClient::where('etat', 'traitee')->count();
+        $totalDemandesNT = DemandesClient::where('etat', 'non_traitee')->count();
+        $totalDemandes = DemandesClient::count();
+        $totalCommentairesC= CommentairesSurClient::count();
+        $totalCommentairesE=CommentairesSurExpert::count();
+        $totalRevenus = DemandesClient::where('etat', 'traitee')->sum('total');
+    
+        return view('admin.dashboard', compact('totalClients', 'totalExperts','totalServices','totalDemandesT','totalDemandesNT','totalDemandes','totalCommentairesC','totalCommentairesE','totalRevenus'));
     }
 }

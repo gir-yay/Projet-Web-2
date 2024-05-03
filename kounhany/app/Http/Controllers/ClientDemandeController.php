@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CommentairesSurClient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\DemandesClient;
@@ -19,9 +20,11 @@ class ClientDemandeController extends Controller
         // Transform demandes data to replace ID columns with corresponding data
         $transformedDemandes = $demandes->map(function ($demande) {
             return [
-                'id' => $demande->client->id,
+                'demande_id' => $demande->id,
+                'client_id' => $demande->client->id,
+                'expert_id' => $demande->expert->id,
                 'email' => $demande->expert->email ,
-                'service' => $demande->service->nom, 
+                'service' => $demande->service->nom,
                 'date_debut' => $demande->date_debut,
                 'duree' => $demande->duree,
                 'total' => $demande->total,
@@ -31,4 +34,6 @@ class ClientDemandeController extends Controller
 
         return view('user.client.demandes', compact('transformedDemandes'));
     }
+
+    
 }
