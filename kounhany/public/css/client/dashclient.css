@@ -815,3 +815,6 @@ body {
     color: var(--red);
     background-color: transparent;
 }
+.close {
+    font-size: 40px;
+}

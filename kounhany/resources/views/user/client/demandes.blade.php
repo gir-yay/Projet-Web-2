@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/star.css') }}">
     <title>Dashboard client</title>
     <style>
-      a:link,
+    a:link,
 a:visited {
     text-decoration: none;
 }
@@ -157,7 +157,7 @@ a:active {
                                     @if($demande['etat'] == 'accepte')
                                     @if($today->greaterThanOrEqualTo($start) && $today->lessThan($end))
                                    
-                                        <button type="button" data-toggle="modal" data-target="#myModal">Commenter</button>
+                                        <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#myModal">Commenter</button>
 
                                          <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog" >

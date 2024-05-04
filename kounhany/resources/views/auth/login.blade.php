@@ -32,9 +32,9 @@
             <!--=============== NAV MENU ===============-->
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="{{ route('home') }}" class="nav__link">Home</a></li>
+                    <li><a href="{{ route('home') }}" class="nav__link">Acceuil</a></li>
 
-                    <li><a href="{{ route('home') }}/#about" class="nav__link">About Us</a></li>
+                    <li><a href="{{ route('home') }}/#about" class="nav__link">A propos</a></li>
 
                     <!--=============== DROPDOWN 1 ===============-->
 
@@ -54,7 +54,7 @@
 
                             <li>
                                 <a href="{{ route('catFiltre', ['cat' => 2]) }}" class="dropdown__link">
-                                    <i class="ri-parent-line"></i> BabySitter
+                                    <i class="ri-parent-line"></i>Garde d'enfants
                                 </a>
                             </li>
 
@@ -66,8 +66,8 @@
                         </ul>
                     </li>
 
-                    <li><a href="{{ route('home') }}/#contact" class="nav__link">Contact Us</a></li>
-                    <li><a href="{{ route('login') }}" class="nav__link">Login</a></li>
+                    <li><a href="{{ route('home') }}/#contact" class="nav__link">Contact</a></li>
+                    <li><a href="{{ route('login') }}" class="nav__link">Connexion</a></li>
                 </ul>
             </div>
         </nav>
@@ -79,7 +79,7 @@
 
     <section class="main">
         <div class="login-container">
-            <p class="title">Login</p>
+            <p class="title">Connexion</p>
             <div class="separator"></div>
             <p class="welcome-message">Veuillez fournir vos identifiants de connexion pour accéder à tous nos services
             </p>
@@ -113,7 +113,7 @@
                     @enderror
                 </div>
 
-                <button class="submit">Login</button>
+                <button class="submit">Se connecter</button>
                 <span> Ou <a href="{{ route('sdk_signup') }}">Créer un compte</a> </span>
             </form>
         </div>

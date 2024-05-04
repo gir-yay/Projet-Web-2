@@ -29,9 +29,9 @@
             <!--=============== NAV MENU ===============-->
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="#" class="nav__link">Home</a></li>
+                    <li><a href="#" class="nav__link">Acceuil</a></li>
 
-                    <li><a href="#about" class="nav__link">About Us</a></li>
+                    <li><a href="#about" class="nav__link">A propos</a></li>
 
                    
                         
@@ -51,7 +51,7 @@
 
                             <li>
                                 <a href="{{ route('catFiltre', ['cat' => 2]) }}" class="dropdown__link">
-                                    <i class="ri-parent-line"></i> BabySitter
+                                    <i class="ri-parent-line"></i> Garde d'enfants
                                 </a>
                             </li>
 
@@ -63,7 +63,7 @@
                         </ul>
                     </li>
                     
-                    <li><a href="#contact" class="nav__link">Contact Us</a></li>
+                    <li><a href="#contact" class="nav__link">Contacter nous</a></li>
                     @if (auth()->check())
                         <li>
                             <a href="{{ route('client.logout') }}" class="nav__link">
@@ -75,7 +75,7 @@
                             </a>
                         </li>
                     @else
-                        <li><a href="{{ route('login') }}" class="nav__link">Login</a></li>
+                        <li><a href="{{ route('login') }}" class="nav__link">Connexion</a></li>
                     @endif
                 </ul>
             </div>
@@ -85,7 +85,7 @@
     <!-- home start -->
     <section class="home" id="home">
         <div class="content">
-            <h3>We believe we can always help you!</h3>
+            <h3>Votre satisfaction est notre priorité absolue !</h3>
         </div>
     </section>
     <!-- home end -->
@@ -101,18 +101,18 @@
 
                     <div class="card__data">
                         <span class="card__description"> </span>
-                        <h2 class="card__title">Garde d'enfants experte et rassurante</h2>
+                        <h2 class="card__title">Profitez d'un intérieur étincelant sans effort</h2>
                         <a href="{{ route('catFiltre', ['cat' => 1]) }}" class="card__button">Demander</a>
                     </div>
                 </article>
 
                 <article class="card__article">
-                    <h1>BabySitter</h1>
+                    <h1>Garde d'enfants</h1>
                     <img src="images/babysitter.png" alt="image" class="card__img">
 
                     <div class="card__data" id="babysitter">
                         <span class="card__description"></span>
-                        <h2 class="card__title">Profitez d'un intérieur étincelant sans effort</h2>
+                        <h2 class="card__title">Garde d'enfants experte et rassurante</h2>
                         <a href="{{ route('catFiltre', ['cat' => 2]) }}" class="card__button">Demander</a>
                     </div>
                 </article>
@@ -172,7 +172,7 @@
     <footer id="contact">
         <div class="main-content">
             <div class="left box">
-                <h2>About us</h2>
+                <h2>A propos</h2>
                 <div class="content">
                     <p>Chez KounHany nous rendons les tâches domestiques <br>faciles. <br> <br>
                         Notre application met en relation les clients <br> <br>
@@ -186,7 +186,7 @@
                 </div>
             </div>
             <div class="center box">
-                <h2>Address</h2>
+                <h2>Adresse</h2>
                 <div class="content">
                     <div class="place">
                         <span class="fas fa-map-marker-alt"></span>
@@ -203,7 +203,7 @@
                 </div>
             </div>
             <div class="right box">
-                <h2>Contact us</h2>
+                <h2>Contacter nous</h2>
                 <div class="content">
                     <form action="{{ route('contact') }}" method="POST" class="contact-form">
                         @csrf
@@ -216,7 +216,7 @@
                             <textarea rows="2" name="message" cols="25" required style="resize:none"></textarea>
                         </div>
                         <div class="btn">
-                            <button type="submit" class="btn-contact">envoyer</button>
+                            <button type="submit" class="btn-contact">Envoyer</button>
                         </div>
                     </form>
                 </div>
