@@ -161,10 +161,18 @@
             @foreach ($commentaires as $commentaire)
             <div class="comment-card">
                 <div class="comment-content">
-                    <p>Commentaire  : {{ $commentaire->commentaire }}</p>
-                    <p>Demande : {{ $commentaire->demande->demande_id }}</p>
-                    <p>sur le client : {{ $commentaire->demande->client->nom }}</p>
-
+                    <p>Commentaire  : {{ $commentaire->commentaire }}</p><br>
+                    <p>Demande : {{ $commentaire->demande_id }}</p><br>
+                    <p>sur le client : {{ $commentaire->demande->client->nom }}</p><br>
+                    <div class="rating">
+                        @for($i = 1; $i <= 5; $i++)
+                        @if($i <= $commentaire->note)
+                    <i class="fa fa-star" style="color: orange;"></i> <!--  les étoiles remplies -->
+                        @else
+                    <i class="fa fa-star"></i> <!-- Étoile vide -->
+                        @endif
+                        @endfor
+                        </div><br>
                     <form action="{{route('admin.sdk_delete',$commentaire->id)}}"  method="POST">
                         @csrf
                         @method('DELETE')

@@ -177,7 +177,7 @@
             <i class="fa fa-star"></i> <!-- Étoile vide -->
         @endif
     @endfor
-</div>
+</div><br>
 
                     <form action="{{route('admin.sdk_delete',$commentaire->id)}}"  method="POST">
                         @csrf
