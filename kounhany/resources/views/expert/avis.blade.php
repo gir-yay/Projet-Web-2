@@ -50,6 +50,12 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('expert.historique.index') }}">
+                    <i class="bx bxs-group"></i>
+                    <span class="text">Historique</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('expert.domaines.index') }}" class="domaines">
                     <i class="fa-brands fa-servicestack"></i>
                     <span class="text">Mes domaines</span>

@@ -56,6 +56,12 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('expert.historique.index') }}">
+                    <i class="bx bxs-group"></i>
+                    <span class="text">Historique </span>
+                </a>
+            </li>
+            <li>
                 <a href="{{route('expert.payment.index')}}">
                     <i class='bx bxs-wallet'></i>
                     <span class="text">Paiement</span>

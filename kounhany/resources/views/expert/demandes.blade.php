@@ -56,6 +56,12 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('expert.historique.index') }}">
+                    <i class="bx bxs-group"></i>
+                    <span class="text">Historique</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('expert.domaines.index') }}" class="domaines">
                     <i class="fa-brands fa-servicestack"></i>
                     <span class="text">Mes domaines</span>
@@ -141,7 +147,6 @@
                                 <th>Durée</th>
                                 <th>Description</th>
                                 <th>Total</th>
-                                <th>Action</th>
                                 <th>Commentaires</th>
 
                             </tr>
@@ -161,63 +166,6 @@
                                             <button type="submit" name="action" value="1" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
                                             <button type="submit" name="action" value="0" class="btn btn-danger"><i class="fa-solid fa-x"></i></button>
                                         </form>
-                                    </td>
-                                    <td>
-                                    @php
-                                    $start = \Carbon\Carbon::parse($demande->date_debut);
-                                    $start = $start->copy()->addDays($demande->duree);
-                                    $end = $start->copy()->addDays(7);
-                                    $today = \Carbon\Carbon::today();
-                                    @endphp
-                                    @if($demande->etat == 'accepte')
-                                    @if($today->greaterThanOrEqualTo($start) && $today->lessThan($end)) 
-                                   
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Commenter</button>
-                                     <!-- Modal -->
-                                        <div class="modal fade" id="myModal" role="dialog" >
-   
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content" style="height: 600px; margin-top: 30%">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Ajouter un commentaire</h4>
-        </div>
-        <form action="{{Route('expert.commentaires-sur-client.store')}}" method="POST">
-            @csrf
-        <input type="hidden" name="demande_id" value="{{ $demande->demande_id }}">
-        <input type="hidden" name="expert_id" value="{{ $demande->expert_id }}">
-        <input type="hidden" name="client_id" value="{{ $demande->client_id }}">
-        <div class="modal-body">
-             <span>Notez le service: </span><br>
-          <div class="stars">
-  <input type="radio" id="star1" name="note" value="1" />
-  <input type="radio" id="star2" name="note" value="2" />
-  <input type="radio" id="star3" name="note" value="3" />
-  <input type="radio" id="star4" name="note" value="4" />
-  <input type="radio" id="star5" name="note" value="5" />
-  
-  <label for="star1" aria-label="Banana">1 star</label><label for="star2">2 stars</label><label for="star3">3 stars</label><label for="star4">4 stars</label><label for="star5">5 stars</label>
-</div>
-<br><br>
-          <textarea name="commentaire" id="comment" cols="60" rows="15" placeholder="Ajouter un commentaire"></textarea>
-        </div>
-        <div class="modal-footer">
-            
-          <button type="submit" class="btn btn-danger">Commenter</button>
-          
-        </div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-                                    
-  @endif
-  @endif    
-
-
                                     </td>
                                 </tr>
                             @endforeach
