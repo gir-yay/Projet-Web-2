@@ -40,6 +40,12 @@ Route::get('/expert/{id}/comments', [ExpertController::class, 'sdk_show'])->name
 Route::delete('/comments/{id}/delete', [ExpertController::class, 'delete'])->name('sdk_delete');
 
 
+/****** voir les commentaires de client*/
+Route::get('/client/{id}/commentaires', [ClientController::class, 'show_comment'])->name('show_comment');
+/****** supprimer un commentaire d un client*/
+Route::delete('/commentaire/{id}/delete', [ClientController::class, 'delete_comment'])->name('delete_comment');
+
+
 
 //admin add service
 

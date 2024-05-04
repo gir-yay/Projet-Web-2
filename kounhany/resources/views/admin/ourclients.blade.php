@@ -131,6 +131,7 @@
                                     <th> email <span class="icon-arrow">&UpArrow;</span></th>
                                     <th> statut <span class="icon-arrow">&UpArrow;</span></th>
                                     <th> Action <span class="icon-arrow">&UpArrow;</span></th>
+                                    <th> Commentaires <span class="icon-arrow">&UpArrow;</span></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -157,6 +158,12 @@
                                                 </form>
                                             @endif
                                         </td>
+                                        
+<td style="text-align: center;">
+    <a href="{{route('admin.show_comment',$client->id)}}">
+        <i class="fa fa-comment" ></i> <!-- Replace "fa-comment" with the appropriate class for your icon -->
+    </a>
+</td>
                                     </tr>
                                 @endforeach
 
