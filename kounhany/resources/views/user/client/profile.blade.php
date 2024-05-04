@@ -37,7 +37,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        background-color: #f4f4f4;
+        /*background-color: #f4f4f4;*/
     }
     a {
         text-decoration: none;
@@ -52,7 +52,7 @@
 
 </head>
 
-<body style="background-color:#eee">
+<body>
 
  <section id="sidebar">
         <a href="#" class="brand">
@@ -123,7 +123,7 @@
         <!-- NAVBAR -->
 
         <!-- MAIN -->
-        <main style="background-color:#eee">
+        <main>
             <div class="head-title">
                 <div class="left">
                     <h1>Dashboard</h1>
@@ -206,6 +206,11 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript"></script>
+
+     <!-- CONTENT -->
+        <script src="{{ asset('js/clientJS/swiper-bundle.min.js') }}"></script>
+        <script src="{{ asset('js/clientJS/main.js') }}"></script>
+        <script src="{{ asset('js/clientJS/script.js') }}"></script>
 </body>
 
 </html>

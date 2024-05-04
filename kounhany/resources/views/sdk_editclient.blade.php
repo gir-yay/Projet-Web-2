@@ -19,7 +19,7 @@
 <style>
 
 body {
-background-color:#eee ;
+/*background-color:#eee ;*/
 margin: 0;
 padding: 0;
 }
@@ -161,7 +161,7 @@ color: black
         <!-- NAVBAR -->
 
         <!-- MAIN -->
-        <main style="background-color:#eee">
+        <main>
             <div class="head-title">
                 <div class="left">
                     <h1>Dashboard</h1>
@@ -217,6 +217,10 @@ color: black
          </section>
 
         </main>
+         <!-- CONTENT -->
+        <script src="{{ asset('js/clientJS/swiper-bundle.min.js') }}"></script>
+        <script src="{{ asset('js/clientJS/main.js') }}"></script>
+        <script src="{{ asset('js/clientJS/script.js') }}"></script>
 </body>
 </html>
 

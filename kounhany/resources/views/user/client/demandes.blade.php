@@ -209,6 +209,7 @@ a:active {
                     </tbody>
                 </table>
             </section>
+</section>
 
         </main>
         <!-- MAIN -->
