@@ -462,6 +462,60 @@ body {
     color: var(--dark);
 }
 
+
+#content main .box-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 24px;
+    margin-top: 36px;
+}
+
+#content main .box-info li {
+    padding: 24px;
+    background: var(--light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+}
+
+#content main .box-info li .bx {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content main .box-info li:nth-child(1) .bx {
+    background: var(--light-blue);
+    color: #3C91E6;
+}
+
+#content main .box-info li:nth-child(2) .bx {
+    background: var(--light-yellow);
+    color: var(--yellow);
+}
+
+#content main .box-info li:nth-child(3) .bx {
+    background: var(--light-orange);
+    color: var(--orange);
+}
+
+#content main .box-info li .text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+#content main .box-info li .text p {
+    color: var(--dark);
+}
+
+
+
 #content main .table-data {
     display: flex;
     flex-wrap: wrap;
@@ -591,6 +645,29 @@ body {
     margin-bottom: 0;
 }
 
+.box-info .text {
+    text-align: center;
+}
+
+.box-info .text h4 {
+    font-weight: normal;
+    margin-bottom: 3px;
+    font-size: 18px;
+}
+
+.box-info .text p {
+    font-weight: 600;
+    color: #FFCE26
+}
+
+.box-info .review p i {
+    color: #FFCE26
+}
+
+.box-info .comment i {
+    color: #ffffff;
+    background-color: #FF9501;
+}
 
 /* MAIN */
 
@@ -601,10 +678,12 @@ body {
     #sidebar {
         width: 200px;
     }
+
     #content {
         width: calc(100% - 60px);
         left: 200px;
     }
+
     #content nav .nav-link {
         display: none;
     }
@@ -614,6 +693,7 @@ body {
     #content nav form .form-input input {
         display: none;
     }
+
     #content nav form .form-input button {
         width: auto;
         height: auto;
@@ -621,10 +701,12 @@ body {
         border-radius: none;
         color: var(--dark);
     }
+
     #content nav form.show .form-input input {
         display: block;
         width: 100%;
     }
+
     #content nav form.show .form-input button {
         width: 36px;
         height: 100%;
@@ -632,19 +714,24 @@ body {
         color: var(--light);
         background: var(--red);
     }
+
     #content nav form.show~.notification,
     #content nav form.show~.profile {
         display: none;
     }
+
     #content main .box-info {
         grid-template-columns: 1fr;
     }
+
     #content main .table-data .head {
         min-width: 420px;
     }
+
     #content main .table-data .order table {
         min-width: 420px;
     }
+
     #content main .table-data .todo .todo-list {
         min-width: 420px;
     }
@@ -786,6 +873,7 @@ body {
     .card__content {
         margin-inline: 3rem;
     }
+
     .swiper-button-next,
     .swiper-button-prev {
         display: block;
@@ -799,9 +887,11 @@ body {
     .card__container {
         max-width: 1120px;
     }
+
     .swiper-button-prev {
         left: -1rem;
     }
+
     .swiper-button-next {
         right: -1rem;
     }

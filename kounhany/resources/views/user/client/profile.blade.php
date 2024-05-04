@@ -87,11 +87,11 @@
 
 
             <li>
-                <a href="#" class="logout">
+                <a href="#" class="logout" >
                     <i class='bx bxs-log-out-circle'></i>
-                    <form action="{{ route('client.logout') }}" method="Post">
+                    <form action="{{ route('client.logout') }}" method="Post" >
                         @csrf
-                        <button class="logout-btn">Deconnexion</button>
+                        <button class="logout-btn" style="padding:0px;">Deconnexion</button>
                     </form>
                 </a>
             </li>

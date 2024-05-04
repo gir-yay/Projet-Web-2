@@ -13,6 +13,10 @@ use App\Http\Controllers\ExperdetailtController;
 use App\Http\Controllers\ClientDemandeController;
 use App\Http\Controllers\DemandesClientController;
 use App\Http\Controllers\ClientCommentsController;
+use App\Models\CommentairesSurClient;
+use App\Models\CommentairesSurExpert;
+use App\Models\DemandesClient;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,7 +67,10 @@ Route::get('/services/categorie/{cat}/filtre', [OurServicesController::class, 'f
 Route::prefix("client")->name("client.")->middleware("auth:web")->group(function () {
     // url: http://localhost:8080/client/dashboard
     Route::get("/dashboard", function () {
-        return view("user.client.dashboard");
+        $demandes = DemandesClient::where("client_id", auth()->user()->id)->count();
+        $ratings = CommentairesSurClient::where("client_id", auth()->user()->id)->avg("note") ?? 0;
+        $comments = CommentairesSurExpert::where("client_id", auth()->user()->id)->count();
+        return view("user.client.dashboard", compact("demandes", "ratings", "comments"));
     })->name("dashboard");
     Route::get('/profile', [ClientProfileController::class, 'show'])->name('profile');
     Route::get('/demande', [ClientDemandeController::class, 'show'])->name('demande_client');
