@@ -49,13 +49,13 @@
                     <span class="text">Mon Profile</span>
                 </a>
             </li>
-            <li  class="active">
+            <li>
                 <a href="{{ route('expert.demandes.index') }}">
                     <i class='bx bxs-group'></i>
                     <span class="text">Mes demandes</span>
                 </a>
             </li>
-            <li>
+            <li  class="active">
                 <a href="{{ route('expert.historique.index') }}">
                     <i class="bx bxs-group"></i>
                     <span class="text">Historique</span>
@@ -154,7 +154,7 @@
                         <tbody>
                             @foreach ($demandes as $demande)
                                 <tr>
-                                    <td>{{ optional($demande->service)->nom }}</td>
+                                    <td>{{ $demande->service->nom }}</td>
                                     <td>{{ $demande->date_debut }}</td>
                                     <td>{{ $demande->duree }} jours</td>
                                     <td>{{ $demande->description }}</td>
@@ -183,7 +183,7 @@
         </div>
         <form action="{{Route('expert.commentaires-sur-client.store')}}" method="POST">
             @csrf
-        <input type="hidden" name="demande_id" value="{{ $demande->demande_id }}">
+        <input type="hidden" name="demande_id" value="{{ $demande->id }}">
         <input type="hidden" name="expert_id" value="{{ $demande->expert_id }}">
         <input type="hidden" name="client_id" value="{{ $demande->client_id }}">
         <div class="modal-body">

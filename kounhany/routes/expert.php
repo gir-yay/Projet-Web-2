@@ -3,10 +3,10 @@
 use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\expert\AvisController;
 use App\Http\Controllers\expert\DemandesController;
-use App\Http\Controllers\ExpertCommentsController;
+use App\Http\Controllers\expert\ExpertCommentsController;
 use App\Http\Controllers\expert\DomainesController;
 use App\Http\Controllers\expert\ExpertProfileController;
-use App\Http\Controllers\expert\HistoriqueController;
+use App\Http\Controllers\expert\historiqueController;
 use App\Http\Controllers\expert\PaymentController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +17,7 @@ use App\Models\ServiceExpert;
 use Illuminate\Support\Facades\DB;
 
 /// url: http://localhost:8080/expert/dashboard
+
 Route::get("/dashboard", function(){
 
     $demandes = DemandesClient::where("expert_id", auth()->user()->id)->count();
@@ -45,7 +46,6 @@ Route::get('/demandes_treated', [DemandesController::class, 'index_treated'])->n
 // historique
 
 Route::get('/historique', [historiqueController::class, 'index'])->name('historique.index');
-
 Route::get('/treated', [historiqueController::class, 'treated'])->name('historique.treated');
 
 // domaines
