@@ -9,23 +9,21 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class CommentMail extends Mailable
+class NotifyDemandeExpert extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
+
     public $name;
-    public $message_;
     public $link;
-    public function __construct($name, $message, $link)
+    public function __construct($name, $link)
     {
         $this->name = $name;
-        $this->message_ = $message;
         $this->link = $link;
     }
-
 
     /**
      * Get the message envelope.
@@ -33,7 +31,7 @@ class CommentMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Feedback',
+            subject: 'Nouvelle Demande',
         );
     }
 
@@ -43,7 +41,7 @@ class CommentMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'admin.mail.comment',
+            view: 'admin.mail.notifyDemandeExpert',
         );
     }
 

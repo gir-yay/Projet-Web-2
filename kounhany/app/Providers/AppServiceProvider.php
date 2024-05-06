@@ -21,7 +21,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
-        /*
         $email_settings = EmailSettings::first();
         if ($email_settings) {
             config()->set('mail.mailers.smtp', [
@@ -37,6 +36,6 @@ class AppServiceProvider extends ServiceProvider
                 'address' => $email_settings->username,
                 'name' => "KounHany",
             ]);
-        }*/
+        }
     }
 }

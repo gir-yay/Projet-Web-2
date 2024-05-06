@@ -18,10 +18,14 @@ class PaymentMail extends Mailable
      */
     public $name;
     public $message_;
-    public function __construct($name, $message)
+    public $tarif;
+    public $link;
+    public function __construct($name, $message, $tarif, $link)
     {
         $this->name = $name;
         $this->message_ = $message;
+        $this->tarif = $tarif;
+        $this->link = $link;
     }
 
 
@@ -31,7 +35,7 @@ class PaymentMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Payment Mail',
+            subject: 'Paiement',
         );
     }
 

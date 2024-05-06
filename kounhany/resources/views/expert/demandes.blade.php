@@ -147,7 +147,7 @@
                                 <th>Durée</th>
                                 <th>Description</th>
                                 <th>Total</th>
-                                <th>Commentaires</th>
+                                <th>Action</th>
 
                             </tr>
                         </thead>

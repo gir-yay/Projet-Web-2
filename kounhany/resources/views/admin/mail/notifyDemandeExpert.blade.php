@@ -15,15 +15,15 @@
     margin-bottom: 20px;
     margin: 10px 0">KounHany!</div>
 
-    <div style="font-family: Arial, sans-serif; max-width: 550px; padding:10px 20px 20px 20px;background: #F6F8FC;
-    box-shadow: 0 0 1px #ddd;
+<div style="font-family: Arial, sans-serif; max-width: 550px; padding:10px 20px 20px 20px;background: #F6F8FC;
+box-shadow: 0 0 1px #ddd;
 
-    border-radius: 5px;margin:auto">
-        <h2>Bonjour, {{ $name }} !</h2>
-        <p>Nous espérons que cet email vous trouve en bonne santé.</p>
-        <p>{{$message_}}</p>
-        <p style="color:grey">Veuillez prendre un moment pour partager vos pensées en cliquant sur le lien ci-dessous :</p>
-        <a href="{{ $link }}" style="display: inline-block; padding: 7px; background-color: #99582a; color: #fff; text-decoration: none; border-radius: 5px;">Donner votre avis</a>
-    </div>
+border-radius: 5px;margin:auto">
+    <h2>Bonjour, {{ $name }} !</h2>
+    <p>Nous espérons que cet email vous trouve en bonne santé.</p>
+    <p>Vous avez une nouvelle demande. <span style="color:grey">Veuillez consulter la demande en cliquant sur le lien ci-dessus.</span></p>
+    <a href="{{ $link }}" style="display: inline-block; padding: 7px; background-color: #99582a; color: #fff; text-decoration: none; border-radius: 5px;">Consulter</a>
+</div>
+
 </body>
 </html>

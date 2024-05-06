@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class CommentMail extends Mailable
+class NotifyStatusDemandeClient extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,14 +18,11 @@ class CommentMail extends Mailable
      */
     public $name;
     public $message_;
-    public $link;
-    public function __construct($name, $message, $link)
+    public function __construct($name, $message_)
     {
         $this->name = $name;
-        $this->message_ = $message;
-        $this->link = $link;
+        $this->message_ = $message_;
     }
-
 
     /**
      * Get the message envelope.
@@ -33,7 +30,7 @@ class CommentMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Feedback',
+            subject: 'Status De Demande',
         );
     }
 
@@ -43,7 +40,7 @@ class CommentMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'admin.mail.comment',
+            view: 'admin.mail.notifyStatusDemandeClient',
         );
     }
 

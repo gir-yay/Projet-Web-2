@@ -28,19 +28,20 @@ class Kernel extends ConsoleKernel
             foreach ($demandes as $demande) {
                 if ($demande->comment_sur_expert == null) {
                     Mail::to($demande->client->email)->send(new CommentMail(
-                        $demande->client->nom. " " .$demande->client->prenom,
-                        "Nous vous serions reconnaissants de bien vouloir évaluer l'expert concernant le service rendu."
+                        $demande->client->nom . " " . $demande->client->prenom,
+                        "Nous souhaitions vous contacter afin de recueillir vos commentaires sur le service fourni par notre expert. Votre avis nous importe et nous aidera à améliorer nos services à l'avenir.",
+                        "http://localhost:8000/client/demande"
                     ));
                 }
                 if ($demande->comment_sur_client == null) {
                     Mail::to($demande->expert->email)->send(new CommentMail(
-                        $demande->expert->nom. " " .$demande->expert->prenom,
-                        "Nous vous serions reconnaissants de bien vouloir évaluer votre client concernant la prestation réalisée."
+                        $demande->expert->nom . " " . $demande->expert->prenom,
+                        "Nous vous serions reconnaissants de bien vouloir évaluer votre client concernant la prestation réalisée.",
+                        "http://localhost:8000/expert/historique"
                     ));
                 }
             }
         })->daily("12:00");
-
 
         // Schedule to notify experts to pay their fees
         $taux_payment = GeneralSettings::first()->taux_payment;
@@ -65,19 +66,20 @@ class Kernel extends ConsoleKernel
                     $tarif = $total * ($taux_payment / 100);
 
                     Mail::to($expert->email)->send(new PaymentMail(
-                        $expert->nom. " " .$expert->prenom,
-                        "Nous vous informons que vous devez payer votre frais. vous avez 7 jours pour le faire. Merci.
-                        Amount: " . $tarif . "MDH"
+                        $expert->nom . " " . $expert->prenom,
+                        "Nous vous informons que vous devez payer votre frais. vous avez 7 jours pour le faire. Merci.",
+                        $tarif,
+                        "http://localhost:8000/expert/paiement"
                     ));
                 }
             })
-            ->monthlyOn($signup_day, '00:00');
+                ->monthlyOn($signup_day, '00:00');
         }
 
         // Schedule to suspend experts who did not pay their fees
         $experts_not_payed = Expert::where('compte_status', 'active')->where('status_abonnement', 1)
-        ->where('status_payment', 0)
-        ->get();
+            ->where('status_payment', 0)
+            ->get();
 
         foreach ($experts_not_payed as $expert) {
             $signup_day = $expert->created_at->day;
@@ -98,14 +100,16 @@ class Kernel extends ConsoleKernel
                     $tarif = $total * ($taux_payment / 100);
 
                     Mail::to($expert->email)->send(new PaymentMail(
-                        $expert->nom. " " .$expert->prenom,
-                        "Nous vous informons que votre compte est invisible pour clients jusqu'à ce que vous payiez votre frais.
-                         Montant : " . $tarif . "MDH"
+                        $expert->nom . " " . $expert->prenom,
+                        "Nous vous informons que votre compte est invisible pour clients jusqu'à ce que vous payiez votre frais.",
+                        $tarif,
+                        "http://localhost:8000/expert/paiement"
                     ));
                 }
             })
-            ->monthlyOn($signup_day + 7, '00:00');
+                ->monthlyOn($signup_day + 7, '00:00');
         }
+
     }
 
 

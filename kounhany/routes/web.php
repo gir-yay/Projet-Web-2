@@ -13,9 +13,11 @@ use App\Http\Controllers\ExperdetailtController;
 use App\Http\Controllers\ClientDemandeController;
 use App\Http\Controllers\DemandesClientController;
 use App\Http\Controllers\ClientCommentsController;
+use App\Mail\CommentMail;
 use App\Models\CommentairesSurClient;
 use App\Models\CommentairesSurExpert;
 use App\Models\DemandesClient;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,3 +95,6 @@ Route::get('/expert-detail/{expertId}/{serviceId}', [ExperdetailtController::cla
 /*************** plus d info sur un expert ..  ****************/
 /** route pour envoi d email ( quand le client clique demander ) */
 
+Route::get("/test", function(){
+    return view("admin.mail.comment_c");
+});

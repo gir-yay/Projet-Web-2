@@ -22,8 +22,6 @@
         <h2>Bonjour, {{ $name }} !</h2>
         <p>Nous espérons que cet email vous trouve en bonne santé.</p>
         <p>{{$message_}}</p>
-        <p style="color:grey">Veuillez prendre un moment pour partager vos pensées en cliquant sur le lien ci-dessous :</p>
-        <a href="{{ $link }}" style="display: inline-block; padding: 7px; background-color: #99582a; color: #fff; text-decoration: none; border-radius: 5px;">Donner votre avis</a>
     </div>
 </body>
 </html>

@@ -1,8 +1,12 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Mail\NotifyDemandeExpert;
 use App\Models\DemandesClient;
+use App\Models\Expert;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class DemandesClientController extends Controller
 {
@@ -64,6 +68,9 @@ class DemandesClientController extends Controller
         // Rediriger ou renvoyer une réponse appropriée
         // Par exemple, rediriger l'utilisateur vers une autre page
         toastr()->success('Votre Demande soumise avec succès.');
+        $expert = Expert::find($expertId);
+        $link = "http://localhost:8000/expert/demandes";
+        Mail::to($expert->email)->send(new NotifyDemandeExpert($expert->prenom . " ".$expert->nom, $link));
         return redirect()->route('expert-detail', ['expertId' => $expertId, 'serviceId' => $serviceId]);
     }
 }
