@@ -142,7 +142,7 @@
                                 <div class="img-area">
                                     <img src="{{ asset('images/user.png') }}" alt="">
                                 </div>
-                                <h5>{{ $comment->client->nom . ' ' . $comment->client->orenom }}</h5>
+                                <h5>{{ $comment->client->nom . ' ' . $comment->client->prenom }}</h5>
                                 <p class="content">
                                     {{ $comment->commentaire }}
                                 </p>

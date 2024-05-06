@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\expert;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CommentairesSurClient;
 
@@ -31,7 +32,7 @@ class ExpertCommentsController extends Controller
 
         toastr()->success('Commentaire ajouté avec succès');
 
-        return redirect()->route('expert.demande_client');
+        return redirect()->back();
     }
 }
 

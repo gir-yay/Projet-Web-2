@@ -23,7 +23,7 @@
             <div class="content">
                 <h1 class="name"> {{ $expert->nom }}  {{ $expert->prenom }} <div class="price ville">{{ $serviceExpert->nbr_annee_d_exp }} d'expérience</div></h1>
                 <div class="price"><i class="fa-solid fa-sack-dollar"></i>{{ $serviceExpert->prix_par_duree }} MAD / jour</div>
-                <div class="price ville" style="font-size=200;"> <i class="fa fa-map-marker-alt"></i> {{ $serviceExpert->ville }}</div>
+                <div class="price ville" style="font-size:200;"> <i class="fa fa-map-marker-alt"></i> {{ $serviceExpert->ville }}</div>
                 <div class="ville"><i class="fa-solid fa-calendar-days"></i> {{ $serviceExpert->disponibilite}}</div>
                 <br> <br>
 

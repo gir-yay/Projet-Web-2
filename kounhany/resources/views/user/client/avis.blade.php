@@ -4,31 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
-<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="{{ asset('css/client/swiper-bundle.min.css') }}">
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
     <link rel="stylesheet" href="{{ asset('css/client/dashclient.css') }}">
-    <title>Dashboard client</title>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <title>Avis</title>
 </head>
 
 <body>
 
-
-    <!-- SIDEBAR -->
+ <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="#" class="brand">
             <i class="bx ri-open-arm-fill "></i>
             <span class="text">Koun Hany</span>
         </a>
         <ul class="side-menu top">
-            <li class="active">
+            <li>
                 <a href="{{ route('client.dashboard') }}">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
@@ -46,7 +48,7 @@
                     <span class="text">Mes demandes</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="{{route('client.avis.index')}}">
                     <i class='bx bxs-message-dots'></i>
                     <span class="text">Mes commentaires</span>
@@ -102,56 +104,94 @@
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
                         <li>
-                            <a class="active" href="#">Home</a>
+                            <a class="active" href="#">Avis</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <ul class="box-info">
-                <li>
-                    <i class='bx bxs-group'></i>
-                    <span class="text">
-                        <h4>Total Demandes</h4>
-                        <p>{{ $demandes }}</p>
-                    </span>
-                </li>
-                
-                <li class="review">
-                    <i class='bx bxs-calendar-check'></i>
-                    <span class="text">
-                        <h4>Evaluation</h4>
-                        <p>
-                            @for ($i = 0; $i < 5; $i++)
-                                @if ($i < $ratings)
-                                    <i class="fa-solid fa-star"></i>
-                                @else
-                                    <i class="fa-regular fa-star"></i>
-                                @endif
-                            @endfor
-                        </p>
-                    </span>
-                </li>
-                <li class="comment">
-                    <i class='bx bxs-chat'></i>
-                    <span class="text">
-                        <h4>Commentaires</h4>
-                        <p>{{ $comments }}</p>
-                    </span>
-                </li>
-               
-            </ul>
+
+
+
+
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    @foreach ($comments as $comment)
+                        <div class="swiper-slide">
+                            <div class="box-area">
+                                <div class="img-area">
+                                    <img src="{{ asset('images/user.png') }}" alt="">
+                                </div>
+                                <h5>{{ $comment->expert->nom . ' ' . $comment->expert->prenom }}</h5>
+                                <p class="content">
+                                    {{ $comment->commentaire }}
+                                </p>
+                                <div class="rating">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        @if ($i <= $comment->note)
+                                            <i class="fa fa-star"></i> <!--  les étoiles remplies -->
+                                        @else
+                                            <i class="fa-regular fa-star"></i>
+                                        @endif
+                                    @endfor
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+
+            </div>
+
 
 
         </main>
         <!-- MAIN -->
     </section>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
 
 
 
-    <!-- CONTENT -->
-    <script src="{{ asset('js/clientJS/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('js/clientJS/main.js') }}"></script>
-    <script src="{{ asset('js/clientJS/script.js') }}"></script>
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            }
+        });
+    </script>
+
+    <script src="{{ asset('js/expertJS/script.js') }}"></script>
+
+
 </body>
+
+
+
 
 </html>

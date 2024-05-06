@@ -20,6 +20,15 @@ class CommentairesSurClient extends Model
     {
         return $this->belongsTo(DemandesClient::class);
     }
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id');
+    }
+
+    public function expert()
+    {
+        return $this->belongsTo(Expert::class, 'expert_id');
+    }
 
 
 
