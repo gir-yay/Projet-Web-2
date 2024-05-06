@@ -79,7 +79,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('client.avis.index')}}">
                     <i class='bx bxs-message-dots'></i>
                     <span class="text">Mes commentaires</span>
                 </a>

@@ -905,6 +905,119 @@ body {
     color: var(--red);
     background-color: transparent;
 }
+
+.close {
+    font-size: 40px;
+}
+
+/*-----------------------------------*/
+.box-area {
+    padding: 30px 2px;
+    position: relative;
+    display: block;
+    background: #F4F1F0;
+    color: #000;
+    border-radius: 40px;
+    border: 2px solid #1167ca;
+    text-align: center;
+    cursor: pointer;
+}
+
+.box-area h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1167ca;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.box-area span {
+    color: #262626;
+    display: block;
+    font-size: 13px;
+    margin: 0 0 10px;
+    font-weight: 400;
+}
+
+.box-area p {
+    margin: 10px 0
+}
+
+.box-area .img-area {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    bottom: 0;
+    margin: 0 auto;
+    right: 0;
+    z-index: 10;
+    border: 5px solid #F4F1F0;
+    border-radius: 50%;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.box-area .img-area img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.rating {
+    color: #F69604;
+    /* Couleur par défaut des étoiles vides */
+}
+
+.rating .fa-star {
+    font-size: 20px;
+    /* Taille des étoiles */
+}
+
+.content-comment {
+    font-size: 15px !important;
+}
+
+.swiper {
+    margin-top: 30px;
+    padding: 50px 0 !important;
+}
+
+.domaines span {
+    font-weight: 500;
+}
+
+.domaines .description {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+label {
+    position: relative;
+    top: 3px;
+    font-size: 14px;
+}
+
+table {
+    text-align: center !important;
+}
+
+td {
+    vertical-align: middle;
+}
+
+th {
+    font-weight: 500;
+}
+
+.payment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .close {
     font-size: 40px;
 }

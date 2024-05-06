@@ -43,7 +43,7 @@
                                 <form action="{{ route('client.logout') }}" method="POST">
                                     @csrf
                                     <button class="nav__link"
-                                        style="border:none; background:none;color:white; font-size:16px; font-weight600">Se
+                                        style="border:none; background:none;color:white; font-size:16px; font-weight:600;">Se
                                         Déconnecter</button>
                                 </form>
                             </a>

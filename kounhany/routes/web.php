@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientProfileController;
 use App\Http\Controllers\OurServicesController;
 use App\Http\Controllers\ExperdetailtController;
+use App\Http\Controllers\ExpertAvisController;
 
 use App\Http\Controllers\ClientDemandeController;
 use App\Http\Controllers\DemandesClientController;
@@ -83,6 +84,9 @@ Route::prefix("client")->name("client.")->middleware("auth:web")->group(function
 
 
     Route::post('commentaires-sur-expert', [ClientCommentsController::class, 'store'])->name('commentaires-sur-expert.store');
+
+    Route::get('/avis', [ExpertAvisController::class, 'index'])->name('avis.index');
+
 
 
 
