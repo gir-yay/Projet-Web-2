@@ -31,7 +31,7 @@ class NotifyDemandeExpert extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Nouvelle Demande',
+            subject: 'Notify Demande Expert',
         );
     }
 
@@ -41,7 +41,7 @@ class NotifyDemandeExpert extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'admin.mail.notifyDemandeExpert',
+            view: 'view.name',
         );
     }
 

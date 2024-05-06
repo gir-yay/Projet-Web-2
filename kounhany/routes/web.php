@@ -95,6 +95,4 @@ Route::get('/expert-detail/{expertId}/{serviceId}', [ExperdetailtController::cla
 /*************** plus d info sur un expert ..  ****************/
 /** route pour envoi d email ( quand le client clique demander ) */
 
-Route::get("/test", function(){
-    return view("admin.mail.comment_c");
-});
+
