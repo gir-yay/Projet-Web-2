@@ -35,19 +35,66 @@ body {
     font-family: helvetica-medium;
 }
 
-header {
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background: #63453c !important;
-    color: white !important;
+    background-color: #F8F7F6;
+    /* box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);*/
+    z-index: 100;
+}
+.nav__logo,
+.nav__burger,
+.nav__close {
+    color: #000;
 }
 
-header nav {
-    height: 60px !important;
+.nav__data {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.nav__logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
+    font-weight: 600;
+}
+
+.nav__logo i {
+    font-weight: initial;
+    font-size: 1.25rem;
+}
+
+.nav__toggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.nav__burger,
+.nav__close {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+    opacity: 0;
+}
+
 
 .offers {
     position: relative !important;
-    top: 50px !important;
+    top: 85px !important;
     height: 30px;
 }
 
@@ -56,11 +103,7 @@ header nav {
     bottom: 25px !important
 }
 
-header a {
-    background-color: #63453c!important;
-    color: white !important;
-    height: 50px;
-}
+
 
 .head1 .container {
     display: grid;
@@ -235,9 +278,9 @@ header a {
 
 .product-view img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     /* Adjust the height as needed */
-    object-fit: cover;
+   
 }
 
 .product-view img:hover {
@@ -265,7 +308,6 @@ header a {
 
 .panel {
     padding: 0 18px;
-    display: none;
     background-color: white;
     overflow: hidden;
 }
@@ -350,7 +392,7 @@ footer a:hover {
 
 .expert img {
     width: 100%;
-    height: 200px;
+    height: 300px;
 }
 
 .expert .text {
