@@ -131,10 +131,10 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1>Clients</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Dashboard</a>
+                        <a href="{{ route('admin.ourclients') }}">Clients</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
@@ -179,7 +179,7 @@
     @endfor
 </div><br>
 
-                    <form action="{{route('admin.sdk_delete',$commentaire->id)}}"  method="POST">
+                    <form action="{{route('admin.delete_comment',$commentaire->id)}}"  method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Supprimer</button>

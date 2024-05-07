@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
 
-    <!-- bootstrap for popup-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="{{ asset('css/client/swiper-bundle.min.css') }}">
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!-- My CSS -->
     <link rel="stylesheet" href="{{ asset('css/admin/ourclient.css') }}">
+    
     <link rel="stylesheet" href="{{ asset('css/star.css') }}">
-    <title>Mes Demandes</title>
-    <style>
+
+    <title>Les Clients de KounHany</title>
+</head>
+
+<body>
+
+<style>
     a:link,
 a:visited {
     text-decoration: none;
@@ -31,13 +31,8 @@ a:active {
 
 
     </style>
-</head>
-
-<body>
-
-
-    <!-- SIDEBAR -->
-    <section id="sidebar">
+   <!-- SIDEBAR -->
+   <section id="sidebar">
         <a href="#" class="brand">
             <i class="bx ri-open-arm-fill "></i>
             <span class="text">Koun Hany</span>
@@ -95,36 +90,34 @@ a:active {
         <!-- NAVBAR -->
         <nav>
             <i class='bx bx-menu'></i>
+            <a href="#" class="nav-link"></a>
             <form action="#">
                 <div class="form-input">
-                    <!--
-                    <input type="search" placeholder="Recherche...">
-                    <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
--->
+
+
                 </div>
             </form>
-            <!--
-            <input type="checkbox" id="switch-mode" hidden>
-            <label for="switch-mode" class="switch-mode"></label>
--->
 
+            <a href="#" class="notification">
+                <i></i>
+
+            </a>
             <a href="#" class="profile">
-                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
-                <!--img src="img/people.png"-->
+                <img src="../images/iconadmin.png">
             </a>
         </nav>
         <!-- NAVBAR -->
 
         <!-- MAIN -->
         <main>
-            <div class="head-title" >
+            <div class="head-title">
                 <div class="left">
-                    <h1>Demandes</h1>
-                    <ul class="breadcrumb" style="background-color: #eee;">
+                    <h1>Mes Demandes</h1>
+                    <ul class="breadcrumb">
                         <li>
-                            <a href="#">Dashboard</a>
+                        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                         </li>
-                        
+                        <li><i class='bx bx-chevron-right'></i></li>
                         <li>
                             <a class="active" href="#">Mes Demandes</a>
                         </li>
@@ -132,11 +125,21 @@ a:active {
                 </div>
             </div>
 
-            <section class="table__body">
-                <table>
-                    <thead>
-                        <tr>
-                            <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+            <div class="table-data">
+                <main class="table" id="customers_table">
+                    <section class="table__header">
+                        <h1></h1>
+                        <div class="input-group">
+                            <input type="search" placeholder="Rechercher...">
+                            <i class='bx bx-search'></i>
+                        </div>
+
+                    </section>
+                    <section class="table__body">
+                        <table>
+                            <thead>
+                                <tr>
+                                <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Email Expert <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Nom du service <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Date de debut <span class="icon-arrow">&UpArrow;</span></th>
@@ -144,19 +147,18 @@ a:active {
                             <th> Total <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Status <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Action <span class="icon-arrow">&UpArrow;</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($transformedDemandes as $demande)
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($transformedDemandes as $demande)
                             <tr>
                                 <td>{{ $demande['demande_id'] }}</td>
                                 <td>{{ $demande['email'] }}</td>
                                 <td>{{ $demande['service'] }}</td>
                                 <td>{{ $demande['date_debut'] }}</td>
-                                <td>{{ $demande['duree'] }}</td>
-                                <td>{{ $demande['total'] }}</td>
-                                <td>{{ $demande['etat'] }}</td>
-
+                                <td>{{ $demande['duree'] }} jours</td>
+                                <td>{{ $demande['total'] }} MAD</td>
+                                <td class="<?php echo $demande['etat'] === 'accepte' ? 'delivered' : ($demande['etat'] === 'en attente' ? 'shipped' : 'cancelled'); ?>"><?php echo $demande['etat']; ?></td>
                                 <td>
                                     @php
                                     $start = \Carbon\Carbon::parse($demande['date_debut']);
@@ -216,19 +218,21 @@ a:active {
                             </tr>
                         @endforeach
 
-                    </tbody>
-                </table>
-            </section>
-</section>
 
+                            </tbody>
+                        </table>
+                    </section>
+                </main>
+
+            </div>
         </main>
         <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
 
-
-
-
-        <!-- CONTENT -->
-        <script src="{{ asset('js/clientJS/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('js/adminJS/script.js') }}"></script>
+    <script src="{{ asset('js/adminJS/table.js') }}"></script>
+    <script src="{{ asset('js/clientJS/swiper-bundle.min.js') }}"></script>
         <script src="{{ asset('js/clientJS/main.js') }}"></script>
         <script src="{{ asset('js/clientJS/script.js') }}"></script>
         

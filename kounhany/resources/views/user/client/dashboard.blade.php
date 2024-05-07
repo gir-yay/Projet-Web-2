@@ -15,7 +15,7 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
     <link rel="stylesheet" href="{{ asset('css/client/dashclient.css') }}">
-    <title>Dashboard client</title>
+    <title>Espace client</title>
 </head>
 
 <body>
@@ -112,7 +112,7 @@
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
                         <li>
-                            <a class="active" href="#">Home</a>
+                            <a class="active" href="#">Acceuil</a>
                         </li>
                     </ul>
                 </div>

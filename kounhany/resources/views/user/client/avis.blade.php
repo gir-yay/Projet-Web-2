@@ -106,7 +106,7 @@
         <main>
             <div class="head-title">
                 <div class="left">
-                    <h1>Dashboard</h1>
+                    <h1>Mes Commentaires</h1>
                     <ul class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>

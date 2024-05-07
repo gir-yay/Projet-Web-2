@@ -99,10 +99,10 @@
         <main>
             <div class="head-title">
                 <div class="left">
-                    <h1>Dashboard</h1>
+                    <h1>Services</h1>
                     <ul class="breadcrumb">
                         <li>
-                            <a href="#">Dashboard</a>
+                        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
                         <li>
@@ -133,7 +133,7 @@
                         </form>
 
                         <div class="input-group">
-                            <input type="search" placeholder="Search Data...">
+                            <input type="search" placeholder="Rechercher...">
                             <i class='bx bx-search'></i>
                         </div>
 

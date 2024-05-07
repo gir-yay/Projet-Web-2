@@ -32,7 +32,7 @@ class ClientDemandeController extends Controller
             ];
         });
 
-        return view('user.client.demandes', compact('transformedDemandes'));
+        return view('user.client.mesdemandes', compact('transformedDemandes'));
     }
 
     
