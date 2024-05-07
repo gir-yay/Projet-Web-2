@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('client_id')->constrained('clients');
             $table->foreignId('expert_id')->constrained('experts');
             $table->string('commentaire', 255);
+            $table->boolean('afficher')->default(false);
             $table->timestamps();
         });
     }

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CommentairesSurClient;
 use Illuminate\Http\Request;
 use App\Models\CommentairesSurExpert;
 
 
 class ClientCommentsController extends Controller
 {
-    
+
     public function store(Request $request)
     {
         $client = auth()->user(); // Assuming the authenticated user is a client
@@ -27,6 +28,12 @@ class ClientCommentsController extends Controller
         $comment->client_id = $validatedData['client_id'];
         $comment->note = $validatedData['note'];
         $comment->commentaire = $validatedData['commentaire'];
+        $commentaireSurClient = CommentairesSurClient::where('demande_id', $validatedData['demande_id'])->first();
+        if($commentaireSurClient){
+            $commentaireSurClient->afficher = 1;
+            $commentaireSurClient->save();
+            $comment->afficher = 1;
+        }
         $comment->save();
 
         toastr()->success('Commentaire ajouté avec succès');

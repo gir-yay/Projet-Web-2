@@ -14,6 +14,7 @@ class CommentairesSurClient extends Model
         'commentaire',
         'client_id',
         'expert_id',
+        'afficher',
     ];
 
     public function demande()
