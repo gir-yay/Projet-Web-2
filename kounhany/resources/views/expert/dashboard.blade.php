@@ -43,6 +43,12 @@
                     <span class="text">Mes demandes</span>
                 </a>
             </li>
+             <li>
+                <a href="{{ route('expert.historique.index') }}">
+                    <i class="bx bxs-group"></i>
+                    <span class="text">Historique </span>
+                </a>
+            </li>
             <li>
                 <a href="{{route('expert.domaines.index')}}" class="domaines">
                     <i class="fa-brands fa-servicestack"></i>
@@ -53,12 +59,6 @@
                 <a href="{{route('expert.avis.index')}}">
                     <i class='bx bxs-message-dots'></i>
                     <span class="text">Avis</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('expert.historique.index') }}">
-                    <i class="bx bxs-group"></i>
-                    <span class="text">Historique </span>
                 </a>
             </li>
             <li>
