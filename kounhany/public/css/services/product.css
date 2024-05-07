@@ -159,7 +159,7 @@ body {
     display: grid;
     list-style: none;
     grid-auto-flow: column;
-    grid-column-gap: 2.5em;
+    grid-column-gap: 2em;
     font-size: 1.2em;
     align-items: center;
     
@@ -251,9 +251,9 @@ body {
 
 .product-view {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.5em;
-    padding-left: 1.5em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.3em;
+    padding-left: 1em;
     justify-content: space-between;
     height: fit-content
     
@@ -289,8 +289,8 @@ body {
     background-color: #F8F7F6;
     color: #444;
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
+    padding: 20px;
+    width: 350px;
     border: none;
     text-align: left;
     outline: none;
