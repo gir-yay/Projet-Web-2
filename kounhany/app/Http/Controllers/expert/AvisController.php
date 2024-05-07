@@ -10,7 +10,7 @@ class AvisController extends Controller
 {
     public function index()
     {
-        $comments = CommentairesSurExpert::where("expert_id", auth()->user()->id)
+        $comments = CommentairesSurExpert::where("expert_id", auth('expert')->user()->id)
         ->get();
         $newCommentsCollection = $comments->filter(function($comment){
             $dateDebut = \Carbon\Carbon::parse($comment->demande->date_debut);
@@ -26,4 +26,3 @@ class AvisController extends Controller
         return view("expert.avis", compact("comments"));
     }
 }
-// $passWeek = now() >= $query->date_debut->addDays($query->duree)->addDays(7);
