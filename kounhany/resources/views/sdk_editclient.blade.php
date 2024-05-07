@@ -110,6 +110,12 @@ color: black
                     <span class="text">Mon Profile</span>
                 </a>
             </li>
+             <li>
+                <a href="{{ route('services') }}">
+                    <i class='bx bxs-cog'></i>
+                    <span class="text">Services</span>
+                </a>
+            </li>
             <li >
                 <a href="{{ route('client.demande_client') }}">
                     <i class='bx bxs-doughnut-chart'></i>
