@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nos services </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/services/product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/services/stellarnav.css') }}">
      <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -30,22 +31,22 @@
             <!--=============== NAV MENU ===============-->
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="#" class="nav__link">Acceuil</a></li>
+                    <li><a href="{{ route('home') }}"class="nav__link">Acceuil</a></li>
 
-                    <li><a href="#about" class="nav__link">A propos</a></li>
+                    <li><a href="{{ route('home') }}/#about" class="nav__link">A propos</a></li>
 
                    
                         
                     
-                    <li><a href="#contact" class="nav__link">Contacter nous</a></li>
+                    <li><a href="{{ route('home') }}/#contact" class="nav__link">Contacter nous</a></li>
                     @if (auth()->check())
                         <li>
                             <a href="{{ route('client.logout') }}" class="nav__link">
                                 <form action="{{ route('client.logout') }}" method="POST">
                                     @csrf
-                                    <button class="nav__link"
-                                        style="border:none; background:none;color:white; font-size:16px; font-weight:600;">Se
-                                        Déconnecter</button>
+
+                                    <button class="nav__link" style="border:none; background:none; font-size:16px; font-weight:600 ;" >
+                                    Se Déconnecter</button>
                                 </form>
                             </a>
                         </li>
@@ -137,7 +138,7 @@
             <div class="product-view">
 
                 @foreach ($serviceExpert as $serviceExpert)
-                    <div class="col-sm-4 col-md-7 col-lg-8">
+                    <div class="col-sm-5 col-md-7 col-lg-8">
                         <div class="expert">
                             <a
                                 href="{{ route('expert-detail', ['expertId' => $serviceExpert->expert->id, 'serviceId' => $serviceExpert->service_id]) }}">
@@ -145,19 +146,30 @@
                                 <div class="text">
                                     <h6 class="mt-2">{{ $serviceExpert->expert->nom }}
                                         {{ $serviceExpert->expert->prenom }}</h6>
-                                    <h6>{{ $serviceExpert->prix_par_duree }} MAD</h6>
+                                    <h6>Prix par jours: {{ $serviceExpert->prix_par_duree }} MAD</h6>
                                     <div class="rating">
-    @php
-        $avgRating = $serviceExpert->expert->CommentairesSurExpert->avg('note');
-    @endphp
-    @for ($i = 1; $i <= 5; $i++)
-        @if ($i <= $avgRating)
-            <i class="fa fa-star" style="color: #583A28;"></i> <!-- filled star -->
-        @else
-            <i class="fa fa-star"></i> <!-- empty star -->
-        @endif
-    @endfor
+    @if ($serviceExpert->expert->commentairesSurExpert)
+        @php
+            $avgRating = $serviceExpert->expert->commentairesSurExpert->avg('note');
+        @endphp
+        @for ($i = 1; $i <= 5; $i++)
+            @if ($i <= round($avgRating))
+                <i class="fa fa-star" style="color: #583A28;"></i> <!-- étoile remplie -->
+            @else
+                <i class="fa fa-star"></i> <!-- étoile vide -->
+            @endif
+        @endfor
+    @else
+    <p><strong>Note : </strong> 
+        @for ($i = 1; $i <= 5; $i++)
+            <i class="fa fa-star"></i> <!-- étoile vide -->
+        
+        @endfor</p>
+    @endif
 </div>
+
+                                  
+
                                 </div>
                             </a>
                         </div>

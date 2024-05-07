@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    
 }
 
 @font-face {
@@ -28,12 +29,7 @@ body {
     src: url("{{ asset('fonts/HelveticaNeue-MediumCond.otf') }}");
 }
 
-.head1 {
-    width: 100%;
-    background: #63453c;
-    padding: 15px;
-    font-family: helvetica-medium;
-}
+
 
 .header {
     position: fixed;
@@ -130,9 +126,7 @@ body {
     grid-column-gap: 4em;
 }
 
-.head2 .logo img {
-    width: 100%;
-}
+
 
 .head1 .account {
     display: grid;
@@ -168,6 +162,7 @@ body {
     grid-column-gap: 2.5em;
     font-size: 1.2em;
     align-items: center;
+    
 }
 
 .stellarnav ul ul {
@@ -198,7 +193,8 @@ body {
 .offers {
     text-align: center;
     font-family: futura-bold;
-    border: 0.5px solid #999;
+    border: 0.5px solid #CAB5A4;
+    
 }
 
 .offers h4 {
@@ -260,6 +256,7 @@ body {
     padding-left: 1.5em;
     justify-content: space-between;
     height: fit-content
+    
 }
 
 .product-view a {
@@ -273,12 +270,12 @@ body {
 }
 
 .product-view div {
-    height: 100%;
+    height: 400px;
 }
 
 .product-view img {
-    width: 100%;
-    height: 300px;
+    width: 100px;
+    height: 200px;
     /* Adjust the height as needed */
    
 }
@@ -289,7 +286,7 @@ body {
 }
 
 .accordion {
-    background-color: #eee;
+    background-color: #F8F7F6;
     color: #444;
     cursor: pointer;
     padding: 18px;
@@ -310,6 +307,8 @@ body {
     padding: 0 18px;
     background-color: white;
     overflow: hidden;
+    display: none;
+
 }
 
 .accordion:after {
@@ -392,10 +391,25 @@ footer a:hover {
 
 .expert img {
     width: 100%;
-    height: 300px;
+    height: 250px;
 }
 
 .expert .text {
     padding: 10px;
     margin-top: 6px;
+}
+.btn{
+    margin-bottom: 10px;
+    margin-left: 80px;
+    color: #CAB5A4;
+
+}
+.rating {
+    color: #CAB5A4; /* Couleur par défaut des étoiles vides */
+    margin-left: 10px;
+}
+
+
+.rating .fa-star {
+    font-size: 30px;
 }
