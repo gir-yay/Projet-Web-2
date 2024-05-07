@@ -14,7 +14,7 @@
 <body>
   <!-- Affichage des détails de l'expert -->
 <div class="container">
-        <div class="title">EXPERTT DETAIL</div>
+        <div class="title">Details du service</div>
          <!-- Toastr message -->
         <div class="detail">
             <div class="image">
