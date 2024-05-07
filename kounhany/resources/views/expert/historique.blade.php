@@ -124,16 +124,16 @@
 
         <!-- MAIN -->
         <main>
-            <div class="head-title">
+        <div class="head-title">
                 <div class="left">
-                    <h1>Dashboard</h1>
+                    <h1>Historique</h1>
                     <ul class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
                         <li>
-                            <a class="active" href="#">Historique des demandes</a>
+                            <a class="active" href="#">Historique des Demandes</a>
                         </li>
                     </ul>
                 </div>
@@ -236,6 +236,7 @@
 
 
     <script src="{{ asset('js/expertJS/script.js') }}"></script>
+    
 </body>
 
 </html>

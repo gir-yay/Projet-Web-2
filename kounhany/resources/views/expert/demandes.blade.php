@@ -123,16 +123,16 @@
 
         <!-- MAIN -->
         <main>
-            <div class="head-title">
+        <div class="head-title">
                 <div class="left">
-                    <h1>Dashboard</h1>
+                    <h1>Mes Demandes</h1>
                     <ul class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
                         <li>
-                            <a class="active" href="#">Demandes</a>
+                            <a class="active" href="#">Mes Demandes</a>
                         </li>
                     </ul>
                 </div>

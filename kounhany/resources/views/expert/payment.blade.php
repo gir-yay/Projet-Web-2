@@ -20,7 +20,7 @@
     <!-- toastr css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
 
-    <title>Profile</title>
+    <title>Paiement</title>
 </head>
 
 <body>
@@ -121,7 +121,7 @@
         <main>
             <div class="head-title">
                 <div class="left">
-                    <h1>Dashboard</h1>
+                    <h1>Paiement</h1>
                     <ul class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>
