@@ -35,9 +35,9 @@
 
                     <li><a href="{{ route('home') }}/#about" class="nav__link">A propos</a></li>
 
-                   
-                        
-                    
+
+
+
                     <li><a href="{{ route('home') }}/#contact" class="nav__link">Contacter nous</a></li>
                     @if (auth()->check())
                         <li>
@@ -148,9 +148,10 @@
                                         {{ $serviceExpert->expert->prenom }}</h6>
                                     <h6>Prix par jours: {{ $serviceExpert->prix_par_duree }} MAD</h6>
                                     <div class="rating">
-    @if ($serviceExpert->expert->commentairesSurExpert)
+    @if ($serviceExpert->expert->commentaires_sur_expert)
         @php
-            $avgRating = $serviceExpert->expert->commentairesSurExpert->avg('note');
+            $avgRating = $serviceExpert->expert->commentaires_sur_expert->avg('note');
+
         @endphp
         @for ($i = 1; $i <= 5; $i++)
             @if ($i <= round($avgRating))
@@ -160,15 +161,15 @@
             @endif
         @endfor
     @else
-    <p><strong>Note : </strong> 
+    <p><strong>Note : </strong>
         @for ($i = 1; $i <= 5; $i++)
             <i class="fa fa-star"></i> <!-- étoile vide -->
-        
+
         @endfor</p>
     @endif
 </div>
 
-                                  
+
 
                                 </div>
                             </a>
