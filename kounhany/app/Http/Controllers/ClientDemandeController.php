@@ -6,6 +6,7 @@ use App\Models\CommentairesSurClient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\DemandesClient;
+use Carbon\Carbon;
 
 class ClientDemandeController extends Controller
 {
@@ -16,8 +17,12 @@ class ClientDemandeController extends Controller
         $demandes = DemandesClient::where('client_id', $client->id)
             ->with(['client', 'expert', 'service'])
             ->get();
+        $demandeesCollection = $demandes->filter(function ($demande) {
+            return $demande->etat == 'en attente' && $demande->created_at > now()->subHours(48) ||
+                $demande->etat == 'accepte' || $demande->etat == 'refuse';
+        });
+        $demandes = $demandeesCollection;
 
-        // Transform demandes data to replace ID columns with corresponding data
         $transformedDemandes = $demandes->map(function ($demande) {
             return [
                 'demande_id' => $demande->id,
@@ -35,5 +40,5 @@ class ClientDemandeController extends Controller
         return view('user.client.mesdemandes', compact('transformedDemandes'));
     }
 
-    
+
 }
