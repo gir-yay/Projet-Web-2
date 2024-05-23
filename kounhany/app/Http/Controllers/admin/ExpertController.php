@@ -34,7 +34,7 @@ class ExpertController extends Controller
         return view("sdk_show",compact('expert','commentaires'));
     }
     
-    //supprimer le commentaire
+    //supprimer le commentairec
     public function sdk_delete($id)
     {
         $comment = CommentairesSurClient::find($id);
