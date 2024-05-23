@@ -42,6 +42,12 @@
                     <span class="text">Mon Profile</span>
                 </a>
             </li>
+             <li>
+                <a href="{{ route('services') }}">
+                    <i class='bx bxs-cog'></i>
+                    <span class="text">Services</span>
+                </a>
+            </li>
             <li>
                 <a href="{{ route('client.demande_client') }}">
                     <i class='bx bxs-doughnut-chart'></i>
@@ -78,13 +84,16 @@
             <i class='bx bx-menu'></i>
             <form action="#">
                 <div class="form-input">
+                    <!--
                     <input type="search" placeholder="Recherche...">
                     <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+-->
                 </div>
             </form>
+            <!--
             <input type="checkbox" id="switch-mode" hidden>
             <label for="switch-mode" class="switch-mode"></label>
-
+-->
             <a href="#" class="profile">
 
                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
@@ -97,7 +106,7 @@
         <main>
             <div class="head-title">
                 <div class="left">
-                    <h1>Dashboard</h1>
+                    <h1>Mes Commentaires</h1>
                     <ul class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>

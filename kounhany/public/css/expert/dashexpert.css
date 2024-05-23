@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
-}
 
 :root {
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(190, 78%, 91%);
+    --first-color-light: hsl(214, 81%, 81%);
+    --first-color-alt: hsl(34, 30%, 95%);
+    --second-color: hsl(204, 6%, 16%);
+    --dark-color: hsl(212, 40%, 12%);
+    --white-color: hsl(212, 4%, 95%);
+    --body-color: hsl(212, 42%, 15%);
+    --container-color: hsl(215, 78%, 65%);
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Bai Jamjuree", sans-serif;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 1rem;
     --poppins: 'Poppins', sans-serif;
     --lato: 'Lato', sans-serif;
     --light: #F9F9F9;
@@ -27,6 +29,20 @@ li {
     --light-yellow: #FFF2C6;
     --orange: #FD7238;
     --light-orange: #FFE0D3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
 }
 
 html {
@@ -75,7 +91,7 @@ body {
     height: 56px;
     display: flex;
     align-items: center;
-    color: #F69604;
+    color: var(--blue);
     position: sticky;
     top: 0;
     left: 0;
@@ -147,7 +163,7 @@ body {
 }
 
 #sidebar .side-menu.top li.active a {
-    color: #F69604;
+    color: #3C91E6;
 }
 
 #sidebar.hide .side-menu li a {
@@ -169,7 +185,7 @@ body {
 }
 
 #sidebar .side-menu.top li a:hover {
-    color: #F69604;
+    color: #3C91E6;
 }
 
 #sidebar .side-menu li a .bx {
@@ -239,7 +255,7 @@ body {
 }
 
 #content nav .nav-link:hover {
-    color: #F69604;
+    color: #3C91E6;
 }
 
 #content nav form {
@@ -272,7 +288,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #F69604;
+    background: #3C91E6;
     color: var(--light);
     font-size: 18px;
     border: none;
@@ -327,7 +343,7 @@ body {
     left: 2px;
     bottom: 2px;
     width: calc(25px - 4px);
-    background: #F69604;
+    background: #3C91E6;
     border-radius: 50%;
     transition: all .3s ease;
 }
@@ -381,7 +397,7 @@ body {
 }
 
 #content main .head-title .left .breadcrumb li a.active {
-    color: #F69604;
+    color: #3C91E6;
     pointer-events: unset;
 }
 
@@ -389,7 +405,7 @@ body {
     height: 36px;
     padding: 0 16px;
     border-radius: 36px;
-    background: #F69604;
+    background: #3C91E6;
     color: var(--light);
     display: flex;
     justify-content: center;
@@ -530,7 +546,7 @@ body {
 }
 
 #content main .table-data .order table tr td .status.completed {
-    background: #F69604;
+    background: #3C91E6;
 }
 
 #content main .table-data .order table tr td .status.process {
@@ -566,7 +582,7 @@ body {
 }
 
 #content main .table-data .todo .todo-list li.completed {
-    border-left: 10px solid #F69604;
+    border-left: 10px solid #3C91E6;
 }
 
 #content main .table-data .todo .todo-list li.not-completed {
@@ -587,10 +603,12 @@ body {
     #sidebar {
         width: 200px;
     }
+
     #content {
         width: calc(100% - 60px);
         left: 200px;
     }
+
     #content nav .nav-link {
         display: none;
     }
@@ -600,6 +618,7 @@ body {
     #content nav form .form-input input {
         display: none;
     }
+
     #content nav form .form-input button {
         width: auto;
         height: auto;
@@ -607,10 +626,12 @@ body {
         border-radius: none;
         color: var(--dark);
     }
+
     #content nav form.show .form-input input {
         display: block;
         width: 100%;
     }
+
     #content nav form.show .form-input button {
         width: 36px;
         height: 100%;
@@ -618,19 +639,24 @@ body {
         color: var(--light);
         background: var(--red);
     }
+
     #content nav form.show~.notification,
     #content nav form.show~.profile {
         display: none;
     }
+
     #content main .box-info {
         grid-template-columns: 1fr;
     }
+
     #content main .table-data .head {
         min-width: 420px;
     }
+
     #content main .table-data .order table {
         min-width: 420px;
     }
+
     #content main .table-data .todo .todo-list {
         min-width: 420px;
     }
@@ -648,16 +674,16 @@ body {
 
 .box-info .text p {
     font-weight: 600;
-    color: #FFCE26
+    color: #3C91E6
 }
 
 .box-info .review p i {
-    color: #FFCE26
+    color: #FF9501
 }
 
 .box-info .comment i {
     color: #ffffff;
-    background-color: #FF9501;
+    background-color: #3C91E6;
 }
 
 .box-info .avis i {
@@ -827,6 +853,7 @@ ul {
     .listProduct {
         grid-template-columns: repeat(3, 1fr);
     }
+
     .detail {
         grid-template-columns: 40% 1fr;
     }
@@ -839,21 +866,26 @@ ul {
     .listProduct {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .detail {
         text-align: center;
         grid-template-columns: 1fr;
     }
+
     .detail .image img {
         width: unset;
         height: 40vh;
     }
+
     .detail .name {
         font-size: x-large;
         margin: 0;
     }
+
     .detail .buttons button {
         font-size: small;
     }
+
     .detail .buttons {
         justify-content: center;
     }
@@ -875,7 +907,7 @@ ul {
     background: #F4F1F0;
     color: #000;
     border-radius: 40px;
-    border: 2px solid #F69604;
+    border: 2px solid #3C91E6;
     text-align: center;
     cursor: pointer;
 }
@@ -883,7 +915,7 @@ ul {
 .box-area h5 {
     font-size: 16px;
     font-weight: 700;
-    color: #F69604;
+    color: #3C91E6;
     margin-top: 30px;
     margin-bottom: 5px;
     text-transform: uppercase;
@@ -974,6 +1006,7 @@ th {
     align-items: center;
     justify-content: center;
 }
+
 .close {
     font-size: 40px;
 }

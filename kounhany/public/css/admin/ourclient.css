@@ -774,29 +774,22 @@ tbody tr.hide td img {
 }
 
 .delivered {
-    background-color: #86e49d;
+   
     color: #006b21;
     border: none;
-    padding: 5px;
-    border-radius: 10%;
-    width: 80px;
+   
 }
 
 .cancelled {
-    background-color: #d893a3;
     color: #b30021;
     border: none;
-    padding: 5px;
-    border-radius: 10%;
-    width: 80px;
+
 }
 
-.status.pending {
-    background-color: #ebc474;
-}
 
-.status.shipped {
-    background-color: #6fcaea;
+.shipped {
+    color: #184d60;
+    border: none;
 }
 
 @media (max-width: 1000px) {

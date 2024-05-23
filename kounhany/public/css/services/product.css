@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    
 }
 
 @font-face {
@@ -28,26 +29,68 @@ body {
     src: url("{{ asset('fonts/HelveticaNeue-MediumCond.otf') }}");
 }
 
-.head1 {
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background: #63453c;
-    padding: 15px;
-    font-family: helvetica-medium;
+    background-color: #F8F7F6;
+    /* box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);*/
+    z-index: 100;
+}
+.nav__logo,
+.nav__burger,
+.nav__close {
+    color: #000;
 }
 
-header {
-    width: 100%;
-    background: #63453c !important;
-    color: white !important;
+.nav__data {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header nav {
-    height: 60px !important;
+.nav__logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
+    font-weight: 600;
 }
+
+.nav__logo i {
+    font-weight: initial;
+    font-size: 1.25rem;
+}
+
+.nav__toggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.nav__burger,
+.nav__close {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+    opacity: 0;
+}
+
 
 .offers {
     position: relative !important;
-    top: 50px !important;
+    top: 85px !important;
     height: 30px;
 }
 
@@ -56,11 +99,7 @@ header nav {
     bottom: 25px !important
 }
 
-header a {
-    background-color: #63453c!important;
-    color: white !important;
-    height: 50px;
-}
+
 
 .head1 .container {
     display: grid;
@@ -87,9 +126,7 @@ header a {
     grid-column-gap: 4em;
 }
 
-.head2 .logo img {
-    width: 100%;
-}
+
 
 .head1 .account {
     display: grid;
@@ -122,9 +159,10 @@ header a {
     display: grid;
     list-style: none;
     grid-auto-flow: column;
-    grid-column-gap: 2.5em;
+    grid-column-gap: 2em;
     font-size: 1.2em;
     align-items: center;
+    
 }
 
 .stellarnav ul ul {
@@ -155,7 +193,8 @@ header a {
 .offers {
     text-align: center;
     font-family: futura-bold;
-    border: 0.5px solid #999;
+    border: 0.5px solid #CAB5A4;
+    
 }
 
 .offers h4 {
@@ -212,11 +251,12 @@ header a {
 
 .product-view {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.5em;
-    padding-left: 1.5em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.3em;
+    padding-left: 1em;
     justify-content: space-between;
     height: fit-content
+    
 }
 
 .product-view a {
@@ -230,14 +270,14 @@ header a {
 }
 
 .product-view div {
-    height: 100%;
+    height: 400px;
 }
 
 .product-view img {
-    width: 100%;
+    width: 100px;
     height: 200px;
     /* Adjust the height as needed */
-    object-fit: cover;
+   
 }
 
 .product-view img:hover {
@@ -246,11 +286,11 @@ header a {
 }
 
 .accordion {
-    background-color: #eee;
+    background-color: #F8F7F6;
     color: #444;
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
+    padding: 20px;
+    width: 350px;
     border: none;
     text-align: left;
     outline: none;
@@ -265,9 +305,10 @@ header a {
 
 .panel {
     padding: 0 18px;
-    display: none;
     background-color: white;
     overflow: hidden;
+    display: none;
+
 }
 
 .accordion:after {
@@ -350,10 +391,25 @@ footer a:hover {
 
 .expert img {
     width: 100%;
-    height: 200px;
+    height: 250px;
 }
 
 .expert .text {
     padding: 10px;
     margin-top: 6px;
+}
+.btn{
+    margin-bottom: 10px;
+    margin-left: 80px;
+    color: #CAB5A4;
+
+}
+.rating {
+    color: #CAB5A4; /* Couleur par défaut des étoiles vides */
+    margin-left: 10px;
+}
+
+
+.rating .fa-star {
+    font-size: 30px;
 }

@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
+
         $email_settings = EmailSettings::first();
         if ($email_settings) {
             config()->set('mail.mailers.smtp', [

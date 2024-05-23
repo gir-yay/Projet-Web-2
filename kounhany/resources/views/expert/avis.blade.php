@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Boxicons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -99,13 +101,16 @@
             <i class='bx bx-menu'></i>
             <form action="#">
                 <div class="form-input">
+                    <!--
                     <input type="search" placeholder="Recherche...">
                     <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+-->
                 </div>
             </form>
+            <!--
             <input type="checkbox" id="switch-mode" hidden>
             <label for="switch-mode" class="switch-mode"></label>
-
+-->
             <a href="#" class="profile">
                 <img src="{{ asset(auth('expert')->user()->photo) }}">
             </a>
@@ -116,7 +121,7 @@
         <main>
             <div class="head-title">
                 <div class="left">
-                    <h1>Dashboard</h1>
+                    <h1>Avis</h1>
                     <ul class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>

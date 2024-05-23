@@ -15,7 +15,9 @@ class DemandesController extends Controller
 {
     public function index()
     {
-        $demandes = DemandesClient::where('expert_id', auth('expert')->user()->id)->where('etat', 'en attente')->get();
+        $demandes = DemandesClient::where('expert_id', auth('expert')->user()->id)->where('etat', 'en attente')
+        ->where("created_at", ">", now()->subHours(48))
+        ->get();
         return view('expert.demandes', compact('demandes'));
     }
 

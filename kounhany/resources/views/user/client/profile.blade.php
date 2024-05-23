@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
 
-    <title>Client Profile</title>
+    <title>Mon Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
@@ -72,6 +72,12 @@
                     <span class="text">Mon Profile</span>
                 </a>
             </li>
+             <li>
+                <a href="{{ route('services') }}">
+                    <i class='bx bxs-cog'></i>
+                    <span class="text">Services</span>
+                </a>
+            </li>
             <li >
                 <a href="{{ route('client.demande_client') }}">
                     <i class='bx bxs-doughnut-chart'></i>
@@ -108,12 +114,16 @@
             <i class='bx bx-menu'></i>
             <form action="#">
                 <div class="form-input">
+                    <!--
                     <input type="search" placeholder="Recherche...">
                     <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+-->
                 </div>
             </form>
+            <!--
             <input type="checkbox" id="switch-mode" hidden>
             <label for="switch-mode" class="switch-mode"></label>
+-->
 
             <a href="#" class="profile">
                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">

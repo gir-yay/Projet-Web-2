@@ -7,6 +7,8 @@
 
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,7 +23,7 @@
     <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="#" class="brand">
-            <i class="bx ri-open-arm-fill "></i>
+            <i class="bx ri-open-arm-fill"></i>
             <span class="text">Koun Hany</span>
         </a>
         <ul class="side-menu top">
@@ -91,15 +93,19 @@
         <!-- NAVBAR -->
         <nav>
             <i class='bx bx-menu'></i>
+            
             <form action="#">
                 <div class="form-input">
+                    <!--
                     <input type="search" placeholder="Recherche...">
                     <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+-->
                 </div>
             </form>
+            <!--
             <input type="checkbox" id="switch-mode" hidden>
             <label for="switch-mode" class="switch-mode"></label>
-
+-->
             <a href="#" class="profile">
                 <img src="{{ asset(auth('expert')->user()->photo) }}">
             </a>

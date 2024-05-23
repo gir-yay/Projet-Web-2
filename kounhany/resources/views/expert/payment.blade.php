@@ -20,7 +20,7 @@
     <!-- toastr css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
 
-    <title>Profile</title>
+    <title>Paiement</title>
 </head>
 
 <body>
@@ -101,13 +101,16 @@
             <i class='bx bx-menu'></i>
             <form action="#">
                 <div class="form-input">
+                    <!--
                     <input type="search" placeholder="Recherche...">
                     <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+-->
                 </div>
             </form>
+            <!--
             <input type="checkbox" id="switch-mode" hidden>
             <label for="switch-mode" class="switch-mode"></label>
-
+-->
             <a href="#" class="profile">
                 <img src="{{ asset(auth('expert')->user()->photo) }}">
             </a>
@@ -118,7 +121,7 @@
         <main>
             <div class="head-title">
                 <div class="left">
-                    <h1>Dashboard</h1>
+                    <h1>Paiement</h1>
                     <ul class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>
@@ -138,7 +141,7 @@
                             <form action="{{ route('expert.payment.paypal') }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="total" value="{{ $frais }}">
-                                <button type="submit" class="btn btn-warning w-100 text-white">PayPal</button>
+                                <button type="submit" class="btn btn-info w-100 text-white">PayPal</button>
                             </form>
                         </div>
 
